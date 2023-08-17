@@ -1,0 +1,107 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+<Meta title="Clases/Clases Globales" />
+
+# Clases Globales
+
+## TEXT ALIGN
+
+text-align es una propiedad CSS que se utiliza para alinear el texto dentro de un elemento HTML.
+Se puede establecer en diferentes opciones como "left" (izquierda), "right" (derecha), "center" (centro) o "justify" (justificar).
+Se utiliza para controlar la alineación horizontal del texto dentro del elemento. <br/>
+En el siguiente ejemplo se puede ver el nombre con el cual se puede usar la clase
+
+<Canvas>
+  <div>
+    <div class="text-left">
+      <span class="mat-h3">text-left</span>
+    </div>
+    <div class="text-center">
+      <span class="mat-h3">text-center</span>
+    </div>
+    <div class="text-right">
+      <span class="mat-h3">text-right</span>
+    </div>
+  </div>
+</Canvas>
+
+## CURSOR
+
+Cursor es una propiedad CSS que se utiliza para cambiar la apariencia del cursor del mouse cuando se mueve sobre un elemento HTML.
+Permite personalizar la forma del cursor para diferentes situaciones, como cuando se pasa el cursor sobre un enlace o un botón.
+El valor de la propiedad se puede establecer en diferentes opciones, como "pointer" (mano) o "text" (línea vertical), entre otras. <br/>
+En el siguiente ejemplo se puede ver el nombre con el cual se puede usar la clase
+
+<Canvas>
+  <div>
+    <div class="d-grid">
+      <div class="d-flex column gap-5">
+        <div class="grid-template-3 ">
+          <span class="mat-h3 cursor-default text-center">cursor-default</span>
+          <span class="mat-h3 cursor-none text-center">cursor-none</span>
+          <span class="mat-h3 cursor-help text-center">cursor-help</span>
+        </div>
+        <div class="grid-template-3 ">
+          <span class="mat-h3 cursor-progress text-center">
+            cursor-progress
+          </span>
+          <span class="mat-h3 cursor-wait text-center">cursor-wait</span>
+          <span class="mat-h3 cursor-text text-center">cursor-text</span>
+        </div>
+        <div class="grid-template-3 ">
+          <span class="mat-h3 cursor-wrap text-center">cursor-wrap</span>
+          <span class="mat-h3 cursor-not-allowed text-center">
+            cursor-not-allowed
+          </span>
+          <span class="mat-h3 cursor-pointer text-center">cursor-pointer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+## POSITION
+
+"Position" es una propiedad CSS que se utiliza para controlar el posicionamiento de un elemento HTML en relación a su contenedor o al documento.
+Se utiliza junto con otras propiedades como "top", "bottom", "left" y "right" para establecer la posición exacta del elemento.
+Las opciones disponibles son "static", "relative", "absolute" y "fixed". Cada opción tiene un efecto diferente en la posición del elemento. <br/>
+En el siguiente ejemplo se puede ver el nombre con el cual se puede usar la clase
+
+<Canvas>
+  <div class="d-grid">
+    <div class="d-flex column gap-5">
+      <div class="grid-template-3">
+        <span class="mat-h3 text-center">fixed</span>
+        <span class="mat-h3 text-center">absolute</span>
+        <span class="mat-h3 text-center">static</span>
+      </div>
+      <div class="grid-template-2">
+        <span class="mat-h3 text-center">sticky</span>
+        <span class="mat-h3 text-center">relative</span>
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+## OPACITY
+
+"Opacity" es una propiedad CSS que se utiliza para controlar la transparencia de un elemento HTML.
+Se utiliza para establecer el nivel de opacidad de un elemento, donde 1 es completamente opaco y 0 es completamente transparente.
+Se pueden utilizar valores intermedios para indicar niveles de transparencia parciales. <br/>
+En el siguiente ejemplo se puede ver el nombre con el cual se puede usar la clase
+
+<Canvas>
+  <div class="d-grid">
+    <div class="d-flex column gap-5">
+      <div class="grid-template-3">
+        <span class="mat-h3 opacity-0 text-center">opacity-0</span>
+        <span class="mat-h3 opacity-25 text-center">opacity-25</span>
+        <span class="mat-h3 opacity-50 text-center">opacity-50</span>
+      </div>
+      <div class="grid-template-2">
+        <span class="mat-h3 opacity-75 text-center"> opacity-75</span>
+        <span class="mat-h3 opacity-100 text-center">opacity-100</span>
+      </div>
+    </div>
+  </div>
+</Canvas>

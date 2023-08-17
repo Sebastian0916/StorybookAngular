@@ -1,0 +1,85 @@
+import { Meta, Story, Canvas } from "@storybook/blocks";
+
+<Meta title="Clases/icon" />
+<style>
+  {`
+  .outlined{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .img-desing{
+    width:40%;
+  }
+  .small{
+    font-size:16px;
+    height:16px;
+    width:16px;
+  }
+  .medium{
+    font-size:20px;
+    height:20px;
+    width:20px;
+  }
+  .large{
+    font-size:33px;
+    height:33px;
+    width:33px;
+  }
+  #icon-outlined{
+    margin-block:8px !important;
+  }
+  .icons{
+    display:flex;
+    align-items:center;
+  }
+`}
+</style>
+
+# ICONS ANGULAR MATERIAL
+
+Los iconos de Angular Material son visualmente simples y limpios, y utilizan una paleta de colores monocromáticos.
+Algunos de los iconos más comunes incluyen:
+
+<ul>
+  <li>Flechas de dirección para indicar la navegación</li>
+  <li>
+    Iconos de menú y hamburguesas para indicar la existencia de un menú
+    desplegable
+  </li>
+  <li>Iconos de búsqueda para indicar la presencia de una barra de búsqueda</li>
+  <li>Iconos de lápiz para indicar la capacidad de editar un elemento</li>
+  <li>
+    Iconos de papelera para indicar la capacidad de eliminar un elemento Iconos
+    de
+  </li>
+  <li>cerrar para indicar la capacidad de cerrar una ventana o modal.</li>
+</ul>
+En general, los iconos de Angular Material son diseñados para ser claros y concisos,
+y para mejorar la usabilidad de las aplicaciones web y móviles construidas con Angular.
+<br />
+### ICON FILLED
+
+Por defecto los iconos de material ya vienen con el estilo filled,
+si aun así quiere ponerle la clase, se la puede colocar de esta manera `class="mat-icon-filled"`
+
+<Canvas>
+  <mat-icon class="material-icons-two-tone mat-icon-filled">home</mat-icon>
+</Canvas>
+
+### ICON OUTLINED
+
+Para poder utilizar el estilo outlined de un icono de material, lo puede hacer de la siguiente manera
+`Class="mat-icon-outline"`
+
+<Canvas>
+  <mat-icon class="material-icons-two-tone mat-icon-outlined">home</mat-icon>
+</Canvas>
+
+### ICON TWO TONE
+
+Como tercer estilo de el icono esta el two tone y su manera de estilizarlo es `class="mat-icon-two-tone"`
+
+<Canvas>
+  <mat-icon class="material-icons-two-tone mat-icon-two-tone">home</mat-icon>
+</Canvas>

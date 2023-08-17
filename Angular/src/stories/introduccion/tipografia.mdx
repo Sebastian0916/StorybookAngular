@@ -1,0 +1,54 @@
+import { Meta } from "@storybook/blocks";
+
+<style>
+  {`
+  .colores{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    gap:8px;
+    margin-top:8px;
+  }
+  .text{
+    margin-top:8px;
+  }
+
+`}
+</style>
+
+<Meta title="Design System/Tipografia" />
+
+# Tipogrfia
+
+## Escala de colores
+
+<div class="text">
+  La Tipografia es una forma de organizar los tipos de letra para que el text
+  sea legible y atractivo cuando se muestra. El sistema de tematización de
+  [Angular Material](https://material.angular.io/) permite personalizar la
+  configuración tipografica de los componentes de la libreria. Además Angular
+  material proporciona APIs para aplicar estilos tipograficos a los elementos de
+  tu propia aplicación. <br /> Entre la configuración global de la tipografia se
+  agregaron 5 niveles nuevos, dedicados directamente para estilizar las
+  etiquetas h3, h4, h5, h6 y una estilización para capitalizar los textos dentor
+  de un elemento.
+  <span class="mat-subtitle-1">font family</span>: <span class="mat-subtitle-2">
+    Roboto y Nunito</span>, <span class="mat-subtitle-1">font weight</span>:
+    <span class="mat-body-1">300,400,500,600,700,</span>
+    <span class="mat-subtitle-2">rem value</span>: <span class="mat-subtitle-2">62.5% of 16px = 10px</span>
+</div>
+
+<div class="colores">
+  <span class="mat-body-2">body-2</span>
+  <span class="mat-body-1">body-1</span>
+  <span class="mat-subtitle-1">subtitle-1</span>
+  <span class="mat-subtitle-2">subtitle-2</span>
+  <span class="mat-caption">caption</span>
+  <span class="mat-overline">overline</span>
+  <span class="mat-headline-5">H1</span>
+  <span class="mat-headline-6">H2</span>
+  <span class="mat-h3">H3</span>
+  <span class="mat-h4">H4</span>
+  <span class="mat-h5">H5</span>
+  <span class="mat-h6">H6</span>
+</div>

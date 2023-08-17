@@ -1,0 +1,47 @@
+import Cover from "../../assets/Cover.svg";
+import { Meta } from "@storybook/blocks";
+
+<style>
+  {`
+  .img-desing{
+    width:60%;
+    height:auto;
+  }
+  .container{
+    display:flex;
+    justify-content:center
+  }
+`}
+</style>
+
+<Meta title="Design System/Introducción" />
+
+# Sinco Desing System
+
+<div className="container">
+  <img className="img-desing" src={Cover} alt={Cover} />
+</div>
+
+## ¿Qué es un Sistema de diseño?
+
+Un Desing System funciona como librería para almacenar colección de componentes con su codigo, que se pueden reutilizar
+para crear un producto rapidamente. Garantiza la calidad del diseño y la eficiencia del desarrolo en muchas empresas del mundo.
+Comprobamos finalmente que un Design System es una serie de componentes que pueden reutilizarse en diferentes combinaciones. Esto nos ayuda a:
+
+<ul>
+  <li>Mejorar la velocudad de produccion</li>
+  <li>Mejorar la comunicación</li>
+  <li>Facilitar la consistecia</li>
+  <li>Simplificar el producto</li>
+  <li>Conseguir coherencia visual</li>
+</ul>
+
+### ¿Como funciona nuestro Desing System?
+
+Buscamos la manera de solucionar las limitaciones de diseño que traía [Angular Material](https://material.angular.io/), una de las limitaciones que tenía y pudimos solucionar
+fue la cuestión de los tamaños, los tamaños de los componente de Angular Material que solo traia un tamaño por defecto. estuvimos buscando y estudiando diferentes frameworks y vimos que algunos
+tenian propiedades para modificar el tamaño de los componentes, trabajamos para que dentro del Framework de Angular, se puderia trabajar con diferentes tipos de tamaños para sus componentes,
+llegando a la solucion de crear una directiva `size` que nos funcionara para tener tamaños: `small`, `medium` y `large`.<br/>
+
+Llegando a la segunda limitacion es el tema de los colores, los colores principales de Angular son: `primary`, `accent`, `warn`. encontramos la manera de extender la cantidad de colores
+así pudimos agregar los colores: `success`, `info` y `caution`

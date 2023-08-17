@@ -1,0 +1,164 @@
+import Col from "../../assets/Col.jpg";
+import { Meta, Story, Canvas } from "@storybook/blocks";
+import { MatButtonModule } from "@angular/material/button";
+
+<style>
+  {`
+  .flex {
+  width: 100%;
+}
+
+.justify {
+  width: 32.7%;
+  height:50px;
+  border: solid;
+  font-size:15px;
+  font-family:Nunito, sans-serif;
+}
+.between{
+  font-size:15px;
+  height:50px;
+  font-family:Nunito, sans-serif;
+
+}
+.between {
+  width: 100%;
+  border: solid;
+}
+.container{
+  width: 100%;
+  border:solid none;
+}
+.container-1{
+  height: 70px;
+  background-color: #abb8c3;
+}
+.container-2{
+  height: 70px;
+  background-color: #57bb69;
+}
+.container-3{
+  height: 70px;
+  background-color: #5761bb;
+}
+.contents{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-right-style: ridge;
+}
+`}
+</style>
+
+<Meta title="Clases/Layout" />
+
+# LAYOUT
+
+En el diseño gráfico y web, un layout se refiere a la estructura de una página o pantalla que organiza los elementos visuales como texto, imágenes, botones, enlaces, etc. de manera coherente y fácilmente navegable para el usuario. El layout puede incluir elementos como encabezados, pies de página, barras laterales, menús de navegación, columnas, y más, que se organizan de manera jerárquica y estética
+
+<br />
+
+## COL
+
+La estructura de la rejilla de Sinco angular se divide en 12 columnas, y para definir el ancho de una columna, se pueden utilizar las clases "col-X" (donde "X" es un número del 1 al 12) para definir cuántas columnas debe ocupar un elemento en una fila. Por ejemplo, la clase `col-6` indica que un elemento debe ocupar la mitad del ancho de la fila, mientras que la clase `col-12` indica que un elemento debe ocupar todo el ancho de la fila
+
+<Canvas>
+  <div class="d-flex justify-content-center">
+    <img src={Col} />
+  </div>
+</Canvas>
+
+## GRID
+
+En diseño gráfico y web, las grids son utilizadas para ayudar a estructurar y distribuir elementos visuales en una página o pantalla,
+asegurando un equilibrio visual y una coherencia en la presentación del contenido. En arquitectura y urbanismo, las grids son utilizadas para planificar
+la distribución de edificios y calles en un área determinada, ayudando a garantizar una organización y accesibilidad adecuadas. En matemáticas y ciencias de la computación,
+las grids son utilizadas para representar datos en matrices y realizar operaciones con ellas.
+para invocar las grid se utliiza la clase `d-grid` y el los elementos donde se vayan a utilizar de utiliza la clase `grid-template-` depenediendo cuantas grillas se va a utilizar
+
+<Canvas>
+  <div class="d-grid container">
+    <div class="grid-template-6 container-1">
+      <div class="contents">COL-1</div>
+      <div class="contents">COL-2</div>
+      <div class="contents">COL-3</div>
+      <div class="contents">COL-4</div>
+      <div class="contents">COL-5</div>
+      <div class="contents">COL-6</div>
+    </div>
+    <div class="grid-template-4 container-2">
+      <div class="contents">COL-1</div>
+      <div class="contents">COL-2</div>
+      <div class="contents">COL-3</div>
+      <div class="contents">COL-4</div>
+    </div>
+    <div class="grid-template-3 container-3">
+      <div class="contents">COL-1</div>
+      <div class="contents">COL-2</div>
+      <div class="contents">COL-3</div>
+    </div>
+  </div>
+</Canvas>
+
+## FLEX-BOX
+
+Flexbox es un módulo de CSS que permite organizar y distribuir elementos en un contenedor de manera flexible y adaptable. Se utilizan propiedades como display: flex, flex-direction, justify-content y align-items para ajustar la presentación de los elementos dentro del contenedor. Es una herramienta útil para crear diseños responsivos y dinámicos en páginas web.
+
+<br />
+##### JUSTIFY CONTENT
+
+Justify-content es una propiedad CSS que se utiliza para alinear
+y distribuir elementos en el eje horizontal (línea de la base) de un contenedor "flex"
+o "grid". Se utiliza para establecer cómo se distribuyen los elementos horizontales
+dentro de su contenedor, con opciones como "flex-start", "flex-end", "center", "space-between" y
+"space-around" .
+
+<Canvas>
+  <aside class="flex d-flex column">
+    <article class="justify-content d-flex gap-2">
+      <div class="d-flex justify justify-content-start">
+        <h3>justify-content-start</h3>
+      </div>
+      <div class="d-flex justify justify-content-center">
+        <h3>justify-content-center</h3>
+      </div>
+      <div class="d-flex justify justify-content-end">
+        <h3>justify-content-end</h3>
+      </div>
+      <div class="d-flex justify-content-between between">
+        <h3>justify-content-between</h3>
+        <h3>justify-content-between</h3>
+      </div>
+      <div class="d-flex justify-content-around between">
+        <h3>justify-content-around</h3>
+        <h3>justify-content-around</h3>
+      </div>
+    </article>
+  </aside>
+</Canvas>
+
+##### ALIGN ITEMS
+
+Align-items es una propiedad CSS que se utiliza para alinear y distribuir elementos en el eje vertical (eje Y) de un contenedor
+"flex" o "grid". Se utiliza para establecer cómo se alinean los elementos verticalmente dentro de su contenedor,
+con opciones como "flex-start", "flex-end", "center".
+
+<Canvas>
+  <aside class="flex d-flex column">
+    <article class="justify-content d-flex gap-2">
+      <div class="d-flex justify align-items-start">
+        <h3>align-items-start</h3>
+      </div>
+      <div class="d-flex justify align-items-center">
+        <h3>align-items-center</h3>
+      </div>
+      <div class="d-flex justify align-items-end">
+        <h3>align-items-end</h3>
+      </div>
+      <div class="d-flex align-items-baseline between">
+        <h3>align-items-baseline</h3>
+      </div>
+    </article>
+  </aside>
+</Canvas>
