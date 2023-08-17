@@ -5,7 +5,6 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Design System', ['Introducción', '*'], 'Clases', ['Clases Globales', 'Layout', '*'], 'Angular Material'],
         locales: 'en-US',
       },
     },
