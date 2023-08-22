@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas } from "@storybook/blocks";
+import * as AlertStories from "./alerts.stories.ts";
+
+<Meta title="Angular Material/Alert" />
+
+# Alert Component
+
+El componente Alert es una herramienta visual que se utiliza para mostrar mensajes importantes o notificaciones al usuario en una aplicación o sitio web. Funciona como un cuadro rectangular que aparece en la pantalla, generalmente en la parte superior, y puede contener información sobre errores, advertencias, confirmaciones u otros tipos de mensajes relevantes.
+
+<br />
+
+### Alert Info
+
+<Canvas of={AlertStories.info} />
+
+### Alert error
+
+<Canvas of={AlertStories.error} />
+
+### Alert success
+
+<Canvas of={AlertStories.success} />
+
+### Alert warning
+
+<Canvas of={AlertStories.warning} />
