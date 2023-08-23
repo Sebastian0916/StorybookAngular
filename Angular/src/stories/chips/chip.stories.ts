@@ -4,26 +4,25 @@ import { MatIconModule } from '@angular/material/icon';
 import { ChipComponent } from '@sinco/angular';
 
 export default {
-  title: 'ChipComponent',
+  title: 'Angular Material/Chips',
   component: ChipComponent,
   decorators: [
     moduleMetadata({
       imports: [MatChipsModule, MatIconModule],
     }),
   ],
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs']
 } as Meta<ChipComponent>;
 
 type Story = StoryObj;
 
-export const Primary: Story = {
+export const primary: Story = {
+  name: "Chip",
   args: {
     arrayChips: [
-      {
-        texto: 'Chip numero 1',
-        selected: true,
-        color: 'warn',
-        size: 'small',
-      },
       {
         texto: 'Chip numero 2',
         selected: true,
@@ -31,24 +30,6 @@ export const Primary: Story = {
         icono: 'home',
         variante: 'stroked',
         cancel: true,
-      },
-      {
-        texto: 'Chip numero 3',
-        selected: true,
-        color: 'success',
-        icono: 'home',
-        variante: 'stroked',
-      },
-      {
-        selected: true,
-        color: 'caution',
-        texto: 'Chip numero 4',
-        variante: 'stroked',
-      },
-      {
-        color: 'primary',
-        texto: 'Chip numero 4',
-        variante: 'stroked',
       },
     ],
   },
