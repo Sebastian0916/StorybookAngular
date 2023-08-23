@@ -1,0 +1,24 @@
+.drawer {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0%;
+  height: 100%;
+  width: 35%;
+  border-start-start-radius: 8px;
+  background-color: #ffffff;
+
+  &__titulo {
+    @extend .drawer__titulo;
+    background-color: #26c6da;
+  }
+
+  &__contenido {
+    overflow-y: auto;
+  }
+
+  &__acciones {
+    border-top: 1px solid rgba(16, 24, 64, 0.23);
+    background-color: #f1f0ee;
+  }
+}
