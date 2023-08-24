@@ -2,7 +2,7 @@ import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { AlertsInfoComponent } from '@sinco/angular';
+import { AlertsInfoComponent } from 'src/components/alerts-info/alerts-info.component';
 
 export default {
   title: 'Angular Material/Alert',

@@ -1,0 +1,18 @@
+<mat-chip-listbox disabled>
+  <mat-chip-option
+    [size]="chip.size || 'medium'"
+    *ngFor="let chip of arrayChips"
+    [selected]="chip.selected || selected"
+    color="{{ chip.color || color }}"
+    [ngClass]="chip.variante"
+    (click)="chipClick(chip)"
+  >
+    <mat-icon name="icono" *ngIf="chip.icono">{{ chip.icono }}</mat-icon>
+    <span>
+      {{ chip.texto }}
+    </span>
+    <button matChipRemove *ngIf="chip.cancel">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-chip-option>
+</mat-chip-listbox>

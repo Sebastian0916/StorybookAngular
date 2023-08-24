@@ -1,6 +1,7 @@
 import { MatIconModule } from '@angular/material/icon';
 import { Meta, moduleMetadata } from '@storybook/angular';
-import { RatingComponent, SizeDirective } from '@sinco/angular';
+import {  SizeDirective } from '@sinco/angular';
+import { RatingComponent } from 'src/components/rating/rating.component';
 
 export default {
   title: 'Angular Material/RatingComponent',

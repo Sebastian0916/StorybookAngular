@@ -7,6 +7,9 @@ import { StandardDirective } from 'src/standard/standard.directive';
 import { MatButtonModule } from '@angular/material/button';
 import { DrawerComponent } from 'src/components/drawer/drawer.component';
 import { SizeDirective } from '@sinco/angular';
+import { RatingComponent } from 'src/components/rating/rating.component';
+import { ChipComponent } from 'src/components/chip/chip.component';
+import { AlertsInfoComponent } from 'src/components/alerts-info/alerts-info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { SizeDirective } from '@sinco/angular';
     BrowserModule,
     BrowserAnimationsModule,
     DrawerComponent,
+    RatingComponent,
+    ChipComponent,
+    AlertsInfoComponent,
     SizeDirective
   ],
   exports: [DrawerComponent],
