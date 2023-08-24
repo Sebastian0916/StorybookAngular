@@ -36,7 +36,7 @@ export const SampleText = 'Lorem ipsum dolor';
 <style>
 {`
   .bitakora-class{
-    margin: 16px 0px;
+    gap:
   }
   .bitakora-class .color-text-primary{
     color:rgba(8, 21, 36, 0.87);
@@ -47,7 +47,7 @@ export const SampleText = 'Lorem ipsum dolor';
   .bitakora-class .color-text-disabled{
     color:rgba(8, 21, 36, 0.6);
   }
-  .bitakora-class .color-text-active{
+  .bitakora-class .color-action-active{
     color:rgba(8, 21, 36, 0.54);
   }
 `}
@@ -69,7 +69,7 @@ Se añadieron 5 nuevos niveles tipográficos globales para estilizar etiquetas e
 
  **Weights:** 200, 300, 400, 500, 600, 700, 800, 900, 1000
 <br/>
-Cada módulo tiene su propia configuración de unidades de medida y clases de estilo para ajustar el color del texto, las cuales utilizan variables propias. Todo esto se explica en la siguiente sección.
+Cada módulo tiene su propia configuración de unidades de medida y clases de estilo para ajustar el color del texto, las cuales utilizan variables propias. Todo esto se explica en la sección de `clases de texto nativas`.
 </div>
 
 <br/>
@@ -77,57 +77,24 @@ Cada módulo tiene su propia configuración de unidades de medida y clases de es
 <br/>
 el **valor de 1 rem** en este tema queviale a`10px`
 <Typeset fontSizes={typographyERP} />
-<h3>clases de texto nativas</h3>
-
-- #### color-text-primary 
-
-> ```
->  <h5 class="color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> ```
-> <Canvas>
->   <h5 class=" color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> </Canvas>
-
-- #### color-text-secondary
-> ```
->  <h5 class="color-text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> ```
-> <Canvas>
->   <h5 class=" color-text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> </Canvas>
-
-- #### color-text-disabled
-> ```
->  <h5 class="color-text-disabled">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> ```
-> <Canvas>
->   <h5 class=" color-text-disabled">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> </Canvas>
-
-- #### color-text-active
-> ```
->  <h5 class="color-text-active">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> ```
-> <Canvas>
->   <h5 class="color-text-active">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> </Canvas>
 
 ## Bitakora
 <br/>
 el **valor de 1 rem** en este tema queviale a`14px`
 <Typeset sampleText={SampleText} fontSizes={typographyBitakora}  />
-<h3>clases de texto nativas</h3>
+<h3>clases de texto</h3>
 
-<div class="bitakora-class">
-- #### color-text-primary 
-
-> ```
->  <h5 class="color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> ```
-> <Canvas>
->   <h5 class=" color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
-> </Canvas>
-</div>
-
+  - #### color-text-primary 
+  > ```
+  >  <h5 class="color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column">
+  >   <h5 class="color-text-primary">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-text-primary">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
 
 
