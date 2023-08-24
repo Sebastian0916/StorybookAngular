@@ -1,18 +1,55 @@
-import { Meta } from "@storybook/blocks";
+import { Meta, Typeset, Canvas } from "@storybook/blocks";
+
+
+export const typographyERP = [
+  '11px',
+  '11px',
+  '13px',
+  '14px',
+  '13px',
+  '14px',
+  '16px',
+  '18px',
+  '20px',
+  '28px',
+  '32px',
+  '40px',
+];
+
+export const typographyBitakora =[
+  '11px',
+  '11px',
+  '13px',
+  '14px',
+  '13px',
+  '14px',
+  '16px',
+  '18px',
+  '34px',
+  '48px',
+  '60px',
+  '96px',
+]; 
+
+export const SampleText = 'Lorem ipsum dolor';
 
 <style>
-  {`
-  .colores{
-    display:flex;
-    align-items:center;
-    flex-direction:column;
-    gap:8px;
-    margin-top:8px;
+{`
+  .bitakora-class{
+    margin: 16px 0px;
   }
-  .text{
-    margin-top:8px;
+  .bitakora-class .color-text-primary{
+    color:rgba(8, 21, 36, 0.87);
   }
-
+  .bitakora-class .color-text-secondary{
+    color:rgba(8, 21, 36, 0.6);
+  }
+  .bitakora-class .color-text-disabled{
+    color:rgba(8, 21, 36, 0.6);
+  }
+  .bitakora-class .color-text-active{
+    color:rgba(8, 21, 36, 0.54);
+  }
 `}
 </style>
 
@@ -20,35 +57,77 @@ import { Meta } from "@storybook/blocks";
 
 # Tipogrfia
 
-## Escala de colores
+<div class="mt-3"> 
+Se añadieron 5 nuevos niveles tipográficos globales para estilizar etiquetas específicas y una clase de capitalización de texto en elementos: 
+ > -  ```<h3>``` 
+ > -  ```<h4>``` 
+ > -  ```<h5>``` 
+ > -  ```<h6>```
+ > -  ```.mat-overflow```
 
-<div class="text">
-  La Tipografia es una forma de organizar los tipos de letra para que el text
-  sea legible y atractivo cuando se muestra. El sistema de tematización de
-  [Angular Material](https://material.angular.io/) permite personalizar la
-  configuración tipografica de los componentes de la libreria. Además Angular
-  material proporciona APIs para aplicar estilos tipograficos a los elementos de
-  tu propia aplicación. <br /> Entre la configuración global de la tipografia se
-  agregaron 5 niveles nuevos, dedicados directamente para estilizar las
-  etiquetas h3, h4, h5, h6 y una estilización para capitalizar los textos dentor
-  de un elemento.
-  <span class="mat-subtitle-1">font family</span>: <span class="mat-subtitle-2">
-    Roboto y Nunito</span>, <span class="mat-subtitle-1">font weight</span>:
-    <span class="mat-body-1">300,400,500,600,700,</span>
-    <span class="mat-subtitle-2">rem value</span>: <span class="mat-subtitle-2">62.5% of 16px = 10px</span>
+ **Font family:** Roboto y Nunito
+
+ **Weights:** 200, 300, 400, 500, 600, 700, 800, 900, 1000
+<br/>
+Cada módulo tiene su propia configuración de unidades de medida y clases de estilo para ajustar el color del texto, las cuales utilizan variables propias. Todo esto se explica en la siguiente sección.
 </div>
 
-<div class="colores">
-  <span class="mat-body-2">body-2</span>
-  <span class="mat-body-1">body-1</span>
-  <span class="mat-subtitle-1">subtitle-1</span>
-  <span class="mat-subtitle-2">subtitle-2</span>
-  <span class="mat-caption">caption</span>
-  <span class="mat-overline">overline</span>
-  <span class="mat-headline-5">H1</span>
-  <span class="mat-headline-6">H2</span>
-  <span class="mat-h3">H3</span>
-  <span class="mat-h4">H4</span>
-  <span class="mat-h5">H5</span>
-  <span class="mat-h6">H6</span>
+<br/>
+## ERP
+<br/>
+el **valor de 1 rem** en este tema queviale a`10px`
+<Typeset fontSizes={typographyERP} />
+<h3>clases de texto nativas</h3>
+
+- #### color-text-primary 
+
+> ```
+>  <h5 class="color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> ```
+> <Canvas>
+>   <h5 class=" color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> </Canvas>
+
+- #### color-text-secondary
+> ```
+>  <h5 class="color-text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> ```
+> <Canvas>
+>   <h5 class=" color-text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> </Canvas>
+
+- #### color-text-disabled
+> ```
+>  <h5 class="color-text-disabled">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> ```
+> <Canvas>
+>   <h5 class=" color-text-disabled">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> </Canvas>
+
+- #### color-text-active
+> ```
+>  <h5 class="color-text-active">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> ```
+> <Canvas>
+>   <h5 class="color-text-active">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> </Canvas>
+
+## Bitakora
+<br/>
+el **valor de 1 rem** en este tema queviale a`14px`
+<Typeset sampleText={SampleText} fontSizes={typographyBitakora}  />
+<h3>clases de texto nativas</h3>
+
+<div class="bitakora-class">
+- #### color-text-primary 
+
+> ```
+>  <h5 class="color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> ```
+> <Canvas>
+>   <h5 class=" color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+> </Canvas>
 </div>
+
+
+
