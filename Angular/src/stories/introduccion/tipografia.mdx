@@ -35,8 +35,23 @@ export const SampleText = 'Lorem ipsum dolor';
 
 <style>
 {`
-  .bitakora-class{
-    gap:
+  .container-gap{
+    gap:10px
+  }
+  .bitakora-class .color-primary{
+    color:#141d29;
+  }
+  .bitakora-class .color-accent{
+    color:#0784ba;
+  }
+  .bitakora-class .color-warn{
+    color:#eb3e53;
+  }
+  .bitakora-class .color-success{
+    color:#8ed243;
+  }
+  .bitakora-class .color-warning ,.color-caution{
+    color:#fb8500;
   }
   .bitakora-class .color-text-primary{
     color:rgba(8, 21, 36, 0.87);
@@ -84,17 +99,133 @@ el **valor de 1 rem** en este tema queviale a`14px`
 <Typeset sampleText={SampleText} fontSizes={typographyBitakora}  />
 <h3>clases de texto</h3>
 
+  - #### color-primary 
+  > ```
+  >  <h5 class="color-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >   <h5 class="color-primary">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-primary">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+  - #### color-accent 
+  > ```
+  >  <h5 class="color-accent">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >   <h5 class="color-accent">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-accent">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+  - #### color-warn 
+  > ```
+  >  <h5 class="color-warn">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >   <h5 class="color-warn">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-warn">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+  - #### color-success 
+  > ```
+  >  <h5 class="color-success">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >   <h5 class="color-success">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-success">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+  - #### color-caution/warning
+  > ```
+  >  <h5 class="color-warning">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >   <h5 class="color-warning">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-warning">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+  - #### color-info
+  > ```
+  >  <h5 class="color-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column ">
+  >   <h5 class="color-info">ERP theme class</h5>
+  >   </div>
+  > </Canvas>
+
+
   - #### color-text-primary 
   > ```
   >  <h5 class="color-text-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
   > ```
   > <Canvas>
-  >  <div class="column">
+  >  <div class="column container-gap">
   >   <h5 class="color-text-primary">ERP theme class</h5>
   >     <span class="bitakora-class">
   >       <h5 class="color-text-primary">Bitakora theme class</h5> 
   >     </span>
   >   </div>
   > </Canvas>
+
+  - #### color-text-secondary 
+  > ```
+  >  <h5 class="color-text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >   <h5 class="color-text-secondary">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-text-secondary">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+  - #### color-text-disabled 
+  > ```
+  >  <h5 class="color-text-disabled">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >   <h5 class="color-text-disabled">ERP theme class</h5>
+  >     <span class="bitakora-class">
+  >       <h5 class="color-text-disabled">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+    - #### color-action-active 
+  > ```
+  >  <h5 class="color-action-active">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate?</h5>
+  > ```
+  > <Canvas>
+  >  <div class="column container-gap">
+  >     <span class="bitakora-class">
+  >       <h5 class="color-action-active">Bitakora theme class</h5> 
+  >     </span>
+  >   </div>
+  > </Canvas>
+
+  
 
 
