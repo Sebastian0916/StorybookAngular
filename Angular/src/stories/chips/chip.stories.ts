@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ChipComponent } from '@sinco/angular';
 
 export default {
-  title: 'Angular Material/Chips',
+  title: 'Angular Material/ChipsComponent',
   component: ChipComponent,
   decorators: [
     moduleMetadata({
