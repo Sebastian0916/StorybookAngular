@@ -38,14 +38,6 @@ import { Meta, Canvas, ColorPalette,ColorItem} from '@storybook/blocks';
         }}
     />
 
-    <ColorItem title="text" subtitle="base:primary"
-        colors={{
-            primary: '#101840de',
-            secondary: '#10184099',
-            disabled: '#10184061',
-        }}
-    />
-
     <ColorItem title="error" subtitle="base:main"
         colors={{
             main:'#D14343',
@@ -79,6 +71,14 @@ import { Meta, Canvas, ColorPalette,ColorItem} from '@storybook/blocks';
             light: '#60a918',
             dark: '#a0d158',
             contrastText: '#ffffff'
+        }}
+    />
+    
+    <ColorItem title="text" subtitle="base:primary"
+        colors={{
+            primary: '#101840de',
+            secondary: '#10184099',
+            disabled: '#10184061',
         }}
     />
 
@@ -137,12 +137,61 @@ import { Meta, Canvas, ColorPalette,ColorItem} from '@storybook/blocks';
 </ColorPalette>
 ## Bitakora
 <ColorPalette>
+
     <ColorItem title="primary" subtitle="base:main"
         colors={{
-            main:'#1e62a1',
-            light: '#5a8fd3',
-            dark: '#003972',
+            main:'#141d29',
+            light: '#373f49',
+            dark: '#060a0f',
             contrastText: '#ffffff'
         }}
     />
+
+    <ColorItem title="secondary" subtitle="base:main"
+            colors={{
+                main:'#0784ba',
+                light: '#2c96c4',
+                dark: '#025494',
+                contrastText: '#ffffff'
+            }}
+    />
+    
+    <ColorItem title="error" subtitle="base:main"
+            colors={{
+                main:'#eb3e53',
+                light: '#ee5b6d',
+                dark: '#dd1b29',
+                contrastText: '#ffffff'
+            }}
+    />
+
+    <ColorItem title="warning" subtitle="base:main"
+            colors={{
+                main:'#fb8500',
+                light: '#fc9726',
+                dark: '#f85500',
+                contrastText: '#ffffff'
+            }}
+    />
+
+    <ColorItem title="success" subtitle="base:main"
+            colors={{
+                main:'#8ed243',
+                light: '#9fd95f',
+                dark: '#5fb61e',
+                contrastText: '#edffde'
+            }}
+    />
+
+    
+    <ColorItem title="text" subtitle="States"
+            colors={{
+                primary:'rgba(8, 21, 36, 0.87)',
+                secondary: 'rgba(8, 21, 36, 0.6);',
+                disabled: 'rgba(8, 21, 36, 0.38)',
+            }}
+    />
+    
+
+
 </ColorPalette>
