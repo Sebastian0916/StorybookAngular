@@ -19,6 +19,21 @@
 
   &__acciones {
     border-top: 1px solid rgba(16, 24, 64, 0.23);
-    background-color: #f1f0ee;
+    background-color: #dddddd;
+    animation: 1.5s  drawer-drownup;
   }
+}
+
+@keyframes drawer-drownup {
+  from {
+    overflow-y: hidden;
+    transform: translateY(100%);
+  }
+  to {
+    overflow-y: hidden;
+    transform: translateY(0%);    
+  }
+}
+.xd {
+  height: 500px;
 }

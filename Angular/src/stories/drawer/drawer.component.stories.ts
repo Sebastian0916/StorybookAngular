@@ -1,10 +1,8 @@
-
 import { MatButtonModule } from '@angular/material/button';
 import { SizeDirective } from '@sinco/angular';
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { DrawerComponent } from 'src/components/drawer/drawer.component';
-
-const meta: Meta<DrawerComponent> ={
+const meta: Meta<DrawerComponent> = {
   decorators: [
     moduleMetadata({
       declarations: [SizeDirective],
@@ -12,17 +10,16 @@ const meta: Meta<DrawerComponent> ={
     }),
   ],
   title: 'Angular Material/Drawer',
-  component: DrawerComponent
-}
+  component: DrawerComponent,
+};
 export default meta;
 type Story = StoryObj<DrawerComponent>;
 
 export const drawerExample: Story = {
   name: 'drawer',
-  args:{
-  },
   render: () => ({
     template: `
+
     <sinco-drawer titulo='Nombre empresa'>
           <ng-template #drawerEncabezado>
             <button mat-icon-button size="small">
@@ -31,13 +28,10 @@ export const drawerExample: Story = {
           </ng-template>
     
           <ng-template #drawerContenido>
-            <div>
-              <mat-chip class="color-white">chip</mat-chip>
-            </div>
-            <p>Contenido drawer</p>
+            <h6 class="mat-h6">Contenido drawer</h6>
           </ng-template>
     
-          <ng-template #drawerAcciones class="row" >
+          <ng-template #drawerAcciones >
             <div>
               <button mat-button color="primary">cerrar</button>
               <button mat-raised-button color="primary">Guardar</button>
@@ -47,3 +41,4 @@ export const drawerExample: Story = {
   `,
   }),
 };
+

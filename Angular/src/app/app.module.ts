@@ -6,22 +6,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StandardDirective } from 'src/standard/standard.directive';
 import { MatButtonModule } from '@angular/material/button';
 import { DrawerComponent } from 'src/components/drawer/drawer.component';
-import { SizeDirective } from '@sinco/angular';
+import { AngularModule } from '@sinco/angular';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
     AppComponent,
     StandardDirective,
-    SizeDirective
+    DrawerComponent,
   ],
   imports: [
     MatButtonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    DrawerComponent,
-    SizeDirective
+    AngularModule,
+    MatChipsModule
   ],
-  exports: [DrawerComponent],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

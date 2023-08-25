@@ -1,4 +1,4 @@
-import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
+import { Component, Input, ContentChild, TemplateRef, ElementRef } from '@angular/core';
 import { MatDrawerMode } from '@angular/material/sidenav';
 import { DrawerService } from './drawer.service';
 
@@ -26,5 +26,11 @@ export class DrawerComponent {
   @Input() mode!: MatDrawerMode;
   @Input() alignEnd: boolean = true;
 
-  constructor( private drawerService: DrawerService){}
+  constructor( private drawerService: DrawerService, private el: ElementRef<HTMLElement>){}
+
+  mostrarAcciones(){
+    this.el.nativeElement.addEventListener('mouseenter', (event)=>{
+      
+    })
+  }
 }
