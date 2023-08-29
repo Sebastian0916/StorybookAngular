@@ -20,15 +20,11 @@ export const drawerExample: Story = {
   render: () => ({
     template: `
 
-    <sinco-drawer titulo='Nombre empresa'>
-          <ng-template #drawerEncabezado>
-            <button mat-icon-button size="small">
-              <mat-icon size="small" (click)="drawer.close()">close</mat-icon>
-            </button>
-          </ng-template>
-    
+    <sinco-drawer titulo='Nombre empresa'> 
           <ng-template #drawerContenido>
-            <h6 class="mat-h6">Contenido drawer</h6>
+            <div>
+            <button mat-button size="small" >Show Actions</button>
+            </div>
           </ng-template>
     
           <ng-template #drawerAcciones >

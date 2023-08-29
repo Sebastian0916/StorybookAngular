@@ -7,7 +7,7 @@
   width: 35%;
   border-start-start-radius: 8px;
   background-color: #ffffff;
-
+  overflow: hidden;
   &__titulo {
     @extend .drawer__titulo;
     background-color: #26c6da;
@@ -18,22 +18,29 @@
   }
 
   &__acciones {
+    display: none;
     border-top: 1px solid rgba(16, 24, 64, 0.23);
     background-color: #dddddd;
-    animation: 1.5s  drawer-drownup;
+    transition: transform 0.5s ease;
   }
 }
 
-@keyframes drawer-drownup {
-  from {
-    overflow-y: hidden;
-    transform: translateY(100%);
-  }
-  to {
-    overflow-y: hidden;
-    transform: translateY(0%);    
-  }
+.hidden {
+  transform: translateY(100%);
 }
+
+.visible {
+  transform: translateY(0);
+}
+
 .xd {
   height: 500px;
+}
+
+.prueba{
+  font-weight: 600;
+  font-size: 1.6;
+  line-height: 1.4;
+  letter-spacing: 0.0075em;
+  font-family: 'Nunito';
 }
