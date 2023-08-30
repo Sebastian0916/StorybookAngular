@@ -25,22 +25,27 @@
   }
 }
 
-.hidden {
-  transform: translateY(100%);
+
+@mixin animaciones($x, $y){
+  transform: translate(#{$x},#{$y});
+}
+.animaciones{
+  &__ocultarAcciones {
+    @include animaciones(0%, 100%)
+  }
+  &__mostrarAcciones {
+    @include animaciones(0%, 0%);
+  }
+  &__cerrarDrawer {
+    @include animaciones(0%, 0%)
+  }
+  &__mostrarDrawer {
+    @include animaciones(0%,0%);
+    right: -300px;
+  }
 }
 
-.visible {
-  transform: translateY(0);
-}
-
-.xd {
+.drawer-container {
   height: 500px;
 }
 
-.prueba{
-  font-weight: 600;
-  font-size: 1.6;
-  line-height: 1.4;
-  letter-spacing: 0.0075em;
-  font-family: 'Nunito';
-}

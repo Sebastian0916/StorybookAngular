@@ -2,6 +2,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SizeDirective } from '@sinco/angular';
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { DrawerComponent } from 'src/components/drawer/drawer.component';
+
 const meta: Meta<DrawerComponent> = {
   decorators: [
     moduleMetadata({
@@ -19,8 +20,7 @@ export const drawerExample: Story = {
   name: 'drawer',
   render: () => ({
     template: `
-
-    <sinco-drawer titulo='Nombre empresa'> 
+    <app-drawer titulo='Nombre empresa'> 
           <ng-template #drawerContenido>
             <div>
             <button mat-button size="small" >Show Actions</button>
@@ -33,7 +33,7 @@ export const drawerExample: Story = {
               <button mat-raised-button color="primary">Guardar</button>
             </div>
           </ng-template>
-      </sinco-drawer>
+      </app-drawer>
   `,
   }),
 };

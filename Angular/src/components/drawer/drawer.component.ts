@@ -3,7 +3,7 @@ import { MatDrawerMode } from '@angular/material/sidenav';
 import { DrawerService } from './drawer.service';
 
 @Component({
-  selector: 'sinco-drawer',
+  selector: 'app-drawer',
   templateUrl: './drawer.component.html',
   styleUrls: ['./drawer.component.scss'],
 })
@@ -26,10 +26,13 @@ export class DrawerComponent {
   @Input() mode!: MatDrawerMode;
   @Input() alignEnd: boolean = true;
   @Input() acciones: boolean = false;
-
+  @Input() cerrar: boolean = false;
   constructor(private drawerService: DrawerService) {}
 
   mostrarAcciones() {
     this.acciones = !this.acciones;
+  }
+  cerrarDrawer(){
+    this.cerrar = !this.cerrar
   }
 }
