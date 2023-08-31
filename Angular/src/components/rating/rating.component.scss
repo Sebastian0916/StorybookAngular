@@ -1,0 +1,27 @@
+$empty-star: rgba(27, 52, 76, 0.23) ;
+$fill-star: rgba(255, 180, 0, 1);
+$opacity:.38;
+
+.rating-container {
+  display: inline-flex;
+  user-select: none; 
+  .stars-outer {
+    display: inline-flex;
+    position: relative;
+  }
+  .stars-inner {
+    position: absolute;
+    overflow: hidden;
+  }
+  .star{
+    color: $fill-star;
+  }
+  .star_outline{
+    color: $empty-star;
+  }
+  &-disabled {
+    opacity: $opacity;
+    cursor: not-allowed;
+  }
+}
+

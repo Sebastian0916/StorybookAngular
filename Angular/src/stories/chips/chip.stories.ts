@@ -1,10 +1,10 @@
 import { moduleMetadata, StoryObj, Meta } from '@storybook/angular';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-import { ChipComponent } from '@sinco/angular';
+import { ChipComponent } from 'src/components/chip/chip.component';
 
 export default {
-  title: 'Angular Material/Chips',
+  title: 'Angular Material/ChipsComponent',
   component: ChipComponent,
   decorators: [
     moduleMetadata({
