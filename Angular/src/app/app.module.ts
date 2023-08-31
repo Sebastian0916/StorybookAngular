@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
-
 import { StandardDirective } from 'src/standard/standard.directive';
 import { AngularModule, SizeDirective } from '@sinco/angular';
 
@@ -17,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { PageHeaderComponent } from 'src/components/page-header/page-header.component';
 
 
 const componentes = [
@@ -24,6 +24,7 @@ const componentes = [
   RatingComponent,
   AlertsInfoComponent,
   ChipComponent,
+  PageHeaderComponent
 ];
 
 const material = [
