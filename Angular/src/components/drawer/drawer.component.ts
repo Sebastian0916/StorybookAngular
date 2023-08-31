@@ -1,9 +1,8 @@
 import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
-import { MatDrawerMode } from '@angular/material/sidenav';
 import { DrawerService } from './drawer.service';
 
 @Component({
-  selector: 'sinco-drawer',
+  selector: 'app-drawer',
   templateUrl: './drawer.component.html',
   styleUrls: ['./drawer.component.scss'],
 })
@@ -21,10 +20,17 @@ export class DrawerComponent {
 
   @ContentChild('drawerAcciones', { static: true })
   drawerAcciones!: TemplateRef<HTMLElement>;
-  
-  @Input() position?: 'start' | 'end';
-  @Input() mode!: MatDrawerMode;
-  @Input() alignEnd: boolean = true;
 
-  constructor( private drawerService: DrawerService){}
+  @Input() positionEnd!: boolean;
+  @Input() alignEndAcciones!: boolean;
+  @Input() acciones!:boolean;
+
+  
+  mostrarAcciones() {
+    this.acciones = !this.acciones;
+  }
+  
+  
+  constructor(private drawerService: DrawerService) {}
+
 }
