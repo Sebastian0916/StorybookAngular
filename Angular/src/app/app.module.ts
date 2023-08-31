@@ -8,11 +8,13 @@ import { DrawerComponent } from 'src/components/drawer/drawer.component';
 import { AngularModule } from '@sinco/angular';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
+import { PageHeaderComponent } from 'src/components/page-header/page-header.component';
 
 const material= [MatCardModule, MatButtonModule,MatChipsModule]
 
 const componentesPropios = [
-  DrawerComponent
+  DrawerComponent,
+  PageHeaderComponent
 ]
 
 @NgModule({
