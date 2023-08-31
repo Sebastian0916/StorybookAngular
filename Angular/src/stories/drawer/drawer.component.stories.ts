@@ -1,40 +1,49 @@
 import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { SizeDirective } from '@sinco/angular';
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { DrawerComponent } from 'src/components/drawer/drawer.component';
+import { StandardDirective } from 'src/standard/standard.directive';
 
 const meta: Meta<DrawerComponent> = {
   decorators: [
     moduleMetadata({
-      declarations: [SizeDirective],
-      imports: [MatButtonModule],
+      declarations: [SizeDirective, StandardDirective],
+      imports: [
+        MatButtonModule,
+        MatFormFieldModule,
+        MatRadioModule,
+        ,
+        MatInputModule,
+      ],
     }),
   ],
   title: 'Angular Material/Drawer',
   component: DrawerComponent,
 };
 export default meta;
-type Story = StoryObj<DrawerComponent>;
+type Story = StoryObj<DrawerComponent> ;
 
 export const drawerExample: Story = {
   name: 'drawer',
-  render: () => ({
-    template: `
-    <app-drawer titulo='Nombre empresa'> 
-          <ng-template #drawerContenido>
-            <div>
-            <button mat-button size="small" >Show Actions</button>
-            </div>
-          </ng-template>
-    
-          <ng-template #drawerAcciones >
-            <div>
-              <button mat-button color="primary">cerrar</button>
-              <button mat-raised-button color="primary">Guardar</button>
-            </div>
-          </ng-template>
-      </app-drawer>
-  `,
-  }),
+  args: {
+    titulo: 'Nombre empresa',
+    acciones: false,
+    alignEndAcciones: false,
+    positionEnd: false,
+  },
+  argTypes:{
+    acciones :{
+      options: [true,false],
+    },
+    alignEndAcciones :{
+      options: [true,false],
+    },
+    positionEnd :{
+      options: [true,false],
+    }
+  },
 };
-

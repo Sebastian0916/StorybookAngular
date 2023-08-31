@@ -7,22 +7,35 @@ import { MatButtonModule } from '@angular/material/button';
 import { DrawerComponent } from 'src/components/drawer/drawer.component';
 import { AngularModule } from '@sinco/angular';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 
+const material = [
+  MatChipsModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatRadioModule,
+  MatInputModule
+]
+
+const componentes = [
+  DrawerComponent
+]
 @NgModule({
   declarations: [
     AppComponent,
     StandardDirective,
-    DrawerComponent,
+    componentes
   ],
   imports: [
-    MatButtonModule,
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
     AngularModule,
-    MatChipsModule
+    material
   ],
-  exports: [],
+  exports: [material, componentes],
   providers: [],
   bootstrap: [AppComponent]
 })
