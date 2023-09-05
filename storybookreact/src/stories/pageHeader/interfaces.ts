@@ -7,6 +7,7 @@ export interface Pageheader {
     title?: string
     subtitle?: string
     breadcrumbs?: BreadcrumbCode[]
-    actions?: React.ReactNode | any
+    actions?: React.ReactNode;
+    tabs?: React.ReactNode
 }
 

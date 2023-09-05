@@ -1,5 +1,4 @@
 import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
-import { DrawerService } from './drawer.service';
 
 @Component({
   selector: 'app-drawer',
@@ -29,8 +28,5 @@ export class DrawerComponent {
   mostrarAcciones() {
     this.acciones = !this.acciones;
   }
-  
-  
-  constructor(private drawerService: DrawerService) {}
 
 }

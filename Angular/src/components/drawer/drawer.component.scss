@@ -53,7 +53,6 @@
   }
   &__mostrarAcciones {
     @include animaciones(0%, 0%);
-    height: 8%;
   }
   &__cerrarDrawer {
     @include animaciones(0%, 0%);
