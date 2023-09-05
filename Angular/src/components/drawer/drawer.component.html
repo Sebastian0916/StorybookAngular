@@ -1,26 +1,61 @@
-<div
-  class="drawer column nowrap mb-1 justify-content-between mat-elevation-z24"
->
+<div class="drawer-container">
   <div
-    class="drawer__titulo row justify-content-between align-items-center px-3 py-2 gap-4"
+    class="drawer column nowrap mb-1 justify-content-between mat-elevation-z24"
+      [ngClass]="positionEnd ? 'drawer-end' : 'drawer'"
   >
-    <ng-container *ngTemplateOutlet="nombreEmpresa"></ng-container>
-    <ng-container *ngTemplateOutlet="drawerEncabezado"></ng-container>
-  </div>
+    <div
+      class="drawer__titulo row justify-content-between align-items-center px-3 py-2 gap-4"
+    >
+      <ng-container *ngTemplateOutlet="nombreEmpresa"></ng-container>
+      <ng-container *ngTemplateOutlet="drawerEncabezado"></ng-container>
+    </div>
 
-  <div class="drawer__contenido nowrap column py-2 px-3 gap-4">
-    <ng-container *ngTemplateOutlet="drawerContenido"></ng-container>
-  </div>
+    <div
+      class="drawer__contenido nowrap column py-2 px-3 gap-4"
+      (click)="mostrarAcciones()"
+    >
+      <ng-container *ngTemplateOutlet="drawerContenido"></ng-container>
+    </div>
 
-  <div
-    class="drawer__acciones row mt-1 py-2 px-3 gap-4"
-    [class.justify-content-end]="alignEnd"
-  >
-    <ng-container *ngTemplateOutlet="drawerAcciones"></ng-container>
+    <div
+      class="drawer__acciones row mt-1 py-2 px-3 gap-4"
+      [ngClass]="{
+        'animaciones__ocultarAcciones': !acciones,
+        'animaciones__mostrarAcciones': acciones
+      }"
+      [class.justify-content-end]="alignEndAcciones"
+    >
+      <ng-container *ngTemplateOutlet="drawerAcciones"></ng-container>
+    </div>
   </div>
 </div>
-
 <ng-template #nombreEmpresa>
-  <h6 class="color-text-primary" *ngIf="titulo">{{ titulo }}</h6>
+  <span class="color-text-primary h6" *ngIf="titulo">{{ titulo }}</span>
+  <button mat-icon-button size="small">
+    <mat-icon size="small">close</mat-icon>
+  </button>
 </ng-template>
 
+<ng-template #drawerContenido>
+    <div class="row gap-3 ">
+     <mat-form-field size="small" appearance="outline">         
+       <mat-label>Correo</mat-label>
+       <input matInput placeholder="pat@example.com" required>
+     </mat-form-field>
+    <mat-form-field size="small" appearance="outline" >         
+       <mat-label>Contraseña</mat-label>
+       <input matInput placeholder="pat@example.com" required>
+     </mat-form-field>
+     <mat-form-field size="small" appearance="outline" >         
+      <mat-label>Documento</mat-label>
+      <input matInput placeholder="pat@example.com" required>
+    </mat-form-field>
+   </div>
+   </ng-template>
+
+<ng-template #drawerAcciones>
+  <div>
+    <button mat-button color="primary">cerrar</button>
+    <button mat-raised-button color="primary">Guardar</button>
+  </div>
+</ng-template>

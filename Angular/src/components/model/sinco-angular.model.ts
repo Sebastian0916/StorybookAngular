@@ -54,8 +54,8 @@ export type ChipsModel = ChipModel[];
 export type Estados = 'create' | 'error' | 'noresult' | 'search';
 
 export enum UrlImagen {
-  error = '../../../public/error.png',
-  search = '../../../public/search.png',
-  noresult = '../../../public/no-result.svg',
-  create = '../../../public/create.svg',
+  error = '/public/error.png',
+  search = '/public/search.png',
+  noresult = '/public/no-result.png',
+  create = '/public/create.png',
 }

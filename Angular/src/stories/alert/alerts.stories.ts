@@ -12,54 +12,62 @@ export default {
       imports: [MatCardModule, MatButtonModule, MatIconModule],
     }),
   ],
+  tags: ['autodocs'],
+  argTypes: {
+    title: {
+      description: "Escribe cualquier titulo para tu alerta",
+    },
+    type: {
+      description: "Con esta propiedad podemos cambiar el tipo de alerta que querramos como: success, info,warning, error",
+      table: {
+        defaultValue: { summary: 'info' }
+      }
+    },
+    mode: {
+      description: "Propiedad que nos permite cambiar el tipo de alerta como:standard,filled y outlined",
+      table: {
+        defaultValue: { summary: 'standard' }
+      }
+    }
+  }
 } as Meta<AlertsInfoComponent>;
 
 type Story = StoryObj<AlertsInfoComponent>;
 export const info: Story = {
   name: 'Alerta info',
-  args: {},
-  render: () => ({
-    template: `
-    <app-alerts-info title="Alert info" type="info" mode="standard"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert info" type="info" mode="outlined"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert info" type="info" mode="filled"></app-alerts-info>`,
-  }),
+  args: {
+    title: "Title",
+    type: "info",
+    mode: "standard",
+    content: "Content"
+  },
+
 };
 export const error: Story = {
   name: 'Alerta error',
-  args: {},
-  render: () => ({
-    template: `
-    <app-alerts-info title="Alert error" type="error" mode="standard"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert error" type="error" mode="outlined"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert error" type="error" mode="filled"></app-alerts-info>`,
-  }),
+  args: {
+    title: "Title",
+    type: "error",
+    mode: "standard",
+    content: "Content"
+  },
+
 };
 export const success: Story = {
   name: 'Alerta success',
-  args: {},
-  render: () => ({
-    template: `
-    <app-alerts-info title="Alert success" type="success" mode="standard"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert success" type="success" mode="outlined"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert success" type="success" mode="filled"></app-alerts-info>`,
-  }),
+  args: {
+    title: "Title",
+    type: "success",
+    mode: "standard",
+    content: "Content"
+  },
 };
 export const warning: Story = {
   name: 'Alerta warning',
-  args: {},
-  render: () => ({
-    template: `
-    <app-alerts-info title="Alert warning" type="warning" mode="standard"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert warning" type="warning" mode="outlined"></app-alerts-info>
-    <br/>
-    <app-alerts-info title="Alert warning" type="warning" mode="filled"></app-alerts-info>`,
-  }),
+  args: {
+    title: "Title",
+    type: "warning",
+    mode: "standard",
+    content: "Content"
+  },
 };

@@ -3,7 +3,9 @@ import { EmptyStateComponent } from 'src/components/empty-state/empty-state.comp
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
-const meta: Meta<typeof EmptyStateComponent> = {
+export default {
+  title: 'Angular Material/EmptyState',
+  component: EmptyStateComponent,
   decorators: [
     moduleMetadata({
       imports: [MatButtonModule, MatCardModule],
@@ -11,20 +13,6 @@ const meta: Meta<typeof EmptyStateComponent> = {
   ],
   parameters: {
     layout: 'centered',
-  },
-  title: 'Angular Material/EmptyState',
-  component: EmptyStateComponent,
-};
-
-export default meta;
-type Story = StoryObj<EmptyStateComponent>;
-
-export const EmptyStateStorie: Story = {
-  name: 'Empty State',
-  args: {
-    estado: 'create',
-    titulo: 'Titulo del empty state',
-    contenido: 'Contenido del empty state',
   },
   argTypes: {
     estado: {
@@ -47,5 +35,15 @@ export const EmptyStateStorie: Story = {
       description:
         'Las acciones están diseñadas para recibir elementos del tipo HTMLButtonElement. Estos botones se visualizan utilizando ng-templates dentro de la etiqueta del componente, donde se utiliza el identificador "#acciones" para insertarlos y mostrarlos.',
     },
+  },
+} as Meta<EmptyStateComponent>;
+
+type Story = StoryObj<EmptyStateComponent>;
+
+export const EmptyState: Story = {
+  args: {
+    estado: 'create',
+    titulo: 'Titulo del empty state',
+    contenido: 'Contenido del empty state',
   },
 };
