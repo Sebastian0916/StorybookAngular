@@ -39,8 +39,23 @@ export type ModeAlert = 'standard' | 'filled' | 'outlined';
 
 export type TypeAlerts = 'success' | 'info' | 'warning' | 'error';
 
-export type Colores = 'primary' | 'accent' | 'warn' | 'success' | 'caution' | 'warning';
+export type Colores =
+  | 'primary'
+  | 'accent'
+  | 'warn'
+  | 'success'
+  | 'caution'
+  | 'warning';
 
 export type Size = 'small' | 'medium' | 'large';
 
 export type ChipsModel = ChipModel[];
+
+export type Estados = 'create' | 'error' | 'noresult' | 'search';
+
+export enum UrlImagen {
+  error = '/public/error.png',
+  search = '/public/search.png',
+  noresult = '/public/no-result.png',
+  create = '/public/create.png',
+}
