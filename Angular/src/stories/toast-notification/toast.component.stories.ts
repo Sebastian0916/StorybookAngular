@@ -15,16 +15,13 @@ import { ToastNotificationComponent } from "src/components/toast-notification/to
   selector:'display-toast',
   template:`
     <ng-template #aditionalContent>
-      <div class="column gap-1">
+      <div class="column gap-2 pt-2">
         <ul class="pl-6 color-text-primary">
             <li *ngFor="let item of listItems | slice:0:(show ? undefiend : 3)">{{item}}</li>
         </ul>
         <div class="row justify-content-end gap-1">
         
-          <button mat-stroked-button [color]="this.type == 'error'?'warn':this.type" (click)="alertMessage()" >
-            desplegar
-            <mat-icon >add</mat-icon>
-          </button>
+          <button mat-stroked-button [color]="this.type == 'error'?'warn':this.type" (click)="alertMessage()" >desplegar</button>
           <button mat-flat-button [color]="this.type == 'error'?'warn':this.type" (click)="show = !show">
             {{show == true?'ocultar  ':'mostrar'}}
             <mat-icon iconPositionEnd>{{show == true?'arrow_upward':'arrow_downward'}}</mat-icon>
