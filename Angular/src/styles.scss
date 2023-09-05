@@ -6,3 +6,18 @@
     letter-spacing: 0.0075em;
     font-family: 'Nunito';
   }
+  
+  $colors:(
+    'error':#d14343,
+    'info':#2d9fc5,
+    'success':#8fc93a,
+    'warning':#fb8500
+  );
+  
+  @each $bgColor, $color in $colors {
+    .mdc-snackbar.#{$bgColor}{
+        .container-icon-ripple{
+            background-color: rgba($color,0.12);
+        }
+    } 
+  }

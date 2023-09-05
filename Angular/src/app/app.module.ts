@@ -13,6 +13,8 @@ import { RatingComponent } from 'src/components/rating/rating.component';
 import { ChipComponent } from 'src/components/chip/chip.component';
 import { AlertsInfoComponent } from 'src/components/alerts-info/alerts-info.component';
 import { EmptyStateComponent } from 'src/components/empty-state/empty-state.component';
+import { PageHeaderComponent } from 'src/components/page-header/page-header.component';
+import { ToastNotificationComponent } from 'src/components/toast-notification/toast-notification.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -20,9 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { PageHeaderComponent } from 'src/components/page-header/page-header.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatRadioModule } from '@angular/material/radio';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressBarModule  } from '@angular/material/progress-bar';
 
 const componentes = [
   EmptyStateComponent,
@@ -31,6 +32,7 @@ const componentes = [
   AlertsInfoComponent,
   ChipComponent,
   PageHeaderComponent,
+  ToastNotificationComponent
 ];
 
 const material = [
@@ -44,8 +46,8 @@ const material = [
   MatCardModule,
   MatChipsModule,
   MatSidenavModule,
-  MatCheckboxModule,
-  MatRadioModule,
+  MatSnackBarModule,
+  MatProgressBarModule,
 ];
 
 const directivas = [StandardDirective];
