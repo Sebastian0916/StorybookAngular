@@ -10,6 +10,7 @@ export interface Toast {
   dataOpt?: Option[];
   actions?: React.ReactNode;
   seeMore?: boolean;
+  position?: string
 }
 
 export interface IconMap {
@@ -18,4 +19,8 @@ export interface IconMap {
 
 export interface ColorMap {
   [key: string]: "success" | "error" | "warning" | "info";
+}
+
+export interface position {
+  [key: string]: "center" | "end" | "start"
 }
