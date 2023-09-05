@@ -9,6 +9,8 @@ import { DrawerComponent } from 'src/components/drawer/drawer.component';
 import { RatingComponent } from 'src/components/rating/rating.component';
 import { ChipComponent } from 'src/components/chip/chip.component';
 import { AlertsInfoComponent } from 'src/components/alerts-info/alerts-info.component';
+import { PageHeaderComponent } from 'src/components/page-header/page-header.component';
+import { ToastNotificationComponent } from 'src/components/toast-notification/toast-notification.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -16,7 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { PageHeaderComponent } from 'src/components/page-header/page-header.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 const componentes = [
@@ -24,7 +27,8 @@ const componentes = [
   RatingComponent,
   AlertsInfoComponent,
   ChipComponent,
-  PageHeaderComponent
+  PageHeaderComponent,
+  ToastNotificationComponent
 ];
 
 const material = [
@@ -38,11 +42,12 @@ const material = [
   MatCardModule,
   MatChipsModule,
   MatSidenavModule,
+  MatSnackBarModule,
+  MatProgressBarModule
 ]
 
 const directivas = [
   StandardDirective,
-  SizeDirective
 ]
 
 @NgModule({
@@ -53,7 +58,6 @@ const directivas = [
   ],
   imports: [material, AngularModule],
   exports: [material, componentes, directivas,AngularModule],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
