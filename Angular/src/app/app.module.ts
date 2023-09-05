@@ -17,6 +17,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { PageHeaderComponent } from 'src/components/page-header/page-header.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule} from '@angular/material/radio';
 
 
 const componentes = [
@@ -38,11 +40,12 @@ const material = [
   MatCardModule,
   MatChipsModule,
   MatSidenavModule,
+  MatCheckboxModule,
+  MatRadioModule
 ]
 
 const directivas = [
-  StandardDirective,
-  SizeDirective
+  StandardDirective
 ]
 
 @NgModule({
