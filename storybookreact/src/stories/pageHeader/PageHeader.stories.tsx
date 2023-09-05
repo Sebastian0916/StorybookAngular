@@ -17,9 +17,7 @@ const meta: Meta<typeof PageHeader> = {
   decorators: [
     (Story) => (
       <ThemeProvider theme={SincoTheme}>
-        <Stack marginLeft={-0}>
           <Story />
-        </Stack>
       </ThemeProvider>
     ),
   ],
