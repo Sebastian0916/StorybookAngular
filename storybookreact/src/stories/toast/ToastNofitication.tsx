@@ -19,14 +19,16 @@ import {
   ArrowDownward,
   ArrowUpward,
 } from "@mui/icons-material";
-import { IconMap, Toast, ColorMap } from "./interfaces";
+import { IconMap, Toast, ColorMap, position } from "./interfaces";
 import { SincoTheme } from "@sinco/react";
 
-const ToastContent = styled(Stack)(({ theme }) => ({
-  marginBottom: theme.spacing(2),
+const ToastContent = styled(Stack)(() => ({
+  position: "fixed",
   zIndex: 1400,
   boxShadow:
     "0px 5px 5px -3px rgba(24, 39, 75, 0.2), 0px 8px 10px 1px rgba(24, 39, 75, 0.14), 0px 3px 14px 2px rgba(24, 39, 75, 0.12)",
+  right: 16,
+  marginTop: 16,
 }));
 const ContentBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(1.5),
@@ -34,13 +36,13 @@ const ContentBox = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   "&.color-error": {
-    backgroundColor: "#feebee",
+    backgroundColor: "#FEEBEE",
   },
   "&.color-info": {
-    backgroundColor: "#e1f5fe",
+    backgroundColor: "#E1F5FE",
   },
   "&.color-warning": {
-    backgroundColor: "#fff3e0",
+    backgroundColor: "#FFF3E0",
   },
   "&.color-success": {
     backgroundColor: "#E8F5E9",
@@ -66,18 +68,18 @@ const RippleIcon = styled(Stack)(({ theme }) => ({
   },
 }));
 
-const ContentIcon = styled(Stack)(() => ({
+const ContentIcon = styled(Stack)(({ theme }) => ({
   "&.icon-color.color-info": {
-    color: "#0097b9",
+    color: theme.palette.info.main,
   },
   "&.icon-color.color-error": {
-    color: "#d14343",
+    color: theme.palette.error.main,
   },
   "&.icon-color.color-warning": {
-    color: "#fb8500",
+    color: theme.palette.warning.main,
   },
   "&.icon-color.color-success": {
-    color: "#8fc93a",
+    color: theme.palette.success.main,
   },
 }));
 
@@ -105,9 +107,16 @@ const ToastNotification = (toast: Toast) => {
 
   const colors = colorMap[toast.type || "info"];
 
+  const toastPosition: position = {
+    center: "center",
+    end: "end",
+    start: "start",
+  };
+  const position = toastPosition[toast.position || "end"];
   const close = () => {
     setOpenToast(false);
   };
+
   const toggleOptions = () => {
     setShowOptions((prevShowOptions) => !prevShowOptions);
   };
@@ -124,17 +133,15 @@ const ToastNotification = (toast: Toast) => {
     setTimeout(() => {
       setOpenToast(false);
     }, timeProgress);
-
     return () => {
       clearInterval(interval || toast.time);
     };
   }, [timeProgress, toast.time]);
-
   return (
-    <>
+    <div style={{ height: 120 }}>
       {openToast && (
         <ThemeProvider theme={SincoTheme}>
-          <ToastContent width={370} role="toast">
+          <ToastContent position={"fixed"}>
             <ContentBox className={`color-${toast.type || "info"}`}>
               {toast && (
                 <RippleIcon className={`ripple-${toast.type || "info"}`}>
@@ -229,7 +236,7 @@ const ToastNotification = (toast: Toast) => {
           </ToastContent>
         </ThemeProvider>
       )}
-    </>
+    </div>
   );
 };
 
