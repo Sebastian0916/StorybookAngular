@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-content>
+    <div class="column align-items-center justy-content-center gap-4">
+      <img [src]="retornarImagen" class="ilustracion" />
+      <div class="column align-items-center gap-3">
+        <span class="mat-h6 titulo" *ngIf="titulo">{{ titulo }}</span>
+        <p class="mat-body-1 color-text-secondary" *ngIf="contenido">
+          {{ contenido }}
+        </p>
+      </div>
+      <div
+        class="d-flex justy-content-center align-items-center gap-4"
+        *ngIf="validarBotones"
+      >
+        <ng-container *ngTemplateOutlet="acciones"></ng-container>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #acciones>
+  <button mat-button color="primary">Añadir</button>
+  <button mat-stroked-button color="primary">
+    <mat-icon>add</mat-icon>
+    Crear
+  </button>
+</ng-template>
