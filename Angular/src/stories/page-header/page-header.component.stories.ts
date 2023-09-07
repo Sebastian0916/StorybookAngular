@@ -36,8 +36,7 @@ export const Fixed_position: Story = {
           inline: false,
           iframeHeight: 300,
         }, 
-      },
-      layout:'fullscren',
+      }
     },
     render:() => ({   
       styles:[
