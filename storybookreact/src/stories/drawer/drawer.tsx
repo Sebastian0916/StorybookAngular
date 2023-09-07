@@ -1,17 +1,11 @@
-import React, { ReactNode, useState } from "react";
-import Drawer from "@mui/material/Drawer";
+import React, { useState } from "react";
+import { Box, IconButton } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { Box } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
+import { DrawerComponentProps } from "./interfaces";
 
-interface DrawerComponentProps {
-  titulo: string;
-  children: ReactNode;
-  acciones: ReactNode;
-  open: boolean;
-  onClose: () => void;
-}
+
 
 const stylesDrawerContainer = {
   display: "flex",
@@ -21,7 +15,6 @@ const stylesDrawerContainer = {
   width: "530px",
   height: "100%",
   overflow: "hidden",
-  borderRadius: "8px 0px 0px 0px",
 };
 
 const stylesEncabezado = {
@@ -39,7 +32,6 @@ const stylesContenido = {
   alignItems: "flex-start",
   flexDirection: "column",
   height: "-webkit-fill-available",
-  marginBottom: "4xp",
   py: "12px",
   px: "8px",
 };
@@ -49,6 +41,7 @@ const stylesAcciones = {
   justifyContent: "flex-start",
   borderTop: "1px solid rgba(16, 24, 64, 0.23)",
   backgroundColor: "#F1F0EE",
+  mt: "4px",
   gap: "8px",
   py: "12px",
   px: "8px",
@@ -60,6 +53,7 @@ const DrawerComponent: React.FC<DrawerComponentProps> = ({
   titulo,
   children,
   acciones,
+  anchor,
 }) => {
   const [showActions, setShowActions] = useState(false);
 
@@ -69,13 +63,13 @@ const DrawerComponent: React.FC<DrawerComponentProps> = ({
 
   return (
     <Drawer
-      anchor="right"
+      anchor={anchor}
       open={open}
       onClose={onClose}
       PaperProps={{
         style: {
-          borderRadius: "8px 0px 0px 0px"
-        }
+          borderRadius: "8px 0px 0px 0px",
+        },
       }}
     >
       <Box sx={stylesDrawerContainer}>

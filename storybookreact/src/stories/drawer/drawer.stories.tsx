@@ -37,9 +37,17 @@ export const Drawer = {
     open: true,
     titulo: "Nombre empresa",
     anchor: "left",
+
     children: (
       <>
-        <Box display="flex" flexDirection="column" gap={2}>
+        <Box
+          display="flex"
+          flexDirection="row"
+          flexWrap="wrap"
+          textAlign="center"
+          gap={1}
+          pb={2}
+        >
           <TextField label="Nombre" variant="outlined" size="small" />
           <TextField label="Apellido" variant="outlined" size="small" />
           <TextField
@@ -48,6 +56,7 @@ export const Drawer = {
             size="small"
             type="number"
           />
+          <TextField label="Cargo" variant="outlined" size="small" />
         </Box>
         <Typography variant="body2" color="text.primary">
           Al hacer click en algun elemento del contenido del drawer se muestran
@@ -57,8 +66,7 @@ export const Drawer = {
     ),
     acciones: (
       <>
-        <Button color="primary" variant="contained" size="small"
-        >
+        <Button color="primary" variant="contained" size="small">
           Cerrar
         </Button>
         <Button color="primary" variant="contained" size="small">
@@ -66,5 +74,11 @@ export const Drawer = {
         </Button>
       </>
     ),
+  },
+  argTypes: {
+    anchor: {
+      options: ["left", "right"],
+      control: { type: "radio" },
+    },
   },
 };
