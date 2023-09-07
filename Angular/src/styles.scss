@@ -16,6 +16,7 @@
   
   @each $bgColor, $color in $colors {
     .mdc-snackbar.#{$bgColor}{
+        width: 400px;
         .container-icon-ripple{
             background-color: rgba($color,0.12);
         }
