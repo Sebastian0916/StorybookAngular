@@ -11,7 +11,7 @@ const meta: Meta<typeof EmptyState> = {
   decorators: [
     (Story) => (
       <ThemeProvider theme={SincoTheme}>
-        <Story />
+          <Story />
       </ThemeProvider>
     ),
   ],
@@ -37,6 +37,7 @@ const meta: Meta<typeof EmptyState> = {
         'Actions están diseñadas para recibir elementos del tipo HTMLButtonElement. Estos botones se visualizan utilizando un ReactNode dentro de la etiqueta del componente, donde se utiliza la propiedad "actions={}" para insertarlos y mostrarlos.',
     },
   },
+  
 };
 export default meta;
 type Story = StoryObj<typeof EmptyState>;
