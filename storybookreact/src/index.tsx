@@ -11,8 +11,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={SincoTheme}></ThemeProvider>
-    <App />
+    <ThemeProvider theme={SincoTheme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
