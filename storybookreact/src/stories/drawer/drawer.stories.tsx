@@ -35,7 +35,7 @@ export default meta;
 export const Drawer = {
   name: "Drawer componente",
   args: {
-    open: true,
+    open: false,
     titulo: "Nombre empresa",
     anchor: "left",
 
