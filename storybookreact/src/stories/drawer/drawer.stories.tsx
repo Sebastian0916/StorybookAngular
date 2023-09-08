@@ -22,6 +22,7 @@ import "@fontsource/nunito/700.css";
 const meta: Meta<typeof DrawerComponent> = {
   title: "Components/DrawerComponent",
   component: DrawerComponent,
+  tags: ["autodocs"],
   decorators: [
     (Story) => (
       <ThemeProvider theme={SincoTheme}>
@@ -32,7 +33,7 @@ const meta: Meta<typeof DrawerComponent> = {
 };
 export default meta;
 export const Drawer = {
-  name: "drawer component",
+  name: "Drawer componente",
   args: {
     open: true,
     titulo: "Nombre empresa",
