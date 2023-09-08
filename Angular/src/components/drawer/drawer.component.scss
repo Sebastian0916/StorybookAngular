@@ -54,11 +54,4 @@
   &__mostrarAcciones {
     @include animaciones(0%, 0%);
   }
-  &__cerrarDrawer {
-    @include animaciones(0%, 0%);
-  }
-  &__mostrarDrawer {
-    @include animaciones(0%, 0%);
-    right: -300px;
-  }
 }
