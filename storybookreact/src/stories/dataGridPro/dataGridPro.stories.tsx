@@ -26,6 +26,6 @@ const meta: Meta <typeof DataGridProExample> = {
 export default meta;
 
 export const DataGrid = {
-    name: "Data gtid pro",
+    name: "EN PROGRESO...",
 
 }

@@ -36,7 +36,7 @@ const stylesContenido = {
 const stylesAcciones = {
   display: "flex",
   alignContent: "center",
-  justifyContent: "flex-start",
+  justifyContent: "flex-end",
   borderTop: "1px solid rgba(16, 24, 64, 0.23)",
   backgroundColor: "#F1F0EE",
   mt: "4px",
