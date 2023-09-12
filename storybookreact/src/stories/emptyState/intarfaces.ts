@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-
+import '../../assets/create.svg';
 export interface EmptyStatePropertys {
   state?: States;
   title?: string;
@@ -10,8 +10,8 @@ export interface EmptyStatePropertys {
 export type States = "create" | "error" | "noresult" | "search";
 
 export enum UrlImage {
-  error = "public/assets/error.svg",
-  search = "public/assets/search.svg",
-  noresult = "public/assets/no-result.svg",
-  create = "public/assets/create.svg",
+  error = "src/assets/error.svg",
+  search = "src/assets/search.svg",
+  noresult = "src/assets/no-result.svg",
+  create = '../../assets/create.svg',
 }

@@ -19,7 +19,7 @@ import {
   ArrowDownward,
   ArrowUpward,
 } from "@mui/icons-material";
-import { IconMap, Toast, ColorMap, position } from "./interfaces";
+import { IconMap, Toast, ColorMap } from "./interfaces";
 import { SincoTheme } from "@sinco/react";
 
 const ToastContent = styled(Stack)(() => ({
@@ -28,7 +28,6 @@ const ToastContent = styled(Stack)(() => ({
   boxShadow:
     "0px 5px 5px -3px rgba(24, 39, 75, 0.2), 0px 8px 10px 1px rgba(24, 39, 75, 0.14), 0px 3px 14px 2px rgba(24, 39, 75, 0.12)",
   right: 16,
-  marginTop: 16,
 }));
 const ContentBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(1.5),
@@ -48,7 +47,6 @@ const ContentBox = styled(Box)(({ theme }) => ({
     backgroundColor: "#E8F5E9",
   },
 }));
-
 const RippleIcon = styled(Stack)(({ theme }) => ({
   padding: theme.spacing(1),
   gap: theme.spacing(1),
@@ -67,7 +65,6 @@ const RippleIcon = styled(Stack)(({ theme }) => ({
     backgroundColor: "#8FC93A1F",
   },
 }));
-
 const ContentIcon = styled(Stack)(({ theme }) => ({
   "&.icon-color.color-info": {
     color: theme.palette.info.main,
@@ -107,12 +104,6 @@ const ToastNotification = (toast: Toast) => {
 
   const colors = colorMap[toast.type || "info"];
 
-  const toastPosition: position = {
-    center: "center",
-    end: "end",
-    start: "start",
-  };
-  const position = toastPosition[toast.position || "end"];
   const close = () => {
     setOpenToast(false);
   };
@@ -130,113 +121,128 @@ const ToastNotification = (toast: Toast) => {
       setProgress(progress <= 0 ? 0 : progress);
     }, 100);
 
-    setTimeout(() => {
+    const closeTimeout = setTimeout(() => {
+      clearInterval(interval);
       setOpenToast(false);
     }, timeProgress);
+
     return () => {
-      clearInterval(interval || toast.time);
+      clearInterval(interval);
+      clearTimeout(closeTimeout);
     };
-  }, [timeProgress, toast.time]);
+  }, [timeProgress]);
   return (
-    <div style={{ height: 120 }}>
+    <>
       {openToast && (
         <ThemeProvider theme={SincoTheme}>
-          <ToastContent position={"fixed"}>
-            <ContentBox className={`color-${toast.type || "info"}`}>
-              {toast && (
-                <RippleIcon className={`ripple-${toast.type || "info"}`}>
-                  <ContentIcon
-                    className={`icon-color color-${toast.type || "info"}`}
-                  >
-                    {ToastIcon}
-                  </ContentIcon>
-                </RippleIcon>
-              )}
-              <Divider orientation="vertical" flexItem />
-              <Stack gap={0.5} width={285}>
-                <Stack
-                  justifyContent="space-between"
-                  flexDirection="row"
-                  alignItems="center"
-                >
-                  <Typography variant="subtitle2" color="text.primary">
-                    {toast.title}
-                  </Typography>
-                  <IconButton size="small" aria-label="delete" onClick={close}>
-                    <Close />
-                  </IconButton>
-                </Stack>
-                <Stack gap="4px">
-                  <Typography color="text.primary" variant="body2">
-                    {toast.subtitle}
-                  </Typography>
-                  {!showOptions &&
-                    toast.dataOpt &&
-                    toast.dataOpt.length > 0 && (
-                      <ul
-                        style={{
-                          paddingLeft: 15,
-                          marginBlock: 0,
-                          fontSize: 11,
-                          color: "#101840de",
-                        }}
-                      >
-                        {toast.dataOpt.map((element: any, i: number) => {
-                          const keyElement = Object.keys(element);
-                          let options = "";
-                          for (let i = 0; i < keyElement.length; i++) {
-                            options += element[keyElement[i]];
-                          }
-                          return (
-                            <li style={{ width: "fit-content" }} key={i}>
-                              <Typography variant="caption">
-                                {options}
-                              </Typography>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
-                </Stack>
-                <Stack
-                  justifyContent="flex-end"
-                  flexDirection="row"
-                  alignItems="flex-end"
-                >
-                  {toast.actions && (
-                    <Stack flexDirection="row" gap={1}>
-                      {toast.actions}
-                    </Stack>
-                  )}
-                  {seeOptions && (
-                    <Button
-                      onClick={toggleOptions}
-                      size="small"
-                      variant="text"
-                      color={colors}
-                      endIcon={
-                        showOptions ? (
-                          <ArrowDownward fontSize="small" />
-                        ) : (
-                          <ArrowUpward fontSize="small" />
-                        )
-                      }
+          <Stack
+            height={105}
+            top={16}
+            right={16}
+            position="absolute"
+            zIndex={1400}
+          >
+            <ToastContent position={"fixed"}>
+              <ContentBox className={`color-${toast.type || "info"}`}>
+                {toast && (
+                  <RippleIcon className={`ripple-${toast.type || "info"}`}>
+                    <ContentIcon
+                      className={`icon-color color-${toast.type || "info"}`}
                     >
-                      {showOptions ? "Ver más" : "Ver menos"}
-                    </Button>
-                  )}
+                      {ToastIcon}
+                    </ContentIcon>
+                  </RippleIcon>
+                )}
+                <Divider orientation="vertical" flexItem />
+                <Stack gap={0.5} width={285}>
+                  <Stack
+                    justifyContent="space-between"
+                    flexDirection="row"
+                    alignItems="center"
+                  >
+                    <Typography variant="subtitle2" color="text.primary">
+                      {toast.title}
+                    </Typography>
+                    <IconButton
+                      size="small"
+                      aria-label="delete"
+                      onClick={close}
+                    >
+                      <Close />
+                    </IconButton>
+                  </Stack>
+                  <Stack gap="4px">
+                    <Typography color="text.primary" variant="body2">
+                      {toast.subtitle}
+                    </Typography>
+                    {!showOptions &&
+                      toast.dataOpt &&
+                      toast.dataOpt.length > 0 && (
+                        <ul
+                          style={{
+                            paddingLeft: 15,
+                            marginBlock: 0,
+                            fontSize: 11,
+                            color: "#101840de",
+                          }}
+                        >
+                          {toast.dataOpt.map((element: any, i: number) => {
+                            const keyElement = Object.keys(element);
+                            let options = "";
+                            for (let i = 0; i < keyElement.length; i++) {
+                              options += element[keyElement[i]];
+                            }
+                            return (
+                              <li style={{ width: "fit-content" }} key={i}>
+                                <Typography variant="caption">
+                                  {options}
+                                </Typography>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
+                  </Stack>
+                  <Stack
+                    justifyContent="flex-end"
+                    flexDirection="row"
+                    alignItems="flex-end"
+                  >
+                    {toast.actions && (
+                      <Stack flexDirection="row" gap={1}>
+                        {toast.actions}
+                      </Stack>
+                    )}
+                    {seeOptions && (
+                      <Button
+                        onClick={toggleOptions}
+                        size="small"
+                        variant="text"
+                        color={colors}
+                        endIcon={
+                          showOptions ? (
+                            <ArrowDownward fontSize="small" />
+                          ) : (
+                            <ArrowUpward fontSize="small" />
+                          )
+                        }
+                      >
+                        {showOptions ? "Ver más" : "Ver menos"}
+                      </Button>
+                    )}
+                  </Stack>
                 </Stack>
-              </Stack>
-            </ContentBox>
-            <LinearProgress
-              color={colors}
-              variant="determinate"
-              value={progress}
-            />
-          </ToastContent>
+              </ContentBox>
+              <LinearProgress
+                color={colors}
+                variant="determinate"
+                value={progress}
+              />
+            </ToastContent>
+          </Stack>
         </ThemeProvider>
       )}
-    </div>
+    </>
   );
 };
 

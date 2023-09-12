@@ -1,6 +1,21 @@
 import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
-import { EmptyStatePropertys, UrlImage } from "./intarfaces";
+import { ReactNode } from "react";
+// import search from "../../src/assents/";
+export interface EmptyStatePropertys {
+  state?: States;
+  title?: string;
+  content?: string;
+  actions?: ReactNode;
+}
 
+export type States = "create" | "error" | "noresult" | "search";
+
+export enum UrlImage {
+  error = "../../assets/error.svg",
+  search = "../../assets/search.svg",
+  noresult = "../../assets/no-result.svg",
+  create = "../../assets/create.svg",
+}
 const EmptyState = (emptyState: EmptyStatePropertys) => {
   const { state = "create" } = emptyState;
 

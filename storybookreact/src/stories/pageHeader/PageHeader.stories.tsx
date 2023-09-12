@@ -1,6 +1,8 @@
 import type { Meta } from "@storybook/react";
 import PageHeader from "./PageHeader";
-import { Button, Tabs, Tab, Stack } from "@mui/material";
+import { Button, Tabs, Tab, IconButton } from "@mui/material";
+import { ArrowBack } from "@mui/icons-material";
+
 import { SincoTheme } from "@sinco/react";
 import { ThemeProvider } from "@mui/material/styles";
 import "@fontsource/nunito/300.css";
@@ -17,7 +19,7 @@ const meta: Meta<typeof PageHeader> = {
   decorators: [
     (Story) => (
       <ThemeProvider theme={SincoTheme}>
-          <Story />
+        <Story />
       </ThemeProvider>
     ),
   ],
@@ -36,73 +38,17 @@ const meta: Meta<typeof PageHeader> = {
   },
 };
 export default meta;
-export const Page = {
-  name: "PageHeader",
-  args: {
-    breadcrumbs: [
-      {
-        name: "Link",
-        link: "https://www.chromatic.com/manage?appId=64ef884812b813707d138f9c&view=configure",
-      },
-      {
-        name: "Link",
-        link: "https://www.chromatic.com/manage?appId=64ef884812b813707d138f9c&view=configure",
-      },
-      {
-        name: "Link",
-        link: "https://www.chromatic.com/manage?appId=64ef884812b813707d138f9c&view=configure",
-      },
-    ],
-    title: "Title",
-    subtitle: "Subtitle",
-    actions: <Button size="small">Actions</Button>,
-    tabs: (
-      <Tabs
-        value={1}
-        onChange={() => {}}
-        indicatorColor="primary"
-        textColor="inherit"
-        variant="fullWidth"
-      >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
-      </Tabs>
-    ),
-  },
-};
-export const PageTabs = {
-  name: "PageTabs",
-  args: {
-    title: "Title",
-    subtitle: "Subtitle",
-    tabs: (
-      <Tabs
-        value={1}
-        onChange={() => {}}
-        indicatorColor="primary"
-        textColor="inherit"
-        variant="fullWidth"
-      >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
-      </Tabs>
-    ),
-  },
-};
+
 export const PageActions = {
   name: "PageActions",
   args: {
+    back: (
+      <IconButton size="small" color="primary">
+        <ArrowBack fontSize="small" />
+      </IconButton>
+    ),
     title: "Title",
     subtitle: "Subtitle",
     actions: <Button size="small">Actions</Button>,
-  },
-};
-// eslint-disable-next-line storybook/prefer-pascal-case
-export const pageHeader = {
-  args: {
-    title: "Title",
-    subtitle: "Subtitle",
   },
 };

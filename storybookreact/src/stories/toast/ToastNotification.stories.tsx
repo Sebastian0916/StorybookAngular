@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
-import ToastNotification from "./ToastNofitication";
 import { Button } from "@mui/material";
+import ToastNotification from "./ToastNofitication";
 
 const meta: Meta<typeof ToastNotification> = {
   title: "Components/ToastNotification",
@@ -11,7 +11,6 @@ const meta: Meta<typeof ToastNotification> = {
     type: {
       table: {
         type: { summary: "string" },
-
         defaultValue: { summary: "Info" },
       },
       description:

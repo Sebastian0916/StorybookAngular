@@ -1,14 +1,19 @@
-import {
-  Breadcrumbs,
-  IconButton,
-  Link,
-  Stack,
-  Typography,
-} from "@mui/material";
-import { ArrowBack } from "@mui/icons-material";
-import { Pageheader } from "./interfaces";
+import { Breadcrumbs, Link, Stack, Typography } from "@mui/material";
 import styled from "styled-components";
-import React, { useState } from "react";
+import React from "react";
+
+interface BreadcrumbCode {
+  link: string;
+  name: string;
+}
+interface Pageheader {
+  back?: React.ReactNode;
+  title?: string;
+  subtitle?: string;
+  breadcrumbs?: BreadcrumbCode[];
+  actions?: React.ReactNode;
+  tabs?: React.ReactNode;
+}
 
 const PageContent = styled(Stack)(({ theme }) => ({
   backgroundColor: "#fff",
@@ -23,7 +28,7 @@ const PageContent = styled(Stack)(({ theme }) => ({
 }));
 const PageHeader = (page: Pageheader) => {
   return (
-    <Stack height={120}>
+    <div style={{ minHeight: 56 }}>
       <PageContent>
         {Array.isArray(page.breadcrumbs) && page.breadcrumbs.length > 0 && (
           <Breadcrumbs>
@@ -48,9 +53,7 @@ const PageHeader = (page: Pageheader) => {
           alignItems="center"
         >
           <Stack gap={1.5} flexDirection="row" alignItems="center">
-            <IconButton size="small" color="primary">
-              <ArrowBack fontSize="small" />
-            </IconButton>
+            {page.back}
             <Stack>
               <Typography variant="h6" color="text.primary">
                 {page.title}
@@ -66,7 +69,7 @@ const PageHeader = (page: Pageheader) => {
         </Stack>
         {page.tabs}
       </PageContent>
-    </Stack>
+    </div>
   );
 };
 
