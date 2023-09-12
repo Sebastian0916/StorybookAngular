@@ -38,7 +38,6 @@ export const Drawer = {
     open: false,
     titulo: "Nombre empresa",
     anchor: "left",
-
     children: (
       <>
         <Box
@@ -66,14 +65,16 @@ export const Drawer = {
       </>
     ),
     acciones: (
-      <>
-        <Button color="primary" variant="contained" size="small">
+      <Box sx={{
+        justifyContent: "flex-end"
+      }}>
+        <Button color="primary" variant="text" size="small">
           Cerrar
         </Button>
         <Button color="primary" variant="contained" size="small">
           Cerrar
         </Button>
-      </>
+      </Box>
     ),
   },
   argTypes: {

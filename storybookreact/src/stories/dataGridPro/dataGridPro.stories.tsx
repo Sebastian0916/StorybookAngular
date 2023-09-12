@@ -9,10 +9,11 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
+import DataGridProDemo from "./dataGridTwo";
 
-const meta: Meta <typeof DataGridProExample> = {
+const meta: Meta <typeof DataGridProDemo> = {
     title: "Components/DataGrid",
-    component: DataGridProExample,
+    component: DataGridProDemo,
     decorators: [
         (Story) => (
           <ThemeProvider theme={SincoTheme}>
@@ -26,6 +27,5 @@ const meta: Meta <typeof DataGridProExample> = {
 export default meta;
 
 export const DataGrid = {
-    name: "Data gtid pro",
-
+    name: "EN PROGRESO...",
 }
