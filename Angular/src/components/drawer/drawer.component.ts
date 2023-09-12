@@ -1,11 +1,12 @@
-import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
+import { Component, Input, ContentChild, TemplateRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-drawer',
   templateUrl: './drawer.component.html',
   styleUrls: ['./drawer.component.scss'],
 })
-export class DrawerComponent {
+
+export class DrawerComponent  {
   @Input('titulo') titulo!: string;
 
   @ContentChild('nombreEmpresa', { static: true })
@@ -20,13 +21,21 @@ export class DrawerComponent {
   @ContentChild('drawerAcciones', { static: true })
   drawerAcciones!: TemplateRef<HTMLElement>;
 
+  @Input() alignEnd: boolean = true;
+  @Input() acciones: boolean = false;
   @Input() positionEnd!: boolean;
-  @Input() alignEndAcciones!: boolean;
-  @Input() acciones!:boolean;
 
-  
   mostrarAcciones() {
-    this.acciones = !this.acciones;
+    this.acciones = true;
   }
 
+  get estadoAcciones() {
+    return this.acciones
+      ? 'animaciones__mostrarAcciones'
+      : 'animaciones__ocultarAcciones';
+  }
+
+  get posicionamientoDrawer() {
+    return this.positionEnd ? 'drawer-end' : 'drawer';
+  }
 }
