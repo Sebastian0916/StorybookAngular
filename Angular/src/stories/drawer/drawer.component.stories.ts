@@ -6,42 +6,161 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
+import { Component, Input, ViewChild } from '@angular/core';
+import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-const meta: Meta<DrawerComponent> = {
+@Component({
+  selector: 'app-drawer-container',
+  template:`
+  <div style="height: 90vh;" class="row align-items-center justify-content-center">
+    <mat-drawer-container>
+        <mat-drawer #drawer  >   
+            <app-drawer titulo="nombre empresa" [alignEnd]="alignEnd"  [acciones]="acciones" [positionEnd]="positionEnd">
+                <ng-template #drawerEncabezado>
+                  <span class="mat-h4 color-text-rimary">titulo de encabezado </span>
+                  <button mat-icon-button (click)="drawer.close()">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </ng-template>
+                             
+                <ng-template #drawerContenido >
+                  <div class="col column gap-2 px-0" >
+                    <mat-form-field appearance="outline"  >
+                      <mat-label>form field 1</mat-label>
+                      <input matInput placeholder="Placeholder">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline"  >
+                      <mat-label>form field 3</mat-label>
+                      <input matInput placeholder="Placeholder">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline"  >
+                      <mat-label>form field 3</mat-label>
+                      <input matInput placeholder="Placeholder">
+                    </mat-form-field>
+                  </div>
+                </ng-template>
+                             
+                <ng-template #drawerAcciones >
+                  <button mat-button color="primary">reiniciar<mat-icon>refresh</mat-icon></button>
+                  <button mat-flat-button color="primary">enviar<mat-icon>send</mat-icon></button>
+                </ng-template>    
+            </app-drawer>     
+        </mat-drawer>                
+    </mat-drawer-container>
+    
+    <button mat-raised-button color="warn" (click)="drawer.toggle()" >Toggle drawer</button>
+    
+  </div>  
+  `
+})
+class ContainerComponent {
+  @Input() alignEnd!: boolean ;
+  @Input() acciones!: boolean;
+  @Input() positionEnd!: boolean;
+
+  @ViewChild('drawer',{static:true})drawer!:MatDrawer;
+
+  ngOnInit(): void {
+    this.drawer.open();
+  }
+
+}
+
+
+const meta: Meta<ContainerComponent> = {
   decorators: [
     moduleMetadata({
+      declarations:[DrawerComponent],
       imports: [
         MatButtonModule,
         MatFormFieldModule,
+        BrowserAnimationsModule,
         MatRadioModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        MatSidenavModule
       ],
+      
     }),
   ],
   title: 'Angular Material/Drawer',
-  component: DrawerComponent,
+  tags:['autodocs'],
+  component: ContainerComponent,
 };
 export default meta;
-type Story = StoryObj<DrawerComponent>;
+type Story = StoryObj<ContainerComponent>;
 
 export const drawerExample: Story = {
   name: 'drawer',
   args: {
-    titulo: 'Nombre empresa',
-    acciones: false,
-    alignEndAcciones: false,
+    acciones: true,
+    alignEnd: true,
     positionEnd: false,
   },
   argTypes: {
     acciones: {
       options: [true, false],
+      description:'la seccion inferior vertical del componente sirve para albergar botones de acciones de manera que interactuen con la seccion de contenido.Todo el contendor podra ser desplegado haciendo click en la seccion de contendio o definiendo un valor absoluto de la propiedad `acciones`.',
+      defaultValue: { summary: false }
+
     },
-    alignEndAcciones: {
+    alignEnd: {
       options: [true, false],
+      description:'el contenido de la seccion de acciones se puede aliniear horizontalmente tanto a a lado de la derecha como a el de la izquierda.',
+      defaultValue: { summary: true }
+
     },
     positionEnd: {
       options: [true, false],
+      description:'el componente puede configurarse para ser desplagado de manera horizontal tanto del lado de la derecha como a el de la izquierda de la pantalla'
     },
+  },
+  parameters:{
+    layout: 'fullscreen', 
+    docs:{
+      source:{
+        code:`
+            <mat-drawer-container>
+              <mat-drawer #drawer>   
+                  <app-drawer titulo="nombre empresa" [alignEnd]="true"  [acciones]="true" [positionEnd]="true">
+                      <ng-template #drawerEncabezado>
+                        <span class="mat-h4 color-text-rimary">titulo de encabezado </span>
+                        <button mat-icon-button (click)="drawer.close()">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                      </ng-template>
+                                   
+                      <ng-template #drawerContenido >
+                        <div class="col column gap-2 px-0" >
+                          <mat-form-field appearance="outline"  >
+                            <mat-label>form field 1</mat-label>
+                            <input matInput placeholder="Placeholder">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline"  >
+                            <mat-label>form field 3</mat-label>
+                            <input matInput placeholder="Placeholder">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline"  >
+                            <mat-label>form field 3</mat-label>
+                            <input matInput placeholder="Placeholder">
+                          </mat-form-field>
+                        </div>
+                      </ng-template>
+                                   
+                      <ng-template #drawerAcciones >
+                        <button mat-button color="primary">reiniciar<mat-icon>refresh</mat-icon></button>
+                        <button mat-flat-button color="primary">enviar<mat-icon>send</mat-icon></button>
+                      </ng-template>    
+                  </app-drawer>     
+              </mat-drawer>                
+          </mat-drawer-container>
+          
+          <button mat-raised-button color="warn" (click)="drawer.toggle()" >Toggle drawer</button>
+        `,
+        language:'html',
+        type:'code',
+      }
+    }
   },
 };
