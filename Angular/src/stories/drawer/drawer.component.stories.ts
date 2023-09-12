@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         <mat-drawer #drawer  >   
             <app-drawer titulo="nombre empresa" [alignEnd]="alignEnd"  [acciones]="acciones" [positionEnd]="positionEnd">
                 <ng-template #drawerEncabezado>
-                  <span class="mat-h4 color-text-rimary">titulo de encabezado </span>
+                  <span class="mat-h4 color-text-rimary">Titulo</span>
                   <button mat-icon-button (click)="drawer.close()">
                     <mat-icon>close</mat-icon>
                   </button>
@@ -42,8 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
                 </ng-template>
                              
                 <ng-template #drawerAcciones >
-                  <button mat-button color="primary">reiniciar<mat-icon>refresh</mat-icon></button>
-                  <button mat-flat-button color="primary">enviar<mat-icon>send</mat-icon></button>
+                  <button mat-button color="primary">Cerrar</button>
+                  <button mat-flat-button color="primary">Guardar</button>
                 </ng-template>    
             </app-drawer>     
         </mat-drawer>                
@@ -94,26 +94,26 @@ type Story = StoryObj<ContainerComponent>;
 export const drawerExample: Story = {
   name: 'drawer',
   args: {
+    positionEnd: false,
     acciones: true,
     alignEnd: true,
-    positionEnd: false,
   },
   argTypes: {
     acciones: {
       options: [true, false],
-      description:'la seccion inferior vertical del componente sirve para albergar botones de acciones de manera que interactuen con la seccion de contenido.Todo el contendor podra ser desplegado haciendo click en la seccion de contendio o definiendo un valor absoluto de la propiedad `acciones`.',
+      description:'Seccion que interactua con el contenido. Se despliega al hacer click en algun elemento dentro de la seccion de contenido.',
       defaultValue: { summary: false }
 
     },
     alignEnd: {
       options: [true, false],
-      description:'el contenido de la seccion de acciones se puede aliniear horizontalmente tanto a a lado de la derecha como a el de la izquierda.',
+      description:'Posiciona el contenido de la acciones a la derecha.',
       defaultValue: { summary: true }
 
     },
     positionEnd: {
       options: [true, false],
-      description:'el componente puede configurarse para ser desplagado de manera horizontal tanto del lado de la derecha como a el de la izquierda de la pantalla'
+      description:'Alinea el drawer a la derecha'
     },
   },
   parameters:{
