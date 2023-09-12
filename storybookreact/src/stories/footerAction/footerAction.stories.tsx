@@ -1,7 +1,6 @@
 import type { Meta } from "@storybook/react";
 import { Button, ThemeProvider, Typography } from "@mui/material";
 import { SincoTheme } from "@sinco/react";
-import { footerAction } from "./footerAction";
 import SaveIcon from "@mui/icons-material/SaveOutlined";
 
 import "@fontsource/roboto/300.css";
@@ -12,6 +11,7 @@ import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/700.css";
+import { footerAction } from "./footerAction";
 
 const meta: Meta<typeof footerAction> = {
   title: "Components/footerAction",

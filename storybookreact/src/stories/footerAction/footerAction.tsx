@@ -1,5 +1,4 @@
-import { Button, AppBar, Toolbar, Box, Typography } from "@mui/material";
-import SaveIcon from "@mui/icons-material/SaveOutlined";
+import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import React from "react";
 
 interface camposModificadosProps {
