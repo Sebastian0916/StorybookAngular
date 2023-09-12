@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { Size } from '@sinco/angular';
 
 @Component({
   selector: 'mat-rating',
@@ -11,6 +12,7 @@ export class RatingComponent {
   @Input() value!: number;
   @Input() max: number = 5;
   @Input() precision: number = 1;
+  @Input() size:Size = 'small'
   @Input() get disabled() {
     return this._disabled;
   }
