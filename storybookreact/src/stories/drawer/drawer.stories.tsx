@@ -72,7 +72,7 @@ export const Drawer = {
           Cerrar
         </Button>
         <Button color="primary" variant="contained" size="small">
-          Cerrar
+          Guardar
         </Button>
       </Box>
     ),

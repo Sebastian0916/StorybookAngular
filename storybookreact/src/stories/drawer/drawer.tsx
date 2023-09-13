@@ -3,7 +3,7 @@ import { Box, IconButton } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Drawer from "@mui/material/Drawer";
-import { DrawerComponentProps } from "./interfaces";
+import { ReactNode } from 'react';
 
 const stylesDrawerContainer = {
   display: "flex",
@@ -30,6 +30,7 @@ const stylesContenido = {
   alignItems: "flex-start",
   flexDirection: "column",
   height: "-webkit-fill-available",
+  backgroundColor: "background.default",
   py: "12px",
   px: "8px",
 };
@@ -39,11 +40,21 @@ const stylesAcciones = {
   justifyContent: "flex-end",
   borderTop: "1px solid rgba(16, 24, 64, 0.23)",
   backgroundColor: "#F1F0EE",
-  mt: "4px",
   gap: "8px",
   py: "12px",
   px: "8px",
 };
+
+ type Anchor = "left" | "right";
+
+ interface DrawerComponentProps {
+  open: boolean;
+  onClose: () => void;
+  titulo: string;
+  children: ReactNode;
+  acciones: ReactNode;
+  anchor?: Anchor;
+}
 
 const DrawerComponent: React.FC<DrawerComponentProps> = ({
   open,
@@ -54,9 +65,19 @@ const DrawerComponent: React.FC<DrawerComponentProps> = ({
   anchor,
 }) => {
   const [showActions, setShowActions] = useState(false);
-
   const mostrarAcciones = () => {
     setShowActions(true);
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [drawerAbierto, setDrawerAbierto] = useState(false);
+  const abrirDrawer = () => {
+    setDrawerAbierto(true);
+    onClose()
+  };
+  const cerrarDrawer = () => {
+    setDrawerAbierto(false);
+    onClose()
   };
 
   return (

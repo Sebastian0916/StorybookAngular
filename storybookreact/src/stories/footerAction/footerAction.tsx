@@ -5,6 +5,7 @@ interface camposModificadosProps {
   children: React.ReactNode;
   cantidadCamposModifcados: number;
 }
+
 export const footerAction = (props: camposModificadosProps) => {
   return (
     <AppBar position="fixed" color="inherit" sx={{ top: "auto", bottom: 0 }}>
