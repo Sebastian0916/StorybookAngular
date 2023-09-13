@@ -1,8 +1,7 @@
 import type { Meta } from "@storybook/react";
-import { Button, ThemeProvider, Typography } from "@mui/material";
+import { Button, ThemeProvider } from "@mui/material";
 import { SincoTheme } from "@sinco/react";
-import SaveIcon from "@mui/icons-material/SaveOutlined";
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -43,16 +42,19 @@ export default meta;
 export const FooterAction = {
   name: "EN PROCESO..",
   args: {
-    cantidadCamposModifcados: 10,
-    children: (
+    cantidadCamposModifcados: 2,
+    leftContent: (
+      <Button size="small">Action</Button>
+    ),
+    rightContent: (
       <>
-        <Button size="small">Cancelar</Button>
+        <Button variant="text" size="small">Action</Button>
         <Button
           variant="contained"
           size="small"
-          endIcon={<SaveIcon fontSize="small" />}
+          endIcon={<ArrowForwardIcon fontSize="small" />}
         >
-          Guardar
+          Action
         </Button>
       </>
     ),

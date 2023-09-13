@@ -1,20 +1,30 @@
 import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import React from "react";
 
-interface camposModificadosProps {
-  children: React.ReactNode;
+interface CamposModificadosProps {
+  leftContent: React.ReactNode;
+  rightContent: React.ReactNode;
   cantidadCamposModifcados: number;
 }
 
-export const footerAction = (props: camposModificadosProps) => {
+export const footerAction = (props: CamposModificadosProps) => {
   return (
     <AppBar position="fixed" color="inherit" sx={{ top: "auto", bottom: 0 }}>
-      <Toolbar sx={{ px: "16px", py: "12px", gap: 1.5 }}>
+      <Toolbar sx={{ gap: 1.5 }}>
+      {props.leftContent}
         <Box flexGrow={1} />
-        <Typography color="text.secondary" variant="body2">
-          Cambiaste {props.cantidadCamposModifcados} campos de información
+        <Typography color="text.secondary" variant="body2" display="flex">
+          Cambiaste
+          <Typography
+            color="text.secondary"
+            variant="body2"
+            sx={{ fontWeight: "bold", px: "2px" }}
+          >
+            {props.cantidadCamposModifcados}
+          </Typography>
+          campos de información
         </Typography>
-        {props.children}
+        {props.rightContent}
       </Toolbar>
     </AppBar>
   );
