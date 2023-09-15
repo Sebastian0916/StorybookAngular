@@ -11,6 +11,7 @@ export default {
       imports: [MatButtonModule, MatCardModule],
     }),
   ],
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
