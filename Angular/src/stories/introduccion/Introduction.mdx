@@ -40,7 +40,29 @@ Originalmene esta librería la implementa Material Design de Google.
   [Documentación Angular Material](https://material.angular.io/)
 </button>
 
+<button color="primary">
+  [NPM](https://www.npmjs.com/package/@sinco/angular)
+</button>
+
 <br />
+
 ### Instalación
 
-Para hacer uso del design system primero hay que instalar la libreria npm [sinco angular](https://www.npmjs.com/package/@sinco/angular) e importar la ruta de la libreria `node_modules/@sinco/angular/src/lib/styles/theme.scss` en angular.json
+Para hacer uso del design system primero hay que instalar la libreria npm e importar la ruta de la libreria
+`node_modules/@sinco/angular/src/lib/styles/theme.scss` en `angular.json`
+
+<br />
+
+### Configuración
+
+En su archivo `angular.json` incorpore este código
+
+```json
+"assets": [
+            {
+              "glob": "**.svg",
+              "input": "node_modules/@sinco/angular/src/lib/assets",
+              "output": "/assets/"
+            }
+          ]
+```
