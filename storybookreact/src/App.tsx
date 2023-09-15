@@ -1,26 +1,29 @@
 import { ArrowBack } from "@mui/icons-material";
 import { Button, IconButton, Typography } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
 
-import {  ToastNotification } from "@sinco/react";
+import { ToastNotification } from "@sinco/react";
 
 // import ToastNotification from "./stories/toast/ToastNofitication";
 import PageHeader from "./stories/pageHeader/PageHeader";
 // import EmptyState from "./stories/emptyState/EmptyState";
 // import Logo from "../src/assets/create.svg";
 // import { ToastNotification, PageHeader } from "@sinco/react";
-
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
+declare module "@mui/material/Chip" {
+  interface ChipPropsSizeOverrides {
+    xsmall: true;
+  }
+}
+declare module "@mui/material/Checkbox" {
+  interface CheckboxPropsSizeOverrides {
+    xsmall: true;
+  }
+}
 function App() {
   return (
     <>
-      <PageHeader
-        back={
-          <IconButton size="small" color="primary">
-            <ArrowBack fontSize="small" />
-          </IconButton>
-        }
-        title="Title"
-        subtitle="Subtitle"
-      />
+      <Checkbox size="xsmall" {...label} defaultChecked />
 
       <ToastNotification
         type="info"
