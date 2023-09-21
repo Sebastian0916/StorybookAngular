@@ -1,0 +1,8 @@
+<div class="container-footer-action col-12 py-3 px-4 fixed row justify-content-between align-items-center fixed bg-white mat-elevation-z6"  >
+    <div *ngIf="leftSection" class="row gap-1" >
+        <ng-container *ngTemplateOutlet="leftSection" />
+    </div>
+    <div *ngIf="rightSection" class="row justify-content-end align-items-center gap-3 px-0" [class.col]="!leftSection" >
+        <ng-container *ngTemplateOutlet="rightSection" />
+    </div>
+</div>

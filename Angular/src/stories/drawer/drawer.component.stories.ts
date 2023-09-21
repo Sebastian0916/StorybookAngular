@@ -67,7 +67,6 @@ class ContainerComponent {
 
 }
 
-
 const meta: Meta<ContainerComponent> = {
   decorators: [
     moduleMetadata({
