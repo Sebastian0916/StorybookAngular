@@ -125,7 +125,7 @@ export const Template:Story = {
   args:{
     time:20000,
     type:'error',
-    title:'Title',
+    title:'',
     description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda nobis officiis hic!',
     content:false
   },
