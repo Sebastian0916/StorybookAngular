@@ -1,29 +1,29 @@
 <div
-  class="drawer column nowrap mb-1 justify-content-between mat-elevation-z24"
-  [ngClass]="posicionamientoDrawer"
+  class="drawer-styles column nowrap mb-1 justify-content-between mat-elevation-z24"
+  [ngClass]="handleDrawerPosition"
+  [style.width]="width"
 >
   <div
-    class="drawer__titulo row justify-content-between align-items-center px-3 py-2 gap-4"
+    class="drawer-styles__title bg-accent row justify-content-between align-items-center px-3 py-2 gap-4"
   >
-    <ng-container *ngTemplateOutlet="nombreEmpresa"></ng-container>
-    <ng-container *ngTemplateOutlet="drawerEncabezado"></ng-container>
+    <ng-container *ngTemplateOutlet="drawerHeader"></ng-container>
   </div>
 
   <div
-    class="drawer__contenido nowrap column py-2 px-3 gap-4"
-    (click)="mostrarAcciones()"
+    class="drawer-styles__content nowrap column py-2 px-3 gap-4"
+    (click)="handlStateActions()"
   >
-    <ng-container *ngTemplateOutlet="drawerContenido"></ng-container>
+    <ng-container *ngTemplateOutlet="drawerContent"></ng-container>
   </div>
 
   <div
-    class="drawer__acciones row mt-1 py-2 px-3 gap-4"
-    [class.justify-content-end]="alignEnd"
-    [ngClass]="estadoAcciones"
+    class="drawer-styles__actions bg-light row mt-1 py-2 px-3 gap-4"
+    [class.justify-content-end]="actionsAlignStart"
+    [ngClass]="setStateActions"
   >
     <ng-container
-      class="drawer__acciones"
-      *ngTemplateOutlet="drawerAcciones"
+      class="drawer-styles__actions"
+      *ngTemplateOutlet="drawerActions"
     ></ng-container>
   </div>
 </div>
