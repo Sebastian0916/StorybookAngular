@@ -7,8 +7,8 @@ import {
   TextField,
 } from "@mui/material";
 
-import DrawerComponent from "./drawer";
 import { SincoTheme } from "@sinco/react";
+import { DrawerComponent } from "./drawer";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -36,8 +36,9 @@ export const Drawer = {
   name: "Drawer componente",
   args: {
     open: false,
-    titulo: "Nombre empresa",
-    anchor: "left",
+    width: "500px",
+    title: "Nombre empresa",
+    position: "left",
     children: (
       <>
         <Box
@@ -64,7 +65,7 @@ export const Drawer = {
         </Typography>
       </>
     ),
-    acciones: (
+    renderActions: (
       <Box sx={{
         justifyContent: "flex-end"
       }}>
