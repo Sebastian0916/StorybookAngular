@@ -1,31 +1,45 @@
-import { AppBar, Toolbar, Box, Typography } from "@mui/material";
 import React from "react";
+import { AppBar, Toolbar, Box, TextField } from "@mui/material";
 
-interface CamposModificadosProps {
-  leftContent: React.ReactNode;
-  rightContent: React.ReactNode;
-  cantidadCamposModifcados: number;
+interface FooterActionsProperties {
+  labelChangeCounter: React.ReactNode;
+  renderLeftContent?: React.ReactNode;
+  renderRightContent?: React.ReactNode;
 }
 
-export const footerAction = (props: CamposModificadosProps) => {
+export const FooterActionComponent = ({
+  renderLeftContent,
+  renderRightContent,
+  labelChangeCounter,
+}: FooterActionsProperties) => {
   return (
-    <AppBar position="fixed" color="inherit" sx={{ top: "auto", bottom: 0 }}>
-      <Toolbar sx={{ gap: 1.5 }}>
-      {props.leftContent}
-        <Box flexGrow={1} />
-        <Typography color="text.secondary" variant="body2" display="flex">
-          Cambiaste
-          <Typography
-            color="text.secondary"
-            variant="body2"
-            sx={{ fontWeight: "bold", px: "2px" }}
-          >
-            {props.cantidadCamposModifcados}
-          </Typography>
-          campos de información
-        </Typography>
-        {props.rightContent}
-      </Toolbar>
-    </AppBar>
+    <>
+      <Box
+        display="flex"
+        flexDirection="row"
+        flexWrap="wrap"
+        textAlign="center"
+        gap={1}
+        pb={2}
+      >
+        <TextField label="Nombre" variant="outlined" size="small" />
+        <TextField label="Apellido" variant="outlined" size="small" />
+        <TextField label="Edad" variant="outlined" size="small" type="number" />
+        <TextField label="Cargo" variant="outlined" size="small" />
+
+        <AppBar
+          position="fixed"
+          color="inherit"
+          sx={{ top: "auto", bottom: 0 }}
+        >
+          <Toolbar sx={{ gap: 1.5 }}>
+            {renderLeftContent}
+            <Box flexGrow={1} />
+            <Box>{labelChangeCounter}</Box>
+            {renderRightContent}
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </>
   );
 };

@@ -1,7 +1,8 @@
 import type { Meta } from "@storybook/react";
-import { Button, ThemeProvider } from "@mui/material";
 import { SincoTheme } from "@sinco/react";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Button, ThemeProvider, Typography } from "@mui/material";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { FooterActionComponent } from "./footerAction";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -10,17 +11,17 @@ import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/700.css";
-import { footerAction } from "./footerAction";
 
-const meta: Meta<typeof footerAction> = {
-  title: "Components/footerAction",
-  component: footerAction,
+
+const meta: Meta<typeof FooterActionComponent> = {
+  title: "Components/footerActionComponent",
+  component: FooterActionComponent,
   tags: ["autodocs"],
   parameters: {
     docs: {
       story: {
         inline: false,
-        iframeHeight: 150,
+        iframeHeight: 400,
       },
     },
   },
@@ -31,24 +32,32 @@ const meta: Meta<typeof footerAction> = {
       </ThemeProvider>
     ),
   ],
-  argTypes: {
-    cantidadCamposModifcados: {
-      description:
-        "Puede contener botones para acciones específicas, como guardar o cancelar un cambio realizado ",
-    },
-  },
 };
 export default meta;
 export const FooterAction = {
-  name: "EN PROCESO..",
+  name: "FooterAction..",
   args: {
-    cantidadCamposModifcados: 2,
-    leftContent: (
-      <Button size="small">Action</Button>
-    ),
-    rightContent: (
+    labelChangeCounter: (
       <>
-        <Button variant="text" size="small">Action</Button>
+        <Typography color="text.secondary" variant="body2" display="flex">
+          Cambiaste
+          <Typography
+            color="text.secondary"
+            variant="body2"
+            sx={{ fontWeight: "bold", px: "2px" }}
+          >
+            X
+          </Typography>
+          Campos de información
+        </Typography>
+      </>
+    ),
+    renderLeftContent: <Button size="small">Action</Button>,
+    renderRightContent: (
+      <>
+        <Button variant="text" size="small">
+          Action
+        </Button>
         <Button
           variant="contained"
           size="small"
@@ -58,5 +67,38 @@ export const FooterAction = {
         </Button>
       </>
     ),
+  },
+  parameters: {
+    docs: {
+      source: {
+        type: "code",
+        code: ` <FooterActionComponent
+       labelChangeCounter={
+         <Typography color="text.secondary" variant="body2" display="flex">
+           Cambiaste
+           <Typography
+             color="text.secondary"
+             variant="body2"
+             sx={{ fontWeight: "bold", px: "2px" }}
+           >
+             X
+           </Typography>
+           Campos de información
+         </Typography>
+       }
+       renderLeftContent={
+         <>
+           <Button size="small">Open drawer</Button>
+         </>
+       }
+       renderRightContent={
+         <>
+           <Button size="small">Open drawer</Button>
+           <Button size="small">Open drawer</Button>
+         </>
+       }
+     ></FooterActionComponent>`,
+      },
+    },
   },
 };
