@@ -47,7 +47,25 @@ Originalmene esta librería la implementa Material Design de Google.
 <br />
 
 ### Instalación
-Archivo `angular.json` 
+Importar y exportar en el modulo principal de su aplicacion. `.module.ts` 
+
+```typescript 
+import { AngularModule } from '@sinco/angular';
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AngularModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+```
+<br />
+En su archivo `angular.json` incorpore este código para hacer uso del tema. 
 ```json 
     "styles": [
               "node_modules/@sinco/angular/src/lib/styles/theme.scss"
