@@ -1,112 +1,98 @@
-import React, { useState } from "react";
-import { Box, IconButton } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import CloseIcon from "@mui/icons-material/Close";
-import Drawer from "@mui/material/Drawer";
-import { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
+import { Box, IconButton } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import CloseIcon from '@mui/icons-material/Close';
+import Drawer from '@mui/material/Drawer';
+import { ThemeProvider } from '@mui/material/styles';
+import { SincoTheme } from '@sinco/react';
 
-const stylesDrawerContainer = {
-  display: "flex",
-  flexDirection: "column",
-  alignContent: "flex-start",
-  justifyContent: "space-between",
-  width: "530px",
-  height: "100%",
-  overflow: "hidden",
+const DrawerContainer = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignContent: 'flex-start',
+  justifyContent: 'space-between',
+  height: '100%',
+  overflow: 'hidden',
 };
 
-const stylesEncabezado = {
-  display: "flex",
-  alignContent: "center",
-  justifyContent: "space-between",
-  backgroundColor: "secondary.main",
-  py: "12px",
-  px: "8px",
+const DrawerHeader = {
+  display: 'flex',
+  alignContent: 'center',
+  justifyContent: 'space-between',
+  backgroundColor: 'secondary.main',
+  py: '12px',
+  px: '8px',
 };
 
-const stylesContenido = {
-  display: "flex",
-  overflow: "auto",
-  alignItems: "flex-start",
-  flexDirection: "column",
-  height: "-webkit-fill-available",
-  backgroundColor: "background.default",
-  py: "12px",
-  px: "8px",
-};
-const stylesAcciones = {
-  display: "flex",
-  alignContent: "center",
-  justifyContent: "flex-end",
-  borderTop: "1px solid rgba(16, 24, 64, 0.23)",
-  backgroundColor: "#F1F0EE",
-  gap: "8px",
-  py: "12px",
-  px: "8px",
+const DrawerContent = {
+  display: 'flex',
+  overflow: 'auto',
+  alignItems: 'flex-start',
+  flexDirection: 'column',
+  height: '-webkit-fill-available',
+  py: '12px',
+  px: '8px',
 };
 
- type Anchor = "left" | "right";
+const DrawerActions = {
+  display: 'flex',
+  alignContent: 'center',
+  justifyContent: 'flex-end',
+  borderTop: '1px solid rgba(16, 24, 64, 0.23)',
+  backgroundColor: '#F1F0EE',
+  gap: '8px',
+  mt: '4px',
+  py: '12px',
+  px: '8px',
+};
 
- interface DrawerComponentProps {
+export type handleDrawerPosition = 'left' | 'right';
+
+export interface DrawerComponentProperties {
+  title: string;
+  children: ReactNode;
+  renderActions: ReactNode;
+  showActions?: boolean;
+  position?: handleDrawerPosition;
+  width: string;
   open: boolean;
   onClose: () => void;
-  titulo: string;
-  children: ReactNode;
-  acciones: ReactNode;
-  anchor?: Anchor;
 }
 
-const DrawerComponent: React.FC<DrawerComponentProps> = ({
+export const DrawerComponent = ({
+  title,
+  children,
+  renderActions,
+  showActions,
+  position,
+  width,
   open,
   onClose,
-  titulo,
-  children,
-  acciones,
-  anchor,
-}) => {
-  const [showActions, setShowActions] = useState(false);
-  const mostrarAcciones = () => {
-    setShowActions(true);
-  };
+}: DrawerComponentProperties) => {
+  const [stateActions, setActionsState] = useState(showActions);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [drawerAbierto, setDrawerAbierto] = useState(false);
-  const abrirDrawer = () => {
-    setDrawerAbierto(true);
-    onClose()
-  };
-  const cerrarDrawer = () => {
-    setDrawerAbierto(false);
-    onClose()
+  const handleDrawerActions = () => {
+    setActionsState(true);
   };
 
   return (
-    <Drawer
-      anchor={anchor}
-      open={open}
-      onClose={onClose}
-      PaperProps={{
-        style: {
-          borderRadius: "8px 0px 0px 0px",
-        },
-      }}
-    >
-      <Box sx={stylesDrawerContainer}>
-        <Box sx={stylesEncabezado}>
-          <Typography variant="h6">{titulo}</Typography>
-          <Box>
-            <IconButton onClick={onClose} size="small">
-              <CloseIcon fontSize="small" />
-            </IconButton>
+    <ThemeProvider theme={SincoTheme}>
+      <Drawer anchor={position} open={open} onClose={onClose}>
+        <Box sx={DrawerContainer} width={width}>
+          <Box sx={DrawerHeader}>
+            <Typography variant="h6">{title}</Typography>
+            <Box>
+              <IconButton onClick={onClose} size="small">
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Box>
           </Box>
+          <Box sx={DrawerContent} onClick={handleDrawerActions}>
+            {children}
+          </Box>
+          {stateActions && <Box sx={DrawerActions}>{renderActions}</Box>}
         </Box>
-        <Box onClick={mostrarAcciones} sx={stylesContenido}>
-          {children}
-        </Box>
-        {showActions && <Box sx={stylesAcciones}>{acciones}</Box>}
-      </Box>
-    </Drawer>
+      </Drawer>
+    </ThemeProvider>
   );
 };
-
-export default DrawerComponent;

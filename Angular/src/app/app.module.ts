@@ -24,6 +24,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule  } from '@angular/material/progress-bar';
+import { FooterActionsComponent } from 'src/components/footer-actions/footer-actions.component';
 
 const componentes = [
   EmptyStateComponent,
@@ -32,7 +33,8 @@ const componentes = [
   AlertsInfoComponent,
   ChipComponent,
   PageHeaderComponent,
-  ToastNotificationComponent
+  ToastNotificationComponent,
+  FooterActionsComponent
 ];
 
 const material = [
