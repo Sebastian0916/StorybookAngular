@@ -1,57 +1,42 @@
-@use "sass:map";
+@use 'sass:map';
+@import '../../../node_modules/@sinco/angular/src/lib/styles/colors.scss';
 
-@mixin animaciones($x, $y) {
+@mixin animationDrawerActions($x, $y) {
   transform: translate(#{$x}, #{$y});
 }
 
-.drawer-container{
-  height: 550px;
-}
-
-.drawer {
+.drawer-styles {
   position: fixed;
   overflow: auto;
   top: 0;
-  bottom:0;
-  left: 0%;
+  right: 0%;
   height: 100%;
-  width: 35%;
-  border-radius: 0 8px 0 0;
-  background-color: #ffffff;
+  border-start-start-radius: 8px;
+  background-color: $light;
   overflow: hidden;
 
-  &__titulo {
-    @extend .drawer__titulo;
-    background-color: #26c6da;
-  }
-
-  &__contenido {
+  &__content {
     overflow-y: auto;
   }
 
-  &__acciones {
+  &__actions {
     border-top: 1px solid rgba(16, 24, 64, 0.23);
-    background-color: #F1F0EE;
+    background-color: $light-background-default;
     transition: transform 0.5s ease;
   }
 }
 
-.drawer-end {
-  top: 0;
-  bottom: 0;
-  left: 65% !important;
-  border-radius: 8px 0 0 0 !important;
-  .drawer__titulo {
-    border-radius: inherit;
+.drawer-animation-actions {
+  &__showActions {
+    @include animationDrawerActions(0%, 0%);
+  }
+  &__hideActions {
+    @include animationDrawerActions(0%, 100%);
+    height: 0%;
   }
 }
 
-.animaciones {
-  &__ocultarAcciones {
-    @include animaciones(0%, 100%);
-    height: 0%;
-  }
-  &__mostrarAcciones {
-    @include animaciones(0%, 0%);
-  }
+.drawer-initial-position{
+  @extend .drawer-styles;
+  left: 0% !important;
 }

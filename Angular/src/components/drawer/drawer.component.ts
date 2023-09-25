@@ -1,4 +1,4 @@
-import { Component, Input, ContentChild, TemplateRef, OnInit } from '@angular/core';
+import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-drawer',
@@ -6,36 +6,34 @@ import { Component, Input, ContentChild, TemplateRef, OnInit } from '@angular/co
   styleUrls: ['./drawer.component.scss'],
 })
 
-export class DrawerComponent  {
-  @Input('titulo') titulo!: string;
+export class DrawerComponent {
 
-  @ContentChild('nombreEmpresa', { static: true })
-  nombreEmpresa!: TemplateRef<HTMLElement>;
+  @ContentChild('drawerHeader', { static: true })
+  drawerHeader!: TemplateRef<HTMLElement>;
 
-  @ContentChild('drawerEncabezado', { static: true })
-  drawerEncabezado!: TemplateRef<HTMLElement>;
+  @ContentChild('drawerContent', { static: true })
+  drawerContent!: TemplateRef<HTMLElement>;
 
-  @ContentChild('drawerContenido', { static: true })
-  drawerContenido!: TemplateRef<HTMLElement>;
+  @ContentChild('drawerActions', { static: true })
+  drawerActions!: TemplateRef<HTMLElement>;
 
-  @ContentChild('drawerAcciones', { static: true })
-  drawerAcciones!: TemplateRef<HTMLElement>;
+  @Input() width!: string;
+  @Input() actions: boolean = false;
+  @Input() actionsAlignStart: boolean = true;
+  @Input() drawerAlignStart!: boolean;
 
-  @Input() alignEnd: boolean = true;
-  @Input() acciones: boolean = false;
-  @Input() positionEnd!: boolean;
-
-  mostrarAcciones() {
-    this.acciones = true;
+  handlStateActions() {
+    return this.actions = true;
   }
 
-  get estadoAcciones() {
-    return this.acciones
-      ? 'animaciones__mostrarAcciones'
-      : 'animaciones__ocultarAcciones';
+  get setStateActions() {
+    return this.actions
+      ? 'drawer-animation-actions__showActions'
+      : 'drawer-animation-actions__hideActions';
   }
 
-  get posicionamientoDrawer() {
-    return this.positionEnd ? 'drawer-end' : 'drawer';
+  get handleDrawerPosition() {
+    return this.drawerAlignStart ? 'drawer-initial-position' : 'drawer-styles';
   }
+
 }
