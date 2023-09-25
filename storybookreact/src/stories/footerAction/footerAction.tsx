@@ -22,11 +22,6 @@ export const FooterActionComponent = ({
         gap={1}
         pb={2}
       >
-        <TextField label="Nombre" variant="outlined" size="small" />
-        <TextField label="Apellido" variant="outlined" size="small" />
-        <TextField label="Edad" variant="outlined" size="small" type="number" />
-        <TextField label="Cargo" variant="outlined" size="small" />
-
         <AppBar
           position="fixed"
           color="inherit"

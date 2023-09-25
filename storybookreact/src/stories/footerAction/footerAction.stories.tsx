@@ -21,7 +21,7 @@ const meta: Meta<typeof FooterActionComponent> = {
     docs: {
       story: {
         inline: false,
-        iframeHeight: 400,
+        iframeHeight: 200,
       },
     },
   },
