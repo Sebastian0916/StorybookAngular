@@ -27,7 +27,7 @@ export const FooterActionComponent = ({
           color="inherit"
           sx={{ top: "auto", bottom: 0 }}
         >
-          <Toolbar sx={{ gap: 1.5 }}>
+          <Toolbar sx={{ gap: 1.5, minHeight: "50px !important" }}>
             {renderLeftContent}
             <Box flexGrow={1} />
             <Box>{labelChangeCounter}</Box>
