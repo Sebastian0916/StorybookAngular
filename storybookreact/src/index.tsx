@@ -3,8 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { SincoTheme } from "@sinco/react";
+// import { SincoTheme } from "@sinco/react";
 import { ThemeProvider } from "@mui/material/styles";
+import { SincoTheme } from "./Theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

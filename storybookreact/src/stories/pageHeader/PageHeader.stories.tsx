@@ -1,5 +1,4 @@
 import type { Meta } from "@storybook/react";
-import PageHeader from "./PageHeader";
 import { Button, Tabs, Tab, IconButton } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
 
@@ -11,10 +10,11 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
+import { PageHeaderComponent } from "./PageHeader";
 
-const meta: Meta<typeof PageHeader> = {
+const meta: Meta<typeof PageHeaderComponent> = {
   title: "Components/PageHeader",
-  component: PageHeader,
+  component: PageHeaderComponent,
   tags: ["autodocs"],
   decorators: [
     (Story) => (
@@ -24,16 +24,8 @@ const meta: Meta<typeof PageHeader> = {
     ),
   ],
   argTypes: {
-    breadcrumbs: {
-      description:
-        "BreadCrumbs nos da la oportunindad de poder hacer ruteos de links ",
-    },
     actions: {
       description: "Las acciones que se podran agregar en el pageheader",
-    },
-    tabs: {
-      description:
-        "Cuando la vista tenga mucha informacion podemos utilizar esta opción",
     },
   },
 };

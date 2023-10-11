@@ -1,87 +1,44 @@
-import { ArrowBack } from "@mui/icons-material";
-import { Button, IconButton, Typography } from "@mui/material";
+import { ArrowBack, Delete, Done, More } from "@mui/icons-material";
+import { Button, Chip, IconButton, TextField, Typography } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 
-import { ToastNotification } from "@sinco/react";
+import { SincoTheme } from "@sinco/react";
 
-// import ToastNotification from "./stories/toast/ToastNofitication";
-import PageHeader from "./stories/pageHeader/PageHeader";
-// import EmptyState from "./stories/emptyState/EmptyState";
-// import Logo from "../src/assets/create.svg";
-// import { ToastNotification, PageHeader } from "@sinco/react";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
-declare module "@mui/material/Chip" {
-  interface ChipPropsSizeOverrides {
-    xsmall: true;
-  }
-}
-declare module "@mui/material/Checkbox" {
-  interface CheckboxPropsSizeOverrides {
-    xsmall: true;
-  }
-}
+
 function App() {
+  console.log(SincoTheme.components?.MuiInputLabel?.styleOverrides?.outlined);
+  const handleClick = () => {
+    console.info("You clicked the Chip.");
+  };
+
+  const handleDelete = () => {
+    console.info("You clicked the delete icon.");
+  };
   return (
     <>
-      <Checkbox size="xsmall" {...label} defaultChecked />
-
-      <ToastNotification
-        type="info"
-        dataOpt={[{ error: "Hola" }]}
-        time={100000}
-        seeMore={false}
-        title="Hola"
-        subtitle="Daño"
-        actions={
-          <Button color="error" size="small">
-            Hola
-          </Button>
-        }
+      <Chip label="Mui Chip" color="primary" />
+      <Chip
+        label="Deletable"
+        // variant="outlined"
+        onDelete={handleDelete}
+        color="primary"
       />
-      <Typography variant="h6">Holaaa</Typography>
-      {/* <EmptyState
-        actions={
-          <>
-            <Button size="small" variant="text">
-              Crear
-            </Button>
-            <Button size="small" variant="outlined">
-              Crear
-            </Button>
-          </>
-        }
-        content="Contenido del empty state"
-        state="noresult"
-        title="Titulo del empty state"
-      /> */}
-      {/* <ToastNotification
-        type="error"
-        dataOpt={[{ erro: "Hola" }]}
-        time={100000}
-        seeMore={true}
-        title="Hola"
-        subtitle="Holaajahsjklajsaljskla ksdjalsj"
-        actions={
-          <Button color="error" size="small">
-            Hola
-          </Button>
-        }
-        // position="center"
+      <Chip
+        label="Custom delete icon"
+        onClick={handleClick}
+        onDelete={handleDelete}
+        deleteIcon={<Delete />}
+        color="primary"
       />
-      <ToastNotification
-        type="error"
-        dataOpt={[{ erro: "Hola" }]}
-        time={100000}
-        seeMore={true}
-        title="Hola"
-        subtitle="Holaajahsjklajsaljskla ksdjalsj"
-        actions={
-          <Button color="error" size="small">
-            Hola
-          </Button>
-        }
-        // position="center"
-      /> */}
+      <Chip
+        color="primary"
+        label="Custom delete icon"
+        onClick={handleClick}
+        onDelete={handleDelete}
+        deleteIcon={<Delete />}
+        variant="outlined"
+      />
     </>
   );
 }
