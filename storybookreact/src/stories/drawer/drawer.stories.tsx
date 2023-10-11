@@ -78,10 +78,4 @@ export const Drawer = {
       </Box>
     ),
   },
-  argTypes: {
-    anchor: {
-      options: ["left", "right"],
-      control: { type: "radio" },
-    },
-  },
 };
