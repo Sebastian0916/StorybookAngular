@@ -1,0 +1,75 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Stack,
+} from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+
+import { SincoTheme } from "@sinco/react";
+import "@fontsource/nunito/300.css";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/500.css";
+import "@fontsource/nunito/600.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import { useState } from "react";
+
+const meta: Meta<typeof Select> = {
+  title: "Components/Select",
+  component: Select,
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={SincoTheme}>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
+  tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Select>;
+
+export const button: Story = {
+  name: "select",
+  render: (args) => (
+    <Stack flexDirection={"row"} width={200} gap={1}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={"hola"}
+          label="Hola"
+          onChange={undefined}
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          size="medium"
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={"hola"}
+          label="Hola"
+          onChange={undefined}
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </Stack>
+  ),
+};
