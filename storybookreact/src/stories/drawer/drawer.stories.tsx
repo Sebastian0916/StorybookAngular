@@ -1,13 +1,6 @@
 import type { Meta } from "@storybook/react";
-import {
-  Button,
-  ThemeProvider,
-  Typography,
-  Box,
-  TextField,
-} from "@mui/material";
+import { Button, Typography, Box, TextField } from "@mui/material";
 
-import { SincoTheme } from "@sinco/react";
 import { DrawerComponent } from "./drawer";
 
 import "@fontsource/roboto/300.css";
@@ -23,22 +16,15 @@ const meta: Meta<typeof DrawerComponent> = {
   title: "Components/DrawerComponent",
   component: DrawerComponent,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <ThemeProvider theme={SincoTheme}>
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 export default meta;
 export const Drawer = {
   name: "Drawer componente",
   args: {
     open: false,
-    width: "500px",
+    width: "35%",
     title: "Nombre empresa",
-    position: "left",
+    anchor: "left",
     children: (
       <>
         <Box
@@ -66,9 +52,11 @@ export const Drawer = {
       </>
     ),
     renderActions: (
-      <Box sx={{
-        justifyContent: "flex-end"
-      }}>
+      <Box
+        sx={{
+          justifyContent: "flex-end",
+        }}
+      >
         <Button color="primary" variant="text" size="small">
           Cerrar
         </Button>
