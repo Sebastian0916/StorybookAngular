@@ -1,13 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material/styles";
-import { SincoTheme } from '@sinco/react';
-
+import { SincoTheme } from "@sinco/react";
+declare module "@mui/material/Radio" {
+  interface RadioPropsSizeOverrides {
+    large: true;
+  }
+}
+declare module "@mui/material/Checkbox" {
+  interface CheckboxPropsSizeOverrides {
+    large: true;
+  }
+}
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>

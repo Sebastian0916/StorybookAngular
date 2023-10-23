@@ -36,6 +36,7 @@ export const button: Story = {
     <>
       <Checkbox {...label} size="small" />
       <Checkbox {...label} size="medium" />
+      <Checkbox {...label} size="large" />
     </>
   ),
 };

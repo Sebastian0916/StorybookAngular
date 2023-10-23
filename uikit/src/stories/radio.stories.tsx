@@ -40,9 +40,15 @@ export const button: Story = {
       />
       <Radio
         size="medium"
-        value="a"
+        value="b"
         name="radio-buttons"
-        inputProps={{ "aria-label": "A" }}
+        inputProps={{ "aria-label": "B" }}
+      />
+      <Radio
+        size="large"
+        value="c"
+        name="radio-buttons"
+        inputProps={{ "aria-label": "C" }}
       />
     </>
   ),

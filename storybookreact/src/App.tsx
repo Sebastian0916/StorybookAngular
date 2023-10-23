@@ -1,44 +1,65 @@
-import { ArrowBack, Delete, Done, More } from "@mui/icons-material";
-import { Button, Chip, IconButton, TextField, Typography } from "@mui/material";
-import Checkbox from "@mui/material/Checkbox";
-
-import { SincoTheme } from "@sinco/react";
-
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+import { ArrowBack } from "@mui/icons-material";
+import { Button, Checkbox, IconButton, Radio } from "@mui/material";
+import { PageHeaderComponent } from "./stories/pageHeader/PageHeader";
+// import { ToastNotificationComponent } from "@sinco/react";
+import { ToastNotificationComponent } from "./stories/toast/ToastNotification";
+import React from "react";
 
 function App() {
-  console.log(SincoTheme.components?.MuiInputLabel?.styleOverrides?.outlined);
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const [selectedValue, setSelectedValue] = React.useState("a");
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
   };
 
-  const handleDelete = () => {
-    console.info("You clicked the delete icon.");
-  };
+  const controlProps = (item: string) => ({
+    checked: selectedValue === item,
+    onChange: handleChange,
+    value: item,
+    name: "size-radio-button-demo",
+    inputProps: { "aria-label": item },
+  });
   return (
     <>
-      <Chip label="Mui Chip" color="primary" />
-      <Chip
-        label="Deletable"
-        // variant="outlined"
-        onDelete={handleDelete}
-        color="primary"
-      />
-      <Chip
-        label="Custom delete icon"
-        onClick={handleClick}
-        onDelete={handleDelete}
-        deleteIcon={<Delete />}
-        color="primary"
-      />
-      <Chip
-        color="primary"
-        label="Custom delete icon"
-        onClick={handleClick}
-        onDelete={handleDelete}
-        deleteIcon={<Delete />}
-        variant="outlined"
-      />
+      {/* <PageHeaderComponent
+        fixed={true}
+        title="Title"
+        subtitle="Hola mundo"
+        buttonBack={
+          <IconButton color="primary" size="small">
+            <ArrowBack fontSize="small" />
+          </IconButton>
+        }
+        actions={<Button size="small">Button</Button>}
+      /> */}
+      {/* <Button size="large" variant="contained" color="primary">
+        Button
+      </Button>
+      <Button size="medium" variant="contained" color="primary">
+        Button
+      </Button>
+      <Button size="small" variant="contained" color="primary">
+        Button
+      </Button>
+      <ToastNotificationComponent title="Hola" time={12} /> */}
+      <IconButton color="primary" size="small">
+        <ArrowBack fontSize="small" />
+      </IconButton>
+      <IconButton size="small" color="primary">
+        <ArrowBack fontSize="medium" />
+      </IconButton>
+      <IconButton size="medium" color="error">
+        <ArrowBack fontSize="small" />
+      </IconButton>
+      <IconButton size="medium" color="error">
+        <ArrowBack fontSize="medium" />
+      </IconButton>
+      <IconButton size="small" color="error">
+        <ArrowBack fontSize="large" />
+      </IconButton>
+      <IconButton size="medium" color="error">
+        <ArrowBack fontSize="large" />
+      </IconButton>
     </>
   );
 }

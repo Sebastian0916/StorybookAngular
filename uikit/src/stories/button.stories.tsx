@@ -67,13 +67,22 @@ export const Icon_Button: Story = {
   render: (args) => (
     <>
       <IconButton size="small">
-        <Delete />
+        <Delete fontSize="small" />
+      </IconButton>
+      <IconButton size="small">
+        <Delete fontSize="medium" />
+      </IconButton>
+      <IconButton size="small">
+        <Delete fontSize="large" />
       </IconButton>
       <IconButton size="medium">
-        <Delete />
+        <Delete fontSize="small" />
       </IconButton>
-      <IconButton size="large">
-        <Delete />
+      <IconButton size="medium">
+        <Delete fontSize="medium" />
+      </IconButton>
+      <IconButton size="medium">
+        <Delete fontSize="large" />
       </IconButton>
     </>
   ),
