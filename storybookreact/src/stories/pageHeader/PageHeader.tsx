@@ -78,3 +78,4 @@ export const PageHeaderComponent = ({
     </Stack>
   );
 };
+export { PageHeaderComponent as PageHeader };

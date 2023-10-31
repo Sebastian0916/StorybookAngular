@@ -12,25 +12,24 @@ import {
   ToastNotification,
   ToastNotificationComponent,
 } from "./stories/toast/ToastNotification";
-import { Chip } from "@mui/material";
+import { Chip, Fab, TextField } from "@mui/material";
+import { Add } from "@mui/icons-material";
 
 function App() {
   return (
     <>
-     <ToastNotification title="Hola" type="success" seeMore={true} />
-    {/* <ToastNotification title="Hola" type="success" seeMore={true} />
-      <PageHeaderComponent title="Title" subtitle="Subtitle" />
-      <Chip label="Hola" color="primary" />
-      <DrawerComponent
-        title="Nukll"
-        open={false}
-        children={null}
-        actions={null}
-        onClose={() => {}}
-        width="600px"
-      ></DrawerComponent> */}
-      {/* <EmptyState title="title" /> */}
-      {/* <FooterActionComponent labelChangeCounter="Label" /> */}
+      <ToastNotification title="Hola" type="success" seeMore={true} />
+      <Fab size="small" color="secondary" aria-label="add">
+        <Add />
+      </Fab>
+      <Fab size="medium" color="secondary" aria-label="add">
+        <Add />
+      </Fab>
+      <Fab size="large" color="secondary" aria-label="add">
+        <Add />
+      </Fab>
+      <TextField variant="outlined" size="medium" label="Outlined" />
+      <TextField variant="outlined" label="Outlined" />
     </>
   );
 }

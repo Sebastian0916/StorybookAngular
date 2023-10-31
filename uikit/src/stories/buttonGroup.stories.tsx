@@ -43,7 +43,7 @@ export const button: Story = {
         <Button>Two</Button>
         <Button>Three</Button>
       </ButtonGroup>
-      <ButtonGroup size="medium" variant="contained">
+      <ButtonGroup size="large" variant="contained">
         <Button>One</Button>
         <Button>Two</Button>
         <Button>Three</Button>

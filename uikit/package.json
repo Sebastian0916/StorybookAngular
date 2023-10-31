@@ -11,7 +11,7 @@
     "@mui/icons-material": "^5.14.13",
     "@mui/material": "^5.14.13",
     "@mui/x-data-grid-pro": "^6.16.1",
-    "@sinco/react": "^1.0.15-rc.24",
+    "@sinco/react": "^1.0.15-rc.66",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -32,7 +32,7 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_365608695386a79"
+    "chromatic": "npx chromatic --project-token=chpt_529017a1697d719"
   },
   "eslintConfig": {
     "extends": [

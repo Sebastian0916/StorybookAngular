@@ -95,7 +95,7 @@ export const ToastNotificationComponent = (toast: ToastBaseProperties) => {
               borderRadius={50}
               sx={{
                 backgroundColor: {
-                  success: SincoTheme.palette.success[50],
+                  success: "#8FC93A1F",
                   error: "#D143431F",
                   warning: "#FB85001F",
                   info: "#2D9FC51F",
