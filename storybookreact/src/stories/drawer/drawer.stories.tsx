@@ -35,10 +35,11 @@ export default meta;
 export const Drawer = {
   name: "Drawer componente",
   args: {
+    anchorActions: "flex-start",
     open: false,
     width: "500px",
     title: "Nombre empresa",
-    position: "left",
+    anchor: "left",
     children: (
       <>
         <Box
@@ -65,10 +66,8 @@ export const Drawer = {
         </Typography>
       </>
     ),
-    renderActions: (
-      <Box sx={{
-        justifyContent: "flex-end"
-      }}>
+    actions: (
+      <Box alignItems="flex-end">
         <Button color="primary" variant="text" size="small">
           Cerrar
         </Button>

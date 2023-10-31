@@ -51,11 +51,11 @@ export type Size = 'small' | 'medium' | 'large';
 
 export type ChipsModel = ChipModel[];
 
-export type Estados = 'create' | 'error' | 'noresult' | 'search';
+export type Estados = 'crear' | 'error' | 'sinresultado' | 'busqueda';
 
-export enum UrlImagen {
-  error = '/public/error.png',
-  search = '/public/search.png',
-  noresult = '/public/no-result.png',
-  create = '/public/create.png',
-}
+export const UrlImagen: Record<Estados, string> = {
+  error: '../../assets/emptyState-icons.svg#error',
+  busqueda: '../../assets/emptyState-icons.svg#search',
+  sinresultado: '../../assets/emptyState-icons.svg#noresult',
+  crear: '../../assets/emptyState-icons.svg#create',
+};
