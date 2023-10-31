@@ -11,18 +11,21 @@ export interface PageheaderProperties {
 }
 export function PageHeaderWraps({
   item,
-  Color,
+  color,
   variant,
 }: {
   item: string | React.ReactNode;
-  Color: string;
+  color: string;
   variant: Variant;
 }) {
-  return (
-    <Typography variant={variant} color={Color}>
-      {item}
-    </Typography>
-  );
+  if (typeof item === "string") {
+    return (
+      <Typography variant={variant} color={color}>
+        {item}
+      </Typography>
+    );
+  }
+  return <>{item}</>;
 }
 
 export const PageHeaderComponent = ({
@@ -53,12 +56,12 @@ export const PageHeaderComponent = ({
           {buttonBack}
           <Stack>
             <Stack>
-              <PageHeaderWraps Color="text.primary" item={title} variant="h6" />
+              <PageHeaderWraps color="text.primary" item={title} variant="h6" />
             </Stack>
             {subtitle && (
               <Stack alignItems="center" flexDirection="row" gap={2}>
                 <PageHeaderWraps
-                  Color="text.secondary"
+                  color="text.secondary"
                   item={subtitle}
                   variant="caption"
                 />

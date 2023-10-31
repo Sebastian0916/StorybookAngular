@@ -1,7 +1,7 @@
 import { Breakpoints } from '@mui/material';
 import { createBreakpoints } from '@mui/system';
 
-const breakpoints: Breakpoints = createBreakpoints({
+export const breakpoints: Breakpoints = createBreakpoints({
     values: {
         xs: 0,
         sm: 600,
@@ -10,5 +10,3 @@ const breakpoints: Breakpoints = createBreakpoints({
         xl: 1920,
     },
 });
-
-export default breakpoints;

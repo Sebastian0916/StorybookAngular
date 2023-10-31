@@ -18,10 +18,12 @@ import {
   KeyboardArrowUp,
 } from "@mui/icons-material";
 import { useProgress } from "./useProgress";
+import { SincoTheme } from "@sinco/react";
+import { blue, green, orange, red } from "@mui/material/colors";
 
-export type toastType = "success" | "error" | "warning" | "info";
+export type ToastType = "success" | "error" | "warning" | "info";
 export interface ToastBaseProperties {
-  type?: toastType;
+  type?: ToastType;
   subtitle?: string;
   title: string;
   time?: number | any;
@@ -36,9 +38,9 @@ export const ToastNotificationComponent = (toast: ToastBaseProperties) => {
   const timeProgress = toast.time || 10;
   const { progressToast } = useProgress(timeProgress);
 
-  const toastColorConfig: toastType = toast.type || "info";
+  const toastColorConfig: ToastType = toast.type || "info";
 
-  const toastIconOption: Record<toastType, ReactElement> = {
+  const toastIconOption: Record<ToastType, ReactElement> = {
     success: <CheckCircleRounded />,
     error: <ErrorRounded />,
     warning: <WarningRounded />,
@@ -78,20 +80,13 @@ export const ToastNotificationComponent = (toast: ToastBaseProperties) => {
             display="flex"
             alignItems="center"
             sx={{
-              "&.color-error": {
-                backgroundColor: "#FEEBEE",
-              },
-              "&.color-info": {
-                backgroundColor: "#E1F5FE",
-              },
-              "&.color-warning": {
-                backgroundColor: "#FFF3E0",
-              },
-              "&.color-success": {
-                backgroundColor: "#E8F5E9",
-              },
+              backgroundColor: {
+                success: green[50],
+                error: red[50],
+                warning: orange[50],
+                info: blue[50],
+              }[toastColorConfig],
             }}
-            className={`color-${toastColorConfig}`}
           >
             <Stack
               p={1}
@@ -99,35 +94,23 @@ export const ToastNotificationComponent = (toast: ToastBaseProperties) => {
               height={20}
               borderRadius={50}
               sx={{
-                "&.ripple-error": {
-                  backgroundColor: "#D143431F",
-                },
-                "&.ripple-info": {
-                  backgroundColor: "#2D9FC51F",
-                },
-                "&.ripple-warning": {
-                  backgroundColor: "#FB85001F",
-                },
-                "&.ripple-success": {
-                  backgroundColor: "#8FC93A1F",
-                },
+                backgroundColor: {
+                  success: SincoTheme.palette.success[50],
+                  error: "#D143431F",
+                  warning: "#FB85001F",
+                  info: "#2D9FC51F",
+                }[toast.type || "info"],
               }}
               className={`ripple-${toast.type || "info"}`}
             >
               <Stack
                 sx={{
-                  "&.icon-color.color-info": {
-                    color: (theme) => theme.palette.info.main,
-                  },
-                  "&.icon-color.color-error": {
-                    color: (theme) => theme.palette.error.main,
-                  },
-                  "&.icon-color.color-warning": {
-                    color: (theme) => theme.palette.warning.main,
-                  },
-                  "&.icon-color.color-success": {
-                    color: (theme) => theme.palette.success.main,
-                  },
+                  color: {
+                    success: SincoTheme.palette.success.main,
+                    error: SincoTheme.palette.error.main,
+                    warning: SincoTheme.palette.warning.main,
+                    info: SincoTheme.palette.info.main,
+                  }[toast.type || "info"],
                 }}
                 className={`icon-color color-${toast.type || "info"}`}
               >
@@ -197,3 +180,5 @@ export const ToastNotificationComponent = (toast: ToastBaseProperties) => {
     </>
   );
 };
+
+export { ToastNotificationComponent as ToastNotification };

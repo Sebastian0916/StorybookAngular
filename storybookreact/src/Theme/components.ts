@@ -1,5 +1,5 @@
 import React from "react";
-import type {} from "@mui/x-data-grid/themeAugmentation";
+import type { } from "@mui/x-data-grid/themeAugmentation";
 import { Components } from "@mui/material";
 import {
   InfoRounded,
@@ -19,6 +19,7 @@ declare module "@mui/material/Checkbox" {
   }
 }
 export const components: Components = {
+
   MuiDataGrid: {
     defaultProps: {
       columnHeaderHeight: 35,
@@ -128,10 +129,6 @@ export const components: Components = {
       root: {
         boxShadow:
           "0px 3px 1px -2px rgba(24, 39, 75, 0.20), 0px 2px 2px 0px rgba(24, 39, 75, 0.14), 0px 1px 5px 0px rgba(24, 39, 75, 0.12)",
-        "&.MuiBackdrop-root": {
-          backgroundColor: "#f0f0f099",
-          backdropFilteCr: "blur(2px) !important",
-        },
       },
     },
   },
@@ -196,10 +193,6 @@ export const components: Components = {
       root: {
         height: "inherit",
         borderRadius: 4,
-        ".MuiChip-deleteIconXsmall": {
-          height: 12,
-          width: 12,
-        },
         ".MuiChip-deleteIconSmall": {
           height: 16,
           widht: 16,
@@ -285,7 +278,6 @@ export const components: Components = {
       size: "small",
     },
   },
-
   MuiFab: {
     defaultProps: {
       size: "small",
@@ -361,7 +353,6 @@ export const components: Components = {
       margin: "dense",
     },
   },
-
   MuiSvgIcon: {
     styleOverrides: {
       fontSizeLarge: {
@@ -384,7 +375,7 @@ export const components: Components = {
   MuiIconButton: {
     styleOverrides: {
       sizeSmall: {
-        padding: 4,
+        padding: 3,
       },
       sizeMedium: {
         padding: 12,
@@ -526,6 +517,17 @@ export const components: Components = {
     },
   },
   MuiSwitch: {
+    variants: [
+      {
+        props: { size: "small" },
+        style: {
+          height: 22,
+          ".MuiSwitch-switchBase": {
+            padding: 3,
+          },
+        },
+      },
+    ],
     defaultProps: {
       size: "small",
     },

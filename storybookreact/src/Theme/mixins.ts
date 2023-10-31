@@ -1,7 +1,7 @@
 import { Mixins } from '@mui/material';
-import breakpoints from './breakpoints';
+import { breakpoints } from './breakpoints';
 
-const mixins: Mixins = {
+export const mixins: Mixins = {
     toolbar: {
         minHeight: 48,
         [breakpoints.down('md')]: {
@@ -9,4 +9,3 @@ const mixins: Mixins = {
         }
     }
 };
-export default mixins 

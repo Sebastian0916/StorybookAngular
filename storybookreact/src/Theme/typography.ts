@@ -1,44 +1,18 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
-import breakpoints from './breakpoints';
+import { breakpoints } from './breakpoints';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
     body3: React.CSSProperties;
-    subtitle3: React.CSSProperties;
-
   }
+
   interface TypographyVariantsOptions {
     body3?: React.CSSProperties;
-    subtitle3?: React.CSSProperties;
-
   }
 }
 
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    body3: true;
-    subtitle3: true;
-  }
-}
-const typography: TypographyOptions = {
+export const typography: TypographyOptions = {
   fontSize: 13,
-  subtitle3: {
-    fontFamily: "Roboto",
-    fontSize: 12,
-    lineHeight: 1.16,
-    letterSpacing: 0.17,
-    fontWeight: 400
-  },
-  body3: {
-    fontFamily: 'Roboto',
-    fontWeight: 310,
-    fontSize: 12,
-    letterSpacing: 0.17,
-    lineHeight: 1.2,
-    [breakpoints.down('md')]: {
-      fontSize: 11,
-    },
-  },
   body1: {
     fontFamily: 'Roboto',
     fontSize: 14,
@@ -57,6 +31,16 @@ const typography: TypographyOptions = {
     lineHeight: 1.2,
     '@media(max-width: 885px)': {
       fontSize: 14,
+    },
+  },
+  body3: {
+    fontFamily: 'Roboto',
+    fontWeight: 300,
+    fontSize: 12,
+    letterSpacing: 0.17,
+    lineHeight: 1.2,
+    [breakpoints.down('md')]: {
+      fontSize: 11,
     },
   },
   subtitle1: {
@@ -152,4 +136,3 @@ const typography: TypographyOptions = {
     },
   },
 };
-export default typography;
