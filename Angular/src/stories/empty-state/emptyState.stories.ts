@@ -1,7 +1,7 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { EmptyStateComponent } from 'src/components/empty-state/empty-state.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { EmptyStateComponent } from '../../components/empty-state/empty-state.component';
 
 export default {
   title: 'Angular Material/EmptyState',
@@ -17,7 +17,7 @@ export default {
   },
   argTypes: {
     estado: {
-      options: ['error', 'create', 'no-result', 'search'],
+      options: ['error', 'crear', 'sinresultado', 'busqueda'],
       control: { type: 'radio' },
       description:
         'El estado define la apariencia y acciones del empty state. Este último consta únicamente de cuatro estados, y las acciones solo son visibles en el estado "create".',
@@ -36,6 +36,18 @@ export default {
       description:
         'Las acciones están diseñadas para recibir elementos del tipo HTMLButtonElement. Estos botones se visualizan utilizando ng-templates dentro de la etiqueta del componente, donde se utiliza el identificador "#acciones" para insertarlos y mostrarlos.',
     },
+    alturaContenedor: {
+      description:
+        "Define la altura del contenedor que envuelve todo el componente. De manera predeterminada, se establece en '100%', lo que significa que el contenedor se expandirá para ocupar todo el espacio disponible. También puede ser personalizado utilizando valores en porcentaje en relación al contenedor padre o en píxeles según las necesidades.",
+    },
+    alturaIlustracion: {
+      description:
+        "Define la altura de la ilustración dentro del componente. De manera predeterminada, se establece en '210px', pero puedes personalizarlo utilizando valores en píxeles u otras unidades según las necesidades.",
+    },
+    anchoIlustracion: {
+      description:
+        "Define el ancho de la ilustración dentro del componente. De manera predeterminada, se establece en '210px', pero puedes personalizarlo utilizando valores en píxeles u otras unidades según las necesidades.",
+    },
   },
 } as Meta<EmptyStateComponent>;
 
@@ -43,8 +55,11 @@ type Story = StoryObj<EmptyStateComponent>;
 
 export const EmptyState: Story = {
   args: {
-    estado: 'create',
+    estado: 'crear',
     titulo: 'Titulo del empty state',
     contenido: 'Contenido del empty state',
+    anchoIlustracion: '210px',
+    alturaIlustracion: '185px',
+    alturaContenedor: '100%',
   },
 };
