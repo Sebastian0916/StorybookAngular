@@ -1,40 +1,26 @@
-import React from "react";
-import { AppBar, Toolbar, Box, TextField } from "@mui/material";
+import React from 'react';
+import { AppBar, Toolbar, Box } from '@mui/material';
 
 interface FooterActionsProperties {
   labelChangeCounter: React.ReactNode;
-  renderLeftContent?: React.ReactNode;
-  renderRightContent?: React.ReactNode;
+  leftContent?: React.ReactNode;
+  rightContent?: React.ReactNode;
 }
 
 export const FooterActionComponent = ({
-  renderLeftContent,
-  renderRightContent,
+  leftContent,
+  rightContent,
   labelChangeCounter,
 }: FooterActionsProperties) => {
   return (
-    <>
-      <Box
-        display="flex"
-        flexDirection="row"
-        flexWrap="wrap"
-        textAlign="center"
-        gap={1}
-        pb={2}
-      >
-        <AppBar
-          position="fixed"
-          color="inherit"
-          sx={{ top: "auto", bottom: 0 }}
-        >
-          <Toolbar sx={{ gap: 1.5, minHeight: "50px !important" }}>
-            {renderLeftContent}
-            <Box flexGrow={1} />
-            <Box>{labelChangeCounter}</Box>
-            {renderRightContent}
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </>
+    <AppBar position="fixed" color="inherit" sx={{ top: 'auto', bottom: 0 }}>
+      <Toolbar sx={{ gap: 1.5, minHeight: '50px !important' }}>
+        {leftContent}
+        <Box flexGrow={1} />
+        <Box>{labelChangeCounter}</Box>
+        {rightContent}
+      </Toolbar>
+    </AppBar>
   );
 };
+export { FooterActionComponent as FooterAction };
