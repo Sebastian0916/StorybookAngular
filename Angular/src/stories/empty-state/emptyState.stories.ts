@@ -20,7 +20,7 @@ export default {
       options: ['error', 'crear', 'sinresultado', 'busqueda'],
       control: { type: 'radio' },
       description:
-        'El estado define la apariencia y acciones del empty state. Este último consta únicamente de cuatro estados, y las acciones solo son visibles en el estado "create".',
+        'El estado define la apariencia y acciones del empty state. Este último consta únicamente de cuatro estados.',
     },
     titulo: {
       type: 'string',
