@@ -30,8 +30,8 @@ describe('EmptyStateComponent', () => {
   });
 
   it('debe retornaImagen retornar el URL de la imagen por el state "create"', () => {
-    const urlEsperado = '../assets/images/create.svg';
-    component.estado = 'create';
+    const urlEsperado = 'assets/emptyState-icons.svg#create';
+    component.estado = 'crear';
 
     const imagen = component.retornarImagen;
 
