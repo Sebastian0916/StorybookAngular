@@ -20,7 +20,7 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/700.css";
 
 const meta: Meta<typeof DrawerComponent> = {
-  title: "Components/DrawerComponent",
+  title: "Components/Drawer",
   component: DrawerComponent,
   tags: ["autodocs"],
   decorators: [
@@ -33,7 +33,7 @@ const meta: Meta<typeof DrawerComponent> = {
 };
 export default meta;
 export const Drawer = {
-  name: "Drawer componente",
+  name: "Drawer",
   args: {
     anchorActions: "flex-start",
     open: false,
