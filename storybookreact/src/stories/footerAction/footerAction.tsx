@@ -7,7 +7,7 @@ interface FooterActionsProperties {
   rightContent?: React.ReactNode;
 }
 
-export const FooterActionComponent = ({
+export const FooterAction = ({
   leftContent,
   rightContent,
   labelChangeCounter,
@@ -23,4 +23,4 @@ export const FooterActionComponent = ({
     </AppBar>
   );
 };
-export { FooterActionComponent as FooterAction };
+

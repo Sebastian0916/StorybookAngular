@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import { SincoTheme } from "@sinco/react";
 import { Button, ThemeProvider, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { FooterActionComponent } from "./footerAction";
+import { FooterAction } from "./footerAction";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -13,9 +13,9 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/700.css";
 
 
-const meta: Meta<typeof FooterActionComponent> = {
-  title: "Components/footerActionComponent",
-  component: FooterActionComponent,
+const meta: Meta<typeof FooterAction> = {
+  title: "Components/footerAction",
+  component: FooterAction,
   tags: ["autodocs"],
   parameters: {
     docs: {
@@ -34,7 +34,7 @@ const meta: Meta<typeof FooterActionComponent> = {
   ],
 };
 export default meta;
-export const FooterAction = {
+export const FooterActionStory = {
   name: "FooterAction..",
   args: {
     labelChangeCounter: (
@@ -52,8 +52,8 @@ export const FooterAction = {
         </Typography>
       </>
     ),
-    renderLeftContent: <Button size="small">Action</Button>,
-    renderRightContent: (
+    leftContent: <Button size="small">Action</Button>,
+    rightContent: (
       <>
         <Button variant="text" size="small">
           Action
@@ -72,7 +72,7 @@ export const FooterAction = {
     docs: {
       source: {
         type: "code",
-        code: ` <FooterActionComponent
+        code: ` <FooterAction
        labelChangeCounter={
          <Typography color="text.secondary" variant="body2" display="flex">
            Cambiaste
@@ -86,18 +86,18 @@ export const FooterAction = {
            Campos de información
          </Typography>
        }
-       renderLeftContent={
+       LeftContent={
          <>
            <Button size="small">Open drawer</Button>
          </>
        }
-       renderRightContent={
+       RightContent={
          <>
            <Button size="small">Open drawer</Button>
            <Button size="small">Open drawer</Button>
          </>
        }
-     ></FooterActionComponent>`,
+     ></FooterAction>`,
       },
     },
   },
