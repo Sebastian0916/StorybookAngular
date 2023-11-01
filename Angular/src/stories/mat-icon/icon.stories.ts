@@ -10,43 +10,40 @@ export default {
     }),
   ],
   parameters: {
-    layout: 'centered'
-  }
+    layout: 'centered',
+  },
 } as Meta;
 
-type Story = StoryObj
+type Story = StoryObj;
 export const small: Story = {
-  name: "small",
+  name: 'small',
   render: () => ({
-    template:
-      `
-    <mat-icon color="info">home</mat-icon>
-    <mat-icon color="success">home</mat-icon>
-    <mat-icon color="warning">home</mat-icon>
-      `
-  })
+    template: `
+    <mat-icon color="info" size="small">home</mat-icon>
+    <mat-icon color="success" size="small">home</mat-icon>
+    <mat-icon color="warning" size="small">home</mat-icon>
+      `,
+  }),
 };
 
 export const medium: Story = {
-  name: "medium",
+  name: 'medium',
   render: () => ({
-    template:
-      `
+    template: `
     <mat-icon color="info" size="medium">home</mat-icon>
     <mat-icon color="success" size="medium">home</mat-icon>
     <mat-icon color="warning" size="medium">home</mat-icon>
-      `
-  })
+      `,
+  }),
 };
 
 export const large: Story = {
-  name: "large",
+  name: 'large',
   render: () => ({
-    template:
-      `
+    template: `
     <mat-icon color="info" size="large">home</mat-icon>
     <mat-icon color="success" size="large">home</mat-icon>
     <mat-icon color="warning" size="large">home</mat-icon>
-      `
-  })
+      `,
+  }),
 };
