@@ -18,7 +18,7 @@ export interface DrawerComponentProperties {
   actions: ReactNode;
   showActions?: boolean;
   anchor?: DrawerPosition;
-  anchorActions: "flex-end" | "flex-start",
+  anchorActions: 'flex-end' | 'flex-start';
   width: string;
   open: boolean;
   onClose: () => void;
@@ -31,7 +31,7 @@ export const DrawerComponent = ({
   actions,
   showActions,
   anchor = 'left',
-  anchorActions = "flex-end",
+  anchorActions = 'flex-end',
   width,
   open,
   onClose,
@@ -89,14 +89,21 @@ export const DrawerComponent = ({
           py={1.5}
           px={1}
           overflow="auto"
-          height="-webkit-fill-available"
+          flex={1}
           onClick={handleDrawerActions}
         >
           {children}
         </Stack>
 
         {stateActions && (
-          <Stack alignItems={anchorActions} gap={1} mt={0.5} py={1.5} px={1} sx={{ bgcolor: 'grey.400' }}>
+          <Stack
+            alignItems={anchorActions}
+            gap={1}
+            mt={0.5}
+            py={1.5}
+            px={1}
+            sx={{ bgcolor: 'grey.400' }}
+          >
             {actions}
           </Stack>
         )}
@@ -104,3 +111,4 @@ export const DrawerComponent = ({
     </Drawer>
   );
 };
+export { DrawerComponent as Drawer };
