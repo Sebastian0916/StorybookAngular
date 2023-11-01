@@ -1,5 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Divider, ListItem, ListItemText, Menu, MenuItem, MenuList, Paper } from "@mui/material";
+import {
+  Divider,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Menu,
+  MenuItem,
+  MenuList,
+  Paper,
+} from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
 import { SincoTheme } from "@sinco/react";
@@ -34,37 +43,71 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 export const button: Story = {
   name: "menu",
   render: (args) => (
-    <>
-      <Paper sx={{ width: 320 }}>
-        <MenuList dense>
-          <MenuItem>
-            <ListItemText inset>Single</ListItemText>
-          </MenuItem>
-          <MenuItem>
-            <ListItemText inset>1.15</ListItemText>
-          </MenuItem>
-          <MenuItem>
-            <ListItemText inset>Double</ListItemText>
-          </MenuItem>
-          <MenuItem>
-            <ListItem>
-              <Check />
-            </ListItem>
-            Custom: 1.2
-          </MenuItem>
-          <Divider />
-          <MenuItem>
-            <ListItemText>Add space before paragraph</ListItemText>
-          </MenuItem>
-          <MenuItem>
-            <ListItemText>Add space after paragraph</ListItemText>
-          </MenuItem>
-          <Divider />
-          <MenuItem>
-            <ListItemText>Custom spacing...</ListItemText>
-          </MenuItem>
-        </MenuList>
-      </Paper>
-    </>
+    <Paper sx={{ width: 320 }}>
+      <MenuList>
+        <MenuItem>
+          <ListItemText inset>Single</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>1.15</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>Double</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Check />
+          </ListItemIcon>
+          Custom: 1.2
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Add space before paragraph</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText>Add space after paragraph</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Custom spacing...</ListItemText>
+        </MenuItem>
+      </MenuList>
+    </Paper>
+  ),
+};
+
+export const dense: Story = {
+  name: "menu-dense",
+  render: (args) => (
+    <Paper sx={{ width: 320 }}>
+      <MenuList dense>
+        <MenuItem>
+          <ListItemText inset>Single</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>1.15</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText inset>Double</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Check />
+          </ListItemIcon>
+          Custom: 1.2
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Add space before paragraph</ListItemText>
+        </MenuItem>
+        <MenuItem>
+          <ListItemText>Add space after paragraph</ListItemText>
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemText>Custom spacing...</ListItemText>
+        </MenuItem>
+      </MenuList>
+    </Paper>
   ),
 };

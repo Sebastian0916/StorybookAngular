@@ -17,7 +17,7 @@ const meta: Meta<typeof ToastNotificationComponent> = {
   decorators: [
     (Story) => (
       <ThemeProvider theme={SincoTheme}>
-        <div style={{ height: "60px" }}>
+        <div style={{ height: "120px" }}>
           <Story />
         </div>
       </ThemeProvider>

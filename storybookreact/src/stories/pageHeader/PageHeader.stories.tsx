@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import { Button, Tabs, Tab, IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
 
 import { SincoTheme } from "@sinco/react";
@@ -10,7 +10,7 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
-import { PageHeaderComponent } from "./PageHeader";
+import { PageHeaderComponent } from "@sinco/react";
 
 const meta: Meta<typeof PageHeaderComponent> = {
   title: "Components/PageHeader",

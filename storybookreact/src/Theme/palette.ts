@@ -139,7 +139,7 @@ export const palette: PaletteOptions = {
   action: {
     active: '#0a12288a',
     hover: '#0a122866',
-    selected: '#0a1228cc',
+    // selected: '#0a1228cc',
     disabled: '#10184042',
     disabledBackground: '#1018401f',
     focus: '#1018401f',

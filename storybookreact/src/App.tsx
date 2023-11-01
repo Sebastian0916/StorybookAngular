@@ -3,22 +3,21 @@ import {
   DrawerComponent,
   EmptyState,
   FooterActionComponent,
-  // PageHeaderComponent,
-  // ToastNotificationComponent,
-} from "@sinco/react";
-import React from "react";
-import { PageHeaderComponent } from "./stories/pageHeader/PageHeader";
-import {
+  PageHeader,
+  PageHeaderComponent,
   ToastNotification,
   ToastNotificationComponent,
-} from "./stories/toast/ToastNotification";
+} from "@sinco/react";
+import React from "react";
+
 import { Chip, Fab, TextField } from "@mui/material";
-import { Add } from "@mui/icons-material";
+import { Add, Delete } from "@mui/icons-material";
 
 function App() {
   return (
     <>
       <ToastNotification title="Hola" type="success" seeMore={true} />
+      {/* <PageHeader title="Titley" fixed={true}/> */}
       <Fab size="small" color="secondary" aria-label="add">
         <Add />
       </Fab>
@@ -30,6 +29,12 @@ function App() {
       </Fab>
       <TextField variant="outlined" size="medium" label="Outlined" />
       <TextField variant="outlined" label="Outlined" />
+      <Chip
+        icon={<Delete />}
+        label="With Icon"
+        variant="filled"
+        // color="primary"
+      />
     </>
   );
 }

@@ -19,7 +19,6 @@ declare module "@mui/material/Checkbox" {
   }
 }
 export const components: Components = {
-
   MuiDataGrid: {
     defaultProps: {
       columnHeaderHeight: 35,
@@ -287,8 +286,8 @@ export const components: Components = {
         boxShadow:
           "0px 1px 18px 0px rgba(24, 39, 75, 0.12), 0px 6px 10px 0px rgba(24, 39, 75, 0.14), 0px 3px 5px -1px rgba(24, 39, 75, 0.20)",
         "&.MuiFab-sizeSmall": {
-          height: 38,
-          width: 38,
+          height: 36,
+          width: 36,
           ".MuiSvgIcon-fontSizeSmall": {
             height: 20,
             width: 20,

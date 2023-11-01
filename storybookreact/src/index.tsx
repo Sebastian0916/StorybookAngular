@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { SincoTheme } from "@sinco/react";
+// import { SincoTheme } from "@sinco/react";
 import { ThemeProvider } from "@mui/material/styles";
-// import { SincoTheme } from "./Theme";
+import { SincoTheme } from "./Theme";
 declare module "@mui/material/styles" {
   interface PaletteColor {
     50: string;
