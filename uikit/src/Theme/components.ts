@@ -1,5 +1,5 @@
 import React from "react";
-import type {} from "@mui/x-data-grid/themeAugmentation";
+import type { } from "@mui/x-data-grid/themeAugmentation";
 import { Components } from "@mui/material";
 import {
   InfoRounded,
@@ -20,6 +20,29 @@ declare module "@mui/material/Checkbox" {
   }
 }
 export const components: Components = {
+  MuiTabs: {
+    styleOverrides: {
+      root: {
+        minHeight: 40,
+      },
+    },
+  },
+  MuiTab: {
+    styleOverrides: {
+      labelIcon: {
+        paddingTop: 10,
+        paddingBottom: 10,
+      },
+      root: {
+        minHeight: "40px",
+        root: {
+          "& .MuiTabs-root": {
+            minHeight: "40px",
+          },
+        },
+      },
+    },
+  },
   MuiDataGrid: {
     defaultProps: {
       columnHeaderHeight: 35,
@@ -203,20 +226,16 @@ export const components: Components = {
       sizeMedium: {
         height: 22,
       },
-      filled: {
-        backgroundColor: palette.grey?.[100],
-      },
       icon: {
         color: palette.action?.active,
         opacity: "26%",
       },
       root: {
-        fontFamily: "Roboto",
-        fontSize: "10px",
-        fontStyle: "normal",
+        fontFamily: 'Roboto',
+        fontSize: '11px',
         fontWeight: 400,
-        lineHeight: "10px",
-        letterSpacing: "0.15px",
+        lineHeight: '14px',
+        letterSpacing: '0.16px',
         height: "inherit",
         borderRadius: 4,
         ".MuiChip-deleteIconXsmall": {
@@ -417,6 +436,9 @@ export const components: Components = {
   },
   MuiFilledInput: {
     styleOverrides: {
+      root: {
+        height: 48,
+      },
       sizeSmall: {
         height: 38,
       },
@@ -438,7 +460,8 @@ export const components: Components = {
           paddingBlock: 14,
         },
         ".MuiFilledInput-input.MuiInputBase-inputSizeSmall": {
-          paddingBlock: "none",
+          paddingTop: 16,
+          paddingBottom: 2,
         },
         ".MuiFilledInput-input": {
           paddingTop: 22,
@@ -491,6 +514,11 @@ export const components: Components = {
         display: "flex",
         gap: ".2rem",
         flexDirection: "row-reverse",
+      },
+      standard: {
+        "&.MuiInputLabel-standard.MuiInputLabel-sizeSmall:not(.MuiInputLabel-shrink)": {
+          transform: "translate(0, 15px) scale(1)"
+        }
       },
       outlined: {
         "&.MuiInputLabel-outlined.MuiInputLabel-sizeSmall ": {
@@ -563,6 +591,14 @@ export const components: Components = {
     },
   },
   MuiTextField: {
+    variants: [{
+      props: { variant: "standard" },
+      style: {
+        ".MuiInputBase-input.MuiInputBase-inputSizeSmall": {
+          padding: 1.5,
+        }
+      }
+    }],
     defaultProps: {
       size: "small",
       margin: "none",
@@ -573,10 +609,27 @@ export const components: Components = {
       dense: true,
     },
   },
-  MuiMenuItem: {
+  MuiListItemButton: {
+    styleOverrides: {
+      dense: {
+        padding: "4px 0px 4px 0px"
+      },
+      root: {
+        padding: "7.5px 0px 7.5px 0px"
+      }
+    }
+  },
+  MuiMenuList: {
     defaultProps: {
-      dense: true,
+      dense: false
     },
+    styleOverrides: {
+      root: {
+        ".MuiMenuItem-root": {
+          minHeight: 28
+        }
+      }
+    }
   },
   MuiTable: {
     defaultProps: {

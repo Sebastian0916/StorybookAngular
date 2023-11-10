@@ -4,7 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material/styles";
-import { SincoTheme } from "@sinco/react";
+import { SincoTheme } from "./Theme";
+// import { SincoTheme } from "@sinco/react";
 declare module "@mui/material/Radio" {
   interface RadioPropsSizeOverrides {
     large: true;

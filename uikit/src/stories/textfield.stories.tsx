@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { TextField } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { SincoTheme } from "@sinco/react";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
+import { SincoTheme } from "../Theme";
 
 const meta: Meta<typeof TextField> = {
   title: "Components/TextField",

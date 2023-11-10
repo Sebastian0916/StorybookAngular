@@ -44,7 +44,7 @@ export const button: Story = {
   name: "menu",
   render: (args) => (
     <Paper sx={{ width: 320 }}>
-      <MenuList dense={false}>
+      <MenuList dense={false  }>
         <MenuItem>
           <ListItemText inset>Single</ListItemText>
         </MenuItem>
@@ -80,7 +80,7 @@ export const dense: Story = {
   name: "menu-dense",
   render: (args) => (
     <Paper sx={{ width: 320 }}>
-      <MenuList dense>
+      <MenuList dense={false}>
         <MenuItem>
           <ListItemText inset>Single</ListItemText>
         </MenuItem>

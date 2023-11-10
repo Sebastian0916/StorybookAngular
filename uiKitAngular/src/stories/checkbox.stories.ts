@@ -22,9 +22,9 @@ export const checkbox: Story = {
   render: () => ({
     template: `
       <div class="mat-typography ">
-          <mat-checkbox color="primary" checked>small</mat-checkbox>
-          <mat-checkbox color="primary" size="medium" checked>medium</mat-checkbox>
-          <mat-checkbox color="primary" size="large" checked>large</mat-checkbox>
+          <mat-checkbox color="primary" checked></mat-checkbox>
+          <mat-checkbox color="primary" size="medium" checked></mat-checkbox>
+          <mat-checkbox color="primary" size="large" checked></mat-checkbox>
           <br>
           <mat-checkbox color="accent" checked>small</mat-checkbox>
           <mat-checkbox color="accent" size="medium" checked>medium</mat-checkbox>

@@ -73,7 +73,7 @@ export const icon_buttons: Story = {
   name: 'icons-button',
   render: () => ({
     template: `
-      <div class="mat-typography ">
+      <div class="mat-typography d-flex align-items-center">
           <button mat-icon-button >
             <mat-icon>adjust</mat-icon>
           </button>
