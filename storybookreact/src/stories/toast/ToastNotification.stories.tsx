@@ -1,7 +1,7 @@
 import type { Meta } from "@storybook/react";
 import { Button } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { ToastNotificationComponent } from "./ToastNotification";
+import { ToastNotification } from "./ToastNotification";
 import { SincoTheme } from "@sinco/react";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
@@ -10,9 +10,9 @@ import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 
-const meta: Meta<typeof ToastNotificationComponent> = {
+const meta: Meta<typeof ToastNotification> = {
   title: "Components/ToastNotification",
-  component: ToastNotificationComponent,
+  component: ToastNotification,
   tags: ["autodocs"],
   decorators: [
     (Story) => (
