@@ -1,5 +1,5 @@
 import React from "react";
-import type { } from "@mui/x-data-grid/themeAugmentation";
+import type {} from "@mui/x-data-grid/themeAugmentation";
 import { Components } from "@mui/material";
 import {
   InfoRounded,
@@ -7,6 +7,7 @@ import {
   WarningRounded,
   ErrorRounded,
 } from "@mui/icons-material";
+import { palette } from "./palette";
 
 declare module "@mui/material/Radio" {
   interface RadioPropsSizeOverrides {
@@ -181,17 +182,47 @@ export const components: Components = {
       size: "small",
     },
   },
+  MuiToggleButton: {
+    styleOverrides: {
+      sizeSmall: {
+        height: 32,
+      },
+      sizeMedium: {
+        height: 38,
+      },
+      sizeLarge: {
+        height: 48,
+      },
+    },
+  },
   MuiChip: {
     styleOverrides: {
       sizeSmall: {
-        height: 16,
+        height: 18,
       },
       sizeMedium: {
-        height: 24,
+        height: 22,
+      },
+      filled: {
+        backgroundColor: palette.grey?.[100],
+      },
+      icon: {
+        color: palette.action?.active,
+        opacity: "26%",
       },
       root: {
+        fontFamily: "Roboto",
+        fontSize: "10px",
+        fontStyle: "normal",
+        fontWeight: 400,
+        lineHeight: "10px",
+        letterSpacing: "0.15px",
         height: "inherit",
         borderRadius: 4,
+        ".MuiChip-deleteIconXsmall": {
+          height: 12,
+          width: 12,
+        },
         ".MuiChip-deleteIconSmall": {
           height: 16,
           widht: 16,

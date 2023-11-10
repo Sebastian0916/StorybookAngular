@@ -2,7 +2,7 @@
 > uikit@0.1.0 build-storybook
 > storybook build --output-dir C:\Users\DAVID~1.PEA\AppData\Local\Temp\chromatic--47976-4nU9ii4rLLaH
 
-@storybook/cli v7.4.6
+@storybook/cli v7.5.2
 
 info => Cleaning outputDir: C:\Users\DAVID~1.PEA\AppData\Local\Temp\chromatic--47976-4nU9ii4rLLaH
 info => Loading presets
@@ -736,7 +736,7 @@ WARN
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
 WARN Assets: 
-WARN   563.d78e1c92.iframe.bundle.js (695 KiB)
+WARN   255.438ea083.iframe.bundle.js (730 KiB)
 WARN   426.8bd7c413.iframe.bundle.js (583 KiB)
 WARN   844.2bd361e4.iframe.bundle.js (401 KiB)
 WARN   342.835b4217.iframe.bundle.js (870 KiB)

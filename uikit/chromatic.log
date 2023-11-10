@@ -1,0 +1,121 @@
+
+Chromatic CLI v7.6.0
+https://www.chromatic.com/docs/cli
+
+Authenticating with Chromatic
+    → Connecting to https://index.chromatic.com
+Authenticated with Chromatic
+    → Using project token '****************d719'
+Retrieving git information
+Retrieved git information
+    → Commit '96392e8' on branch 'main'; found 1 parent build
+Collecting Storybook metadata
+Collected Storybook metadata
+    → Storybook 7.5.2 for React; using the @storybook/react-webpack5 builder (7.5.2); supported addons found: Links, Essentials, Interactions
+Initializing build
+Initialized build
+    → Build 3 initialized
+Building your Storybook
+    → Running command: npm run build-storybook -- --output-dir C:\Users\SEBAST~1.VER\AppData\Local\Temp\chromatic--31436-ctyuGHetsflN
+Storybook built in 1 minute 35 seconds
+    → View build log at C:\Users\sebastian.vera\Desktop\StorybookAngular-1\uikit\build-storybook.log
+Publish your built Storybook
+    → Validating Storybook files
+Publishing your built Storybook
+    → Retrieving target location
+    → Starting publish
+    → [                    ] 0%
+    → [=                   ] 3%
+    → [=                   ] 4%
+    → [=                   ] 7%
+    → [==                  ] 9%
+    → [==                  ] 11%
+    → [===                 ] 14%
+    → [====                ] 19%
+    → [====                ] 20%
+    → [=====               ] 24%
+    → [=====               ] 27%
+    → [======              ] 28%
+    → [=======             ] 33%
+    → [=======             ] 35%
+    → [========            ] 38%
+    → [========            ] 39%
+    → [========            ] 41%
+    → [========            ] 42%
+    → [=========           ] 44%
+    → [==========          ] 48%
+    → [==========          ] 50%
+    → [==========          ] 51%
+    → [==========          ] 52%
+    → [===========         ] 53%
+    → [===========         ] 54%
+    → [===========         ] 55%
+    → [===========         ] 56%
+    → [===========         ] 57%
+    → [============        ] 58%
+    → [============        ] 59%
+    → [============        ] 60%
+    → [============        ] 61%
+    → [============        ] 62%
+    → [=============       ] 63%
+    → [=============       ] 64%
+    → [=============       ] 65%
+    → [=============       ] 66%
+    → [=============       ] 67%
+    → [==============      ] 68%
+    → [==============      ] 71%
+    → [==============      ] 72%
+    → [===============     ] 73%
+    → [===============     ] 76%
+    → [===============     ] 77%
+    → [================    ] 79%
+    → [=================   ] 83%
+    → [=================   ] 87%
+    → [==================  ] 88%
+    → [==================  ] 89%
+    → [==================  ] 90%
+    → [==================  ] 91%
+    → [==================  ] 92%
+    → [=================== ] 93%
+    → [=================== ] 96%
+    → [=================== ] 97%
+    → [====================] 98%
+    → [====================] 99%
+    → [====================] 100%
+Publish complete in 40 seconds
+    → View your Storybook at https://65400b6a845f4219dbbda334-exlkuxfwqg.chromatic.com
+Verifying your Storybook
+    → This may take a few minutes
+Started build 3
+    → View build details at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=3
+Running 27 tests
+    → This may take a few minutes
+i Speed up Continuous Integration
+Your project is linked to GitHub so Chromatic will report results there.
+This means you can pass the --exit-once-uploaded flag to skip waiting for build results.
+Read more here: https://www.chromatic.com/docs/cli#chromatic-options
+    → [=                   ] 1/27  Acordion › Accordion 
+    → [=                   ] 2/27  Avatar › avatar 
+    → [==                  ] 3/27  Button › button 
+    → [===                 ] 4/27  Button › button-icons 
+    → [====                ] 6/27  ButtonGroup › button 
+    → [=====               ] 7/27  ToggleButton, › Ratign 
+    → [======              ] 8/27  Checkbox › checkbox 
+    → [=======             ] 10/27  fab › fab-extend 
+    → [=========           ] 12/27  SvgIcon › svgIcon 
+    → [==========          ] 13/27  Menu › menu 
+    → [============        ] 16/27  radio › radio 
+    → [=============       ] 17/27  Rating › Ratign 
+    → [=============       ] 18/27  Select › select 
+    → [===============     ] 20/27  Switch › switch 
+    → [================    ] 22/27  Table › table-small 
+    → [=================   ] 23/27  Tabs › Tab 
+    → [==================  ] 24/27  Tabs › Tab-vertical 
+    → [=================== ] 25/27  TextField › textField-outlined 
+    → [=================== ] 26/27  TextField › textField-filled 
+    → [====================] 27/27  TextField › textField-standard 
+× Found 11 visual changes: Review the changes at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=3
+
+i For CI/CD use cases, this command failed with exit code 1
+Pass --exit-zero-on-changes to succeed this command regardless of changes.
+Pass --auto-accept-changes to succeed and automatically accept any changes.
