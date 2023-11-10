@@ -44,7 +44,7 @@ export const button: Story = {
   name: "menu",
   render: (args) => (
     <Paper sx={{ width: 320 }}>
-      <MenuList>
+      <MenuList dense={false}>
         <MenuItem>
           <ListItemText inset>Single</ListItemText>
         </MenuItem>
