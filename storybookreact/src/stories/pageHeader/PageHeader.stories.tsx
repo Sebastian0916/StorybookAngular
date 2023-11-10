@@ -10,11 +10,11 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
-import { PageHeaderComponent } from "@sinco/react";
+import { PageHeader } from "@sinco/react";
 
-const meta: Meta<typeof PageHeaderComponent> = {
+const meta: Meta<typeof PageHeader> = {
   title: "Components/PageHeader",
-  component: PageHeaderComponent,
+  component: PageHeader,
   tags: ["autodocs"],
   decorators: [
     (Story) => (

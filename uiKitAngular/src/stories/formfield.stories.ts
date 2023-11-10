@@ -6,8 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormControl } from '@angular/forms';
 
 @Component({
-    selector:'app-autocomplete-container',
-    template:`
+  selector: 'app-autocomplete-container',
+  template: `
     <mat-form-field class="col-12"  appearance="outline" [floatLabel]="'always'">
     <mat-label>panel-option-{{size !== 'medium'?'small':'medium'}}</mat-label>
     
@@ -26,36 +26,36 @@ import { FormControl } from '@angular/forms';
     `
 })
 
-class ContainerAutocompleteComponent{
+class ContainerAutocompleteComponent {
   myControl = new FormControl('');
   options: string[] = ['One', 'Two', 'Three'];
-  @Input()size!:Size;
+  @Input() size!: Size;
 
-  get mediumGetter ():string{
-    return this.size == 'medium'?'mat-option-medium':'';
+  get mediumGetter(): string {
+    return this.size == 'medium' ? 'mat-option-medium' : '';
   }
 }
 
 export default {
-    title: 'Angular Material/form-field',
-    decorators: [
-        moduleMetadata({
-            declarations:[ContainerAutocompleteComponent],
-            imports: [AngularModule, BrowserAnimationsModule],
-        }),
-    ],
-    parameters: {
-        layout: 'centered',
-    },
+  title: 'Angular Material/form-field',
+  decorators: [
+    moduleMetadata({
+      declarations: [ContainerAutocompleteComponent],
+      imports: [AngularModule, BrowserAnimationsModule],
+    }),
+  ],
+  parameters: {
+    layout: 'centered',
+  },
 
-    tags: ['autodocs']
+  tags: ['autodocs']
 } as Meta;
 type Story = StoryObj;
 
 export const formfield_input: Story = {
-    name: 'formfield-input',
-    render: () => ({
-        template: `
+  name: 'formfield-input',
+  render: () => ({
+    template: `
       <div class="mat-typography ">
         <div class="row gap-2 align-items-start">
               <mat-form-field class="col" appearance="outline" [floatLabel]="'always'" >
@@ -90,13 +90,13 @@ export const formfield_input: Story = {
         </div>
       </div>
     `,
-    }),
+  }),
 
 };
 export const formfield_input_icons: Story = {
-    name: 'formfield-input-icons',
-    render: () => ({
-        template: `
+  name: 'formfield-input-icons',
+  render: () => ({
+    template: `
         <div class="mat-typography ">
             <div class="col-12 row gap-2 align-items-start">
                 <mat-form-field class="col" appearance="outline" [floatLabel]="'always'" >
@@ -174,37 +174,37 @@ export const formfield_input_icons: Story = {
             </div>
         </div>
       `,
-    }),
+  }),
 
 };
 
 export const formfield_autocomplete_small: Story = {
-    name: 'formfield-autocomplete-panel-small',
-    render: () => ({
-        template: `
+  name: 'formfield-autocomplete-panel-small',
+  render: () => ({
+    template: `
         <div class="mat-typography ">
             <app-autocomplete-container class="col-12"/>
         </div>
       `,
-    }),
+  }),
 
 };
 export const formfield_autocomplete_medium: Story = {
-    name: 'formfield-autocomplete-panel-medium',
-    render: () => ({
-        template: `
+  name: 'formfield-autocomplete-panel-medium',
+  render: () => ({
+    template: `
         <div class="mat-typography ">
             <app-autocomplete-container size="medium"/>
         </div>
       `,
-    }),
+  }),
 
 };
 
 export const formfield_select_small: Story = {
-    name: 'formfield-select-panel-small',
-    render: () => ({
-        template: `
+  name: 'formfield-select-panel-small',
+  render: () => ({
+    template: `
         <div class="mat-typography ">
             <div class="col-12 row gap-2 align-items-start">
             <mat-form-field appearance="outline" [floatLabel]="'always'">
@@ -218,16 +218,16 @@ export const formfield_select_small: Story = {
             </div>
         </div>
       `,
-    }),
+  }),
 
 };
 export const formfield_select_medium: Story = {
-    name: 'formfield-select-panel-medium',
-    render: () => ({
-        template: `
+  name: 'formfield-select-panel-medium',
+  render: () => ({
+    template: `
         <div class="mat-typography ">
             <div class="col-12 row gap-2 align-items-start">
-            <mat-form-field appearance="outline" [floatLabel]="'always'">
+            <mat-form-field appearance="outline" size="medium" [floatLabel]="'always'">
                 <mat-label>panel-options-medium</mat-label>
                 <mat-select disableRipple value="1" panelClass="mat-option-medium">
                   <mat-option value="1">Option 1</mat-option>
@@ -238,13 +238,13 @@ export const formfield_select_medium: Story = {
             </div>
         </div>
       `,
-    }),
+  }),
 
 };
 export const formfield_DatePicker_small: Story = {
-    name: 'formfield-date-Picker-small',
-    render: () => ({
-        template: `
+  name: 'formfield-date-Picker-small',
+  render: () => ({
+    template: `
       <div class="mat-typography ">
         <div class="row gap-2 align-items-start">
             <mat-form-field  appearance="outline" [floatLabel]="'always'">
@@ -324,13 +324,13 @@ export const formfield_DatePicker_small: Story = {
         </div> 
       </div>
     `,
-    }),
+  }),
 
 };
 export const formfield_DatePicker_medium: Story = {
-    name: 'formfield-date-Picker-medium',
-    render: () => ({
-        template: `
+  name: 'formfield-date-Picker-medium',
+  render: () => ({
+    template: `
       <div class="mat-typography ">
         <div class="row gap-2 align-items-start">
             <mat-form-field  size="medium" appearance="outline" [floatLabel]="'always'">
@@ -410,7 +410,7 @@ export const formfield_DatePicker_medium: Story = {
         </div> 
       </div>
     `,
-    }),
+  }),
 
 };
 
