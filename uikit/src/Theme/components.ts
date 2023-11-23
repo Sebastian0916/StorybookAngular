@@ -20,6 +20,39 @@ declare module "@mui/material/Checkbox" {
   }
 }
 export const components: Components = {
+  MuiSpeedDialIcon: {
+    styleOverrides: {
+      icon: {
+        height: 24,
+        width: 24
+      }
+    }
+  },
+  MuiSpeedDialAction: {
+    styleOverrides: {
+      fab: {
+        height: 40,
+        width: 40
+      }
+    }
+  },
+  MuiSpeedDial: {
+    styleOverrides: {
+      fab: {
+        height: 56,
+        width: 56
+      }
+    }
+  },
+  MuiAccordion: {
+    styleOverrides: {
+      root: {
+        ".MuiButtonBase-root.MuiAccordionSummary-root": {
+          minHeight: 44
+        },
+      }
+    }
+  },
   MuiTabs: {
     styleOverrides: {
       root: {
@@ -30,16 +63,10 @@ export const components: Components = {
   MuiTab: {
     styleOverrides: {
       labelIcon: {
-        paddingTop: 10,
-        paddingBottom: 10,
+        paddingBlock: 10
       },
       root: {
-        minHeight: "40px",
-        root: {
-          "& .MuiTabs-root": {
-            minHeight: "40px",
-          },
-        },
+        minHeight: 40,
       },
     },
   },
@@ -140,13 +167,6 @@ export const components: Components = {
       },
     },
   },
-  MuiToolbar: {
-    styleOverrides: {
-      root: {
-        height: "48px",
-      },
-    },
-  },
   MuiDrawer: {
     styleOverrides: {
       root: {
@@ -209,12 +229,17 @@ export const components: Components = {
     styleOverrides: {
       sizeSmall: {
         height: 32,
+        width: 32
       },
       sizeMedium: {
         height: 38,
+        width: 38
+
       },
       sizeLarge: {
         height: 48,
+        width: 48
+
       },
     },
   },
@@ -228,7 +253,7 @@ export const components: Components = {
       },
       icon: {
         color: palette.action?.active,
-        opacity: "26%",
+        opacity: "70%",
       },
       root: {
         fontFamily: 'Roboto',
@@ -335,7 +360,7 @@ export const components: Components = {
       circular: {
         boxShadow:
           "0px 1px 18px 0px rgba(24, 39, 75, 0.12), 0px 6px 10px 0px rgba(24, 39, 75, 0.14), 0px 3px 5px -1px rgba(24, 39, 75, 0.20)",
-        "&.MuiFab-sizeSmall": {
+        "&.MuiFab-sizeSmall:not(.MuiSpeedDial-fab, .MuiSpeedDialAction-fab)": {
           height: 36,
           width: 36,
           ".MuiSvgIcon-fontSizeSmall": {
@@ -396,6 +421,7 @@ export const components: Components = {
       size: "small",
       margin: "none",
     },
+
   },
   MuiFormHelperText: {
     defaultProps: {
@@ -427,13 +453,14 @@ export const components: Components = {
         padding: 3,
       },
       sizeMedium: {
-        padding: 12,
+        padding: 8,
       },
       sizeLarge: {
-        padding: 17,
+        padding: 12,
       },
     },
   },
+
   MuiFilledInput: {
     styleOverrides: {
       root: {
@@ -489,6 +516,9 @@ export const components: Components = {
         "&.MuiAutocomplete-root .MuiOutlinedInput-root.MuiInputBase-sizeSmall": {
           paddingBlock: 3.5,
           paddingRight: 14,
+          "& .MuiAutocomplete-endAdornment": {
+            top: "calc(50% - 12px)"
+          },
           ".MuiIconButton-sizeSmall .MuiAutocomplete-popupIndicator": {
             padding: 5,
           },
@@ -608,6 +638,19 @@ export const components: Components = {
     defaultProps: {
       dense: true,
     },
+    styleOverrides: {
+      padding: {
+        ".MuiListItem-padding": {
+          paddingBlock: 1
+        },
+      },
+      dense: {
+        ".MuiListItem-dense": {
+          padding: "0.25px 12px 0.25px 16px"
+        },
+
+      }
+    }
   },
   MuiListItemButton: {
     styleOverrides: {
@@ -615,25 +658,58 @@ export const components: Components = {
         padding: "4px 0px 4px 0px"
       },
       root: {
-        padding: "7.5px 0px 7.5px 0px"
+        padding: "8.5px 16px"
       }
     }
   },
-  MuiMenuList: {
-    defaultProps: {
-      dense: false
-    },
+  MuiMenuItem: {
     styleOverrides: {
+      dense: {
+        height: 28,
+        minHeight: 28,
+        ".MuiListItemText-root > .MuiTypography-root": {
+          lineHeight: "14.3px",
+          letterSpacing: 0.15,
+        }
+      },
       root: {
-        ".MuiMenuItem-root": {
-          minHeight: 28
+        padding: "7px 16px 7px 16px",
+        ".MuiMenuList-root": {
+          height: 34,
+          minHeight: 34,
+        },
+        ".MuiListItemText-root > .MuiTypography-root": {
+          lineHeight: "20px",
+          letterSpacing: 0.17,
+        },
+        ".MuiListItemIcon-root": {
+          minWidth: 32
         }
       }
+    }
+  },
+  MuiTableBody: {
+    styleOverrides: {
+      root: {
+        ".MuiTableCell-body.MuiTableCell-sizeMedium": {
+          padding: "16px !important"
+        }
+      }
+    }
+  },
+  MuiTableCell: {
+    styleOverrides: {
+      sizeMedium: {
+        padding: 13
+      },
     }
   },
   MuiTable: {
     defaultProps: {
       size: "small",
     },
+    styleOverrides: {
+
+    }
   },
 };

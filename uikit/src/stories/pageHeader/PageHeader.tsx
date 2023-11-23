@@ -47,7 +47,7 @@ export const PageHeaderComponent = ({
     >
       <Stack
         px={3}
-        py={1}
+        py={1.25}
         justifyContent="space-between"
         flexDirection="row"
         alignItems="center"
@@ -55,17 +55,13 @@ export const PageHeaderComponent = ({
         <Stack gap={1.5} flexDirection="row" alignItems="center">
           {buttonBack}
           <Stack>
-            <Stack>
-              <PageHeaderWraps color="text.primary" item={title} variant="h6" />
-            </Stack>
+            <PageHeaderWraps color="text.primary" item={title} variant="h6" />
             {subtitle && (
-              <Stack alignItems="center" flexDirection="row" gap={2}>
-                <PageHeaderWraps
-                  color="text.secondary"
-                  item={subtitle}
-                  variant="caption"
-                />
-              </Stack>
+              <PageHeaderWraps
+                color="text.secondary"
+                item={subtitle}
+                variant="caption"
+              />
             )}
           </Stack>
         </Stack>

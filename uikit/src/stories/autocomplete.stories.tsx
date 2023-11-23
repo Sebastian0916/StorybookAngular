@@ -1,28 +1,67 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { PageHeader } from "./stories/pageHeader/PageHeader";
-import { ToastNotification } from "./stories/toast/ToastNotification";
-import { Autocomplete, TextField } from "@mui/material";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Autocomplete, Stack, TextField } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 
-function App() {
-  return (
-    <div className="App">
-      <ToastNotification
-        title="Manuela hizo algo que daño el toast "
-        type="error"
-        time={10}
-      />
+import { SincoTheme } from "@sinco/react";
+import "@fontsource/nunito/300.css";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/500.css";
+import "@fontsource/nunito/600.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+
+const meta: Meta<typeof Autocomplete> = {
+  title: "Components/Autocomplete",
+  component: Autocomplete,
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme={SincoTheme}>
+        <Stack height={145}>
+          <Story />
+        </Stack>
+      </ThemeProvider>
+    ),
+  ],
+  tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Autocomplete>;
+
+export const button: Story = {
+  name: "Autocomplete",
+  render: (args) => (
+    <>
       <Autocomplete
         disablePortal
         id="combo-box-demo"
         options={top100Films}
         sx={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Movie"  />}
+        renderInput={(params) => <TextField {...params} label="Movie" />}
       />
-    </div>
-  );
-}
+    </>
+  ),
+};
+export const medium: Story = {
+  name: "Autocomplete-medium",
+  render: (args) => (
+    <>
+      <Autocomplete
+        size="medium"
+        disablePortal
+        id="combo-box-demo"
+        options={top100Films}
+        sx={{ width: 300 }}
+        renderInput={(params) => (
+          <TextField {...params} label="Movie" size="medium" />
+        )}
+      />
+    </>
+  ),
+};
 const top100Films = [
   { label: "The Shawshank Redemption", year: 1994 },
   { label: "The Godfather", year: 1972 },
@@ -150,4 +189,3 @@ const top100Films = [
   { label: "3 Idiots", year: 2009 },
   { label: "Monty Python and the Holy Grail", year: 1975 },
 ];
-export default App;

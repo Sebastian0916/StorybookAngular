@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import { Button, IconButton } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
 
-import { SincoTheme } from "@sinco/react";
+import { SincoTheme } from "../../Theme";
 import { ThemeProvider } from "@mui/material/styles";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
@@ -10,7 +10,7 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
-import { PageHeader } from "@sinco/react";
+import { PageHeader } from "./PageHeader";
 
 const meta: Meta<typeof PageHeader> = {
   title: "Components/PageHeader",
@@ -43,7 +43,7 @@ export const PageActions = {
     title: "Title",
     subtitle: "Subtitle",
     actions: <Button size="small">Actions</Button>,
-    back: (
+    buttonBack: (
       <IconButton size="small" color="primary">
         <ArrowBack fontSize="small" />
       </IconButton>

@@ -3,7 +3,7 @@ import { Button, IconButton } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { Delete } from "@mui/icons-material";
 
-import { SincoTheme } from "@sinco/react";
+import { SincoTheme } from "../Theme";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
@@ -69,20 +69,20 @@ export const Icon_Button: Story = {
       <IconButton size="small">
         <Delete fontSize="small" />
       </IconButton>
-      <IconButton size="small">
+      {/* <IconButton size="small">
         <Delete fontSize="medium" />
-      </IconButton>
-      <IconButton size="small">
+      </IconButton> */}
+      {/* <IconButton size="small">
         <Delete fontSize="large" />
-      </IconButton>
-      <IconButton size="medium">
+      </IconButton> */}
+      {/* <IconButton size="medium">
         <Delete fontSize="small" />
-      </IconButton>
+      </IconButton> */}
       <IconButton size="medium">
         <Delete fontSize="medium" />
       </IconButton>
-      <IconButton size="medium">
-        <Delete fontSize="large" />
+      <IconButton size="large">
+        <Delete fontSize="medium" />
       </IconButton>
     </>
   ),

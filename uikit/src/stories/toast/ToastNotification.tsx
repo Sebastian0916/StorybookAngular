@@ -138,7 +138,11 @@ export const ToastNotificationComponent = (toast: ToastBaseProperties) => {
                 {!stateOptions && toast.dataOpt && toast.dataOpt.length > 0 && (
                   <Stack>
                     {toast.dataOpt.map((element, i) => (
-                      <Typography variant="caption" key={i}>
+                      <Typography
+                        variant="caption"
+                        color="text.primary"
+                        key={i}
+                      >
                         • {element}
                       </Typography>
                     ))}

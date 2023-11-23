@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Box, Slider } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { SincoTheme } from "@sinco/react";
+import { SincoTheme } from "../Theme";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
