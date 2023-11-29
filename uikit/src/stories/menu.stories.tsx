@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   Divider,
-  ListItem,
   ListItemIcon,
   ListItemText,
   Menu,
@@ -11,7 +10,6 @@ import {
 } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { SincoTheme } from "@sinco/react";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
@@ -19,6 +17,7 @@ import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import { Check } from "@mui/icons-material";
+import { SincoTheme } from "../Theme";
 
 const meta: Meta<typeof Menu> = {
   title: "Components/Menu",
@@ -44,7 +43,7 @@ export const button: Story = {
   name: "menu",
   render: (args) => (
     <Paper sx={{ width: 320 }}>
-      <MenuList dense={false  }>
+      <MenuList dense={false}>
         <MenuItem>
           <ListItemText inset>Single</ListItemText>
         </MenuItem>
@@ -80,7 +79,7 @@ export const dense: Story = {
   name: "menu-dense",
   render: (args) => (
     <Paper sx={{ width: 320 }}>
-      <MenuList dense={false}>
+      <MenuList>
         <MenuItem>
           <ListItemText inset>Single</ListItemText>
         </MenuItem>
