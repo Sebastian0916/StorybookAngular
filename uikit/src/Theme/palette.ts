@@ -1,16 +1,16 @@
 import { PaletteOptions } from "@mui/material";
 
-declare module "@mui/material/styles" {
-  interface PaletteColor {
-    50: string;
-    100: string;
-    200: string;
-    300: string;
-    600: string;
-    700: string;
-    800: string;
-  }
-}
+// declare module "@mui/material/styles" {
+//   interface PaletteColor {
+//     50: string;
+//     100: string;
+//     200: string;
+//     300: string;
+//     600: string;
+//     700: string;
+//     800: string;
+//   }
+// }
 export const palette: PaletteOptions = {
   primary: {
     50: "#E4ECF4",

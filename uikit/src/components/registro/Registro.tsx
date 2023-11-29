@@ -19,7 +19,7 @@ import RegistroTerceros from "./RegistroTerceros";
 const Registro = () => {
   return (
     <>
-    <ToastNotification  title="Title" time={100000} subtitle="Subtitle" />
+      <ToastNotification title="Title" time={100000} subtitle="Subtitle" />
       <PageHeader
         title="Administración de terceros"
         subtitle={
@@ -93,9 +93,9 @@ const Registro = () => {
           alignItems={"center"}
         >
           <img src={Ilustracion} width="13%" alt="Nuevo Tercero" />
-            <Button size="small" variant="contained">
-              Crear tercero
-            </Button>
+          <Button size="small" variant="contained">
+            Crear tercero
+          </Button>
         </Stack>
       </Stack>
     </>

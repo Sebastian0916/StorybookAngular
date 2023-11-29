@@ -10,11 +10,6 @@ import "./index.css";
 import Registro from "./components/registro/Registro";
 import RegistroTerceros from "./components/registro/RegistroTerceros";
 
-declare module "@mui/material/Typography" {
-  interface TypographyPropsVariantOverrides {
-    body3: true;
-  }
-}
 const router = createBrowserRouter([
   {
     path: "/",

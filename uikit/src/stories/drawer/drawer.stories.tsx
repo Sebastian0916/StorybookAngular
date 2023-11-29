@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 
 import { SincoTheme } from "@sinco/react";
-import { DrawerComponent } from "./drawer";
+import { DrawerComponent } from "@sinco/react";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
