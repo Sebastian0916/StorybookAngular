@@ -19,7 +19,7 @@ import RegistroTerceros from "./RegistroTerceros";
 const Registro = () => {
   return (
     <>
-      <ToastNotification title="Title" time={100000} subtitle="Subtitle" />
+      <ToastNotification title="Title" time={8} subtitle="Subtitle" />
       <PageHeader
         title="Administración de terceros"
         subtitle={

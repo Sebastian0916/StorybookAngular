@@ -8,7 +8,7 @@ import { shadows } from "./shadows";
 
 export const themeOptions: ThemeOptions = {
   components,
-  // typography,
+  typography,
   palette,
   spacing: 8,
   mixins,

@@ -9,16 +9,6 @@ import {
 } from "@mui/icons-material";
 import { palette } from "./palette";
 
-declare module "@mui/material/Radio" {
-  interface RadioPropsSizeOverrides {
-    large: true;
-  }
-}
-declare module "@mui/material/Checkbox" {
-  interface CheckboxPropsSizeOverrides {
-    large: true;
-  }
-}
 export const components: Components = {
   MuiSpeedDialIcon: {
     styleOverrides: {
@@ -48,7 +38,9 @@ export const components: Components = {
     styleOverrides: {
       root: {
         ".MuiButtonBase-root.MuiAccordionSummary-root": {
-          minHeight: 44
+          minHeight: 44,
+          height: 44
+
         },
       }
     }
@@ -77,9 +69,15 @@ export const components: Components = {
       density: "compact",
     },
     styleOverrides: {
+      columnHeader: {
+        minHeight: 22,
+        maxHeight: 22,
+        lineHeight: "22px",
+      },
       iconButtonContainer: {
         fontSize: 16,
       },
+
       columnHeaderTitle: {
         fontFamily: "Roboto",
         fontWeight: 500,
@@ -139,6 +137,7 @@ export const components: Components = {
         },
         // TAMAÑO PEQUEÑO
         "&.MuiDataGrid-root--densityCompact": {
+
           ".MuiSvgIcon-root": {
             fontSize: 16,
           },
@@ -709,7 +708,6 @@ export const components: Components = {
       size: "small",
     },
     styleOverrides: {
-
     }
   },
 };

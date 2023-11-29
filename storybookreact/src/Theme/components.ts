@@ -1,5 +1,5 @@
 import React from "react";
-import type {} from "@mui/x-data-grid/themeAugmentation";
+import type { } from "@mui/x-data-grid/themeAugmentation";
 import { Components } from "@mui/material";
 import {
   InfoRounded,
@@ -9,17 +9,59 @@ import {
 } from "@mui/icons-material";
 import { palette } from "./palette";
 
-declare module "@mui/material/Radio" {
-  interface RadioPropsSizeOverrides {
-    large: true;
-  }
-}
-declare module "@mui/material/Checkbox" {
-  interface CheckboxPropsSizeOverrides {
-    large: true;
-  }
-}
 export const components: Components = {
+  MuiSpeedDialIcon: {
+    styleOverrides: {
+      icon: {
+        height: 24,
+        width: 24
+      }
+    }
+  },
+  MuiSpeedDialAction: {
+    styleOverrides: {
+      fab: {
+        height: 40,
+        width: 40
+      }
+    }
+  },
+  MuiSpeedDial: {
+    styleOverrides: {
+      fab: {
+        height: 56,
+        width: 56
+      }
+    }
+  },
+  MuiAccordion: {
+    styleOverrides: {
+      root: {
+        ".MuiButtonBase-root.MuiAccordionSummary-root": {
+          minHeight: 44,
+          height: 44
+
+        },
+      }
+    }
+  },
+  MuiTabs: {
+    styleOverrides: {
+      root: {
+        minHeight: 40,
+      },
+    },
+  },
+  MuiTab: {
+    styleOverrides: {
+      labelIcon: {
+        paddingBlock: 10
+      },
+      root: {
+        minHeight: 40,
+      },
+    },
+  },
   MuiDataGrid: {
     defaultProps: {
       columnHeaderHeight: 35,
@@ -27,9 +69,15 @@ export const components: Components = {
       density: "compact",
     },
     styleOverrides: {
+      columnHeader: {
+        minHeight: 22,
+        maxHeight: 22,
+        lineHeight: "22px",
+      },
       iconButtonContainer: {
         fontSize: 16,
       },
+
       columnHeaderTitle: {
         fontFamily: "Roboto",
         fontWeight: 500,
@@ -117,13 +165,6 @@ export const components: Components = {
       },
     },
   },
-  MuiToolbar: {
-    styleOverrides: {
-      root: {
-        height: "48px",
-      },
-    },
-  },
   MuiDrawer: {
     styleOverrides: {
       root: {
@@ -186,12 +227,17 @@ export const components: Components = {
     styleOverrides: {
       sizeSmall: {
         height: 32,
+        width: 32
       },
       sizeMedium: {
         height: 38,
+        width: 38
+
       },
       sizeLarge: {
         height: 48,
+        width: 48
+
       },
     },
   },
@@ -203,20 +249,16 @@ export const components: Components = {
       sizeMedium: {
         height: 22,
       },
-      filled: {
-        backgroundColor: palette.grey?.[100],
-      },
       icon: {
         color: palette.action?.active,
-        opacity: "26%",
+        opacity: "70%",
       },
       root: {
-        fontFamily: "Roboto",
-        fontSize: "10px",
-        fontStyle: "normal",
+        fontFamily: 'Roboto',
+        fontSize: '11px',
         fontWeight: 400,
-        lineHeight: "10px",
-        letterSpacing: "0.15px",
+        lineHeight: '14px',
+        letterSpacing: '0.16px',
         height: "inherit",
         borderRadius: 4,
         ".MuiChip-deleteIconXsmall": {
@@ -316,7 +358,7 @@ export const components: Components = {
       circular: {
         boxShadow:
           "0px 1px 18px 0px rgba(24, 39, 75, 0.12), 0px 6px 10px 0px rgba(24, 39, 75, 0.14), 0px 3px 5px -1px rgba(24, 39, 75, 0.20)",
-        "&.MuiFab-sizeSmall": {
+        "&.MuiFab-sizeSmall:not(.MuiSpeedDial-fab, .MuiSpeedDialAction-fab)": {
           height: 36,
           width: 36,
           ".MuiSvgIcon-fontSizeSmall": {
@@ -377,6 +419,7 @@ export const components: Components = {
       size: "small",
       margin: "none",
     },
+
   },
   MuiFormHelperText: {
     defaultProps: {
@@ -408,15 +451,19 @@ export const components: Components = {
         padding: 3,
       },
       sizeMedium: {
-        padding: 12,
+        padding: 8,
       },
       sizeLarge: {
-        padding: 17,
+        padding: 12,
       },
     },
   },
+
   MuiFilledInput: {
     styleOverrides: {
+      root: {
+        height: 48,
+      },
       sizeSmall: {
         height: 38,
       },
@@ -438,7 +485,8 @@ export const components: Components = {
           paddingBlock: 14,
         },
         ".MuiFilledInput-input.MuiInputBase-inputSizeSmall": {
-          paddingBlock: "none",
+          paddingTop: 16,
+          paddingBottom: 2,
         },
         ".MuiFilledInput-input": {
           paddingTop: 22,
@@ -466,6 +514,9 @@ export const components: Components = {
         "&.MuiAutocomplete-root .MuiOutlinedInput-root.MuiInputBase-sizeSmall": {
           paddingBlock: 3.5,
           paddingRight: 14,
+          "& .MuiAutocomplete-endAdornment": {
+            top: "calc(50% - 12px)"
+          },
           ".MuiIconButton-sizeSmall .MuiAutocomplete-popupIndicator": {
             padding: 5,
           },
@@ -491,6 +542,11 @@ export const components: Components = {
         display: "flex",
         gap: ".2rem",
         flexDirection: "row-reverse",
+      },
+      standard: {
+        "&.MuiInputLabel-standard.MuiInputLabel-sizeSmall:not(.MuiInputLabel-shrink)": {
+          transform: "translate(0, 15px) scale(1)"
+        }
       },
       outlined: {
         "&.MuiInputLabel-outlined.MuiInputLabel-sizeSmall ": {
@@ -563,6 +619,14 @@ export const components: Components = {
     },
   },
   MuiTextField: {
+    variants: [{
+      props: { variant: "standard" },
+      style: {
+        ".MuiInputBase-input.MuiInputBase-inputSizeSmall": {
+          padding: 1.5,
+        }
+      }
+    }],
     defaultProps: {
       size: "small",
       margin: "none",
@@ -572,15 +636,77 @@ export const components: Components = {
     defaultProps: {
       dense: true,
     },
+    styleOverrides: {
+      padding: {
+        ".MuiListItem-padding": {
+          paddingBlock: 1
+        },
+      },
+      dense: {
+        ".MuiListItem-dense": {
+          padding: "0.25px 12px 0.25px 16px"
+        },
+
+      }
+    }
+  },
+  MuiListItemButton: {
+    styleOverrides: {
+      dense: {
+        padding: "4px 0px 4px 0px"
+      },
+      root: {
+        padding: "8.5px 16px"
+      }
+    }
   },
   MuiMenuItem: {
-    defaultProps: {
-      dense: true,
-    },
+    styleOverrides: {
+      dense: {
+        height: 28,
+        minHeight: 28,
+        ".MuiListItemText-root > .MuiTypography-root": {
+          lineHeight: "14.3px",
+          letterSpacing: 0.15,
+        }
+      },
+      root: {
+        padding: "7px 16px 7px 16px",
+        ".MuiMenuList-root": {
+          height: 34,
+          minHeight: 34,
+        },
+        ".MuiListItemText-root > .MuiTypography-root": {
+          lineHeight: "20px",
+          letterSpacing: 0.17,
+        },
+        ".MuiListItemIcon-root": {
+          minWidth: 32
+        }
+      }
+    }
+  },
+  MuiTableBody: {
+    styleOverrides: {
+      root: {
+        ".MuiTableCell-body.MuiTableCell-sizeMedium": {
+          padding: "16px !important"
+        }
+      }
+    }
+  },
+  MuiTableCell: {
+    styleOverrides: {
+      sizeMedium: {
+        padding: 13
+      },
+    }
   },
   MuiTable: {
     defaultProps: {
       size: "small",
     },
+    styleOverrides: {
+    }
   },
 };

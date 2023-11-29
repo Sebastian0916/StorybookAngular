@@ -36,10 +36,10 @@ const meta: Meta<typeof ToastNotification> = {
       table: {
         type: { summary: "number" },
 
-        defaultValue: { summary: 8000 },
+        defaultValue: { summary: 8 },
       },
       description:
-        "En su progressBar por defecto time tienen 8segundos e igualmente puede ser modificado segun los segundos necesarios",
+        "En el tiempo del toast se maneja sobre segundos(`1`) y no por milisegundos(`100`), el tiempo por defecto es de 8 segundos.",
     },
     seeMore: {
       table: {

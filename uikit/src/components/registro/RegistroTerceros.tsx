@@ -1,13 +1,18 @@
 import React from "react";
-import { PageHeader } from "@sinco/react";
+import { Drawer, PageHeader } from "@sinco/react";
 import {
   Autocomplete,
   Avatar,
   Badge,
+  Box,
   Button,
   Card,
   CardContent,
+  Checkbox,
+  Fab,
   FormControl,
+  FormControlLabel,
+  FormLabel,
   Grid,
   IconButton,
   InputAdornment,
@@ -17,6 +22,8 @@ import {
   ListItem,
   ListItemText,
   MenuItem,
+  Radio,
+  RadioGroup,
   Rating,
   Select,
   SelectChangeEvent,
@@ -47,14 +54,26 @@ import {
   AttachMoney,
   DoNotDisturb,
   Today,
+  Edit,
+  Navigation,
+  Favorite,
 } from "@mui/icons-material";
 
 const RegistroTerceros = () => {
   const [age, setAge] = React.useState("");
+  const [value, setValue] = React.useState("female");
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value);
+  };
+  const handleChange1 = (event: SelectChangeEvent) => {
     setAge(event.target.value);
   };
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
     <div>
       <PageHeader
@@ -80,6 +99,7 @@ const RegistroTerceros = () => {
             renderInput={(params) => <TextField {...params} label="Nombre" />}
           />
           <Button
+          onClick={toggleDrawer}
             fullWidth
             size="small"
             color="primary"
@@ -157,7 +177,33 @@ const RegistroTerceros = () => {
                 <Typography variant="h6" color="text.primary">
                   Sebastian Vera
                 </Typography>
-                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+                <Checkbox {...label} />
+                <Checkbox size="medium" {...label} />
+                <Checkbox size="large" {...label} />
+                <FormControl>
+                  <RadioGroup
+                    aria-labelledby="demo-controlled-radio-buttons-group"
+                    name="controlled-radio-buttons-group"
+                    value={value}
+                    onChange={handleChange}
+                  >
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label="Female"
+                    />
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio size="medium" />}
+                      label="Male"
+                    />
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio size="large" />}
+                      label="Male"
+                    />
+                  </RadioGroup>
+                </FormControl>
               </Stack>
             </Stack>
             <Stack gap={1} flexDirection={"row"}>
@@ -476,6 +522,44 @@ const RegistroTerceros = () => {
             </Stack>
           </CardContent>
         </Card>
+        <Drawer
+          open={isOpen}
+          onClose={toggleDrawer}
+          title="Nombre empresa"
+          color="#000"
+          width="50%"
+          anchorActions="flex-start"
+          anchor="right"
+          actions={
+            <>
+              <Box display="flex">
+                <Button color="primary" variant="outlined">
+                  Action
+                </Button>
+                <Button color="primary" variant="contained">
+                  Action
+                </Button>
+                <Button color="primary" variant="contained">
+                  Action
+                </Button>
+              </Box>
+            </>
+          }
+        >
+          <Fab color="primary" aria-label="add">
+            <Add />
+          </Fab>
+          <Fab color="success" aria-label="edit">
+            <Edit />
+          </Fab>
+          <Fab variant="extended">
+            <Navigation sx={{ mr: 1 }} />
+            Navigate
+          </Fab>
+          <Fab disabled aria-label="like">
+            <Favorite />
+          </Fab>
+        </Drawer>
       </Stack>
     </div>
   );

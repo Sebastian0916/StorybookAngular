@@ -10,16 +10,16 @@ import "./index.css";
 import Registro from "./components/registro/Registro";
 import RegistroTerceros from "./components/registro/RegistroTerceros";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Registro />,
-  },
-  {
-    path: "RegistroTerceros:RegistroTercerosID",
-    element: <RegistroTerceros />,
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Registro />,
+//   },
+//   {
+//     path: "RegistroTerceros:RegistroTercerosID",
+//     element: <RegistroTerceros />,
+//   },
+// ]);
 // import { SincoTheme } from "@sinco/react";
 declare module "@mui/material/Radio" {
   interface RadioPropsSizeOverrides {
@@ -37,7 +37,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={SincoTheme}>
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
+      <App />
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -6,17 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 // import { SincoTheme } from "@sinco/react";
 import { ThemeProvider } from "@mui/material/styles";
 import { SincoTheme } from "./Theme";
-declare module "@mui/material/styles" {
-  interface PaletteColor {
-    50: string;
-    100: string;
-    200: string;
-    300: string;
-    600: string;
-    700: string;
-    800: string;
-  }
-}
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

@@ -10,7 +10,7 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { SincoTheme } from "../Theme";
+import { SincoTheme } from "@sinco/react";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
