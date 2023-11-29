@@ -4,12 +4,117 @@ https://www.chromatic.com/docs/cli
 
 Authenticating with Chromatic
     → Connecting to https://index.chromatic.com
+Authenticated with Chromatic
+    → Using project token '****************d719'
+Retrieving git information
 ‼ Using outdated package
 You are using an outdated version of the Chromatic CLI (v7.6.0).
 A new major version is available (v9.1.0).
 Run npm install chromatic@latest --save-dev to upgrade.
-Authenticated with Chromatic
-    → Using project token '****************d719'
-Retrieving git information
-Skipping build
-    → Skipping rebuild of an already fully passed/accepted build
+Retrieved git information
+    → Commit 'cdce0c0' on branch 'ajustes-componentes'; found 1 parent build
+Collecting Storybook metadata
+Collected Storybook metadata
+    → Storybook 7.5.2 for React; using the @storybook/react-webpack5 builder (7.5.2); supported addons found: Links, Essentials, Interactions
+Initializing build
+Initialized build
+    → Build 20 initialized
+Building your Storybook
+    → Running command: npm run build-storybook -- --output-dir C:\Users\SEBAST~1.VER\AppData\Local\Temp\chromatic--23460-Nxct13iY30LK
+Storybook built in 1 minute 14 seconds
+    → View build log at C:\Users\sebastian.vera\Desktop\StorybookAngular-1\uikit\build-storybook.log
+Publish your built Storybook
+    → Validating Storybook files
+Publishing your built Storybook
+    → Retrieving target location
+    → Starting publish
+    → [                    ] 0%
+    → [                    ] 2%
+    → [=                   ] 3%
+    → [=                   ] 4%
+    → [=                   ] 5%
+    → [=                   ] 7%
+    → [==                  ] 8%
+    → [==                  ] 9%
+    → [==                  ] 12%
+    → [===                 ] 13%
+    → [===                 ] 14%
+    → [===                 ] 16%
+    → [====                ] 19%
+    → [====                ] 20%
+    → [====                ] 22%
+    → [=====               ] 23%
+    → [=====               ] 24%
+    → [=====               ] 27%
+    → [======              ] 29%
+    → [======              ] 30%
+    → [======              ] 31%
+    → [=======             ] 33%
+    → [=======             ] 34%
+    → [=======             ] 36%
+    → [========            ] 38%
+    → [========            ] 39%
+    → [========            ] 40%
+    → [=========           ] 43%
+    → [=========           ] 44%
+    → [=========           ] 46%
+    → [=========           ] 47%
+    → [==========          ] 48%
+    → [==========          ] 52%
+    → [===========         ] 53%
+    → [===========         ] 54%
+    → [===========         ] 56%
+    → [===========         ] 57%
+    → [============        ] 58%
+    → [============        ] 59%
+    → [============        ] 60%
+    → [============        ] 61%
+    → [============        ] 62%
+    → [=============       ] 63%
+    → [=============       ] 64%
+    → [=============       ] 65%
+    → [=============       ] 66%
+    → [=============       ] 67%
+    → [==============      ] 71%
+    → [==============      ] 72%
+    → [===============     ] 74%
+    → [===============     ] 75%
+    → [===============     ] 77%
+    → [=================   ] 87%
+    → [==================  ] 90%
+    → [==================  ] 91%
+    → [==================  ] 92%
+    → [=================== ] 93%
+    → [=================== ] 94%
+    → [=================== ] 95%
+    → [=================== ] 97%
+    → [====================] 98%
+    → [====================] 99%
+    → [====================] 100%
+Publish complete in 56 seconds
+    → View your Storybook at https://65400b6a845f4219dbbda334-kpqiepjccu.chromatic.com
+Verifying your Storybook
+    → This may take a few minutes
+Started build 20
+    → View build details at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=20
+Running 43 tests
+    → This may take a few minutes
+i Speed up Continuous Integration
+Your project is linked to GitHub so Chromatic will report results there.
+This means you can pass the --exit-once-uploaded flag to skip waiting for build results.
+Read more here: https://www.chromatic.com/docs/cli#chromatic-options
+    → [                    ] 1/43  footerAction › FooterAction.. 
+    → [=                   ] 3/43  Autocomplete › Autocomplete 
+    → [=====               ] 10/43  ToggleButton, › Ratign 
+    → [========            ] 17/43  SvgIcon › svgIcon 
+    → [=========           ] 20/43  Menu › menu-dense 
+    → [=============       ] 28/43  Select › select 
+    → [===============     ] 33/43  Switch › switch 
+    → [=================   ] 36/43  Tabs › Tab 
+    → [====================] 42/43  ToastNotification › Toast-seeMore 
+    → [====================] 44/43  
+× Found 9 visual changes: Review the changes at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=20
+
+i For CI/CD use cases, this command failed with exit code 1
+Pass --exit-zero-on-changes to succeed this command regardless of changes.
+Pass --auto-accept-changes to succeed and automatically accept any changes.

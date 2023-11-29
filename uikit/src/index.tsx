@@ -4,7 +4,27 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material/styles";
-import { SincoTheme } from "./Theme";
+import { SincoTheme } from "@sinco/react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import Registro from "./components/registro/Registro";
+import RegistroTerceros from "./components/registro/RegistroTerceros";
+
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    body3: true;
+  }
+}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Registro />,
+  },
+  {
+    path: "RegistroTerceros:RegistroTercerosID",
+    element: <RegistroTerceros />,
+  },
+]);
 // import { SincoTheme } from "@sinco/react";
 declare module "@mui/material/Radio" {
   interface RadioPropsSizeOverrides {
@@ -22,7 +42,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={SincoTheme}>
-      <App />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>
 );
