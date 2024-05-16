@@ -19,7 +19,7 @@ type Story = StoryObj
 export const small: Story = {
   name: 'mat-slide-toggle',
   render: () => ({
-    template: `<mat-slide-toggle>Theme!</mat-slide-toggle>`
+    template: `<p><mat-slide-toggle labelPosition="after">!Theme </mat-slide-toggle></p>`
   })
 }
 export const medium: Story = {
