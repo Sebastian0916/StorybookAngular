@@ -1,0 +1,32 @@
+@keyframes animationFooterAction {
+    0%{
+		animation-timing-function: ease;
+        transform: translateY(100%);
+    }
+    25%{
+		animation-timing-function: ease;
+        transform: translateY(66.6%);
+    }
+    50%{
+		animation-timing-function: ease;
+        transform: translateY(33.3%)
+    }
+    100%{
+		animation-timing-function: ease;
+        transform: translateY(0);
+    }
+}
+
+.container-footer-action{
+    top: auto; 
+    bottom: 0;
+    left: 0;
+    animation: animationFooterAction 300ms ease 0s 1 normal ;
+}
+
+.py-3{
+    padding-block: 12px;
+} 
+.px-4{
+    padding-inline: 16px;
+} 

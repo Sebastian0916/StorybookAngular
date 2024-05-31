@@ -1,0 +1,25 @@
+<div class="row gap-3  nowrap py-2">
+    <div class="container-icon-ripple d-flex justify-content-center align-items-center" >
+        <mat-icon class="icon-variant" />
+    </div>
+    <mat-divider [vertical]="true" />
+    <div class="column col gap-1 p-0 justify-content-center">
+
+        <div class="row gap-1 align-items-center justify-content-between nowrap" >
+            <span class="mat-subtitle-1 color-text-primary">{{data.title}}</span>
+            <button size="small" mat-icon-button (click)="closeSnackbar()">
+                <mat-icon fontIcon="close" class="color-text-primary" />
+            </button>
+        </div>
+
+        <div *ngIf="data.description">
+            <span class="color-text-primary mat-body-2">{{data.description}}</span>
+        </div>
+
+        <div *ngIf="data.aditionalContent" >
+            <ng-container *ngTemplateOutlet="data.aditionalContent"></ng-container>
+        </div>
+
+    </div>
+</div>
+<mat-progress-bar [color]="defineColor" mode="determinate" [value]="progressBarValue" />

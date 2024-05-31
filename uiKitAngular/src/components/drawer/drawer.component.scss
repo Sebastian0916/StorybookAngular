@@ -1,0 +1,42 @@
+@use 'sass:map';
+@import '../../../node_modules/@sinco/angular/src/lib/styles/colors.scss';
+
+@mixin animationDrawerActions($x, $y) {
+  transform: translate(#{$x}, #{$y});
+}
+
+.drawer-styles {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0%;
+  height: 100%;
+  border-start-start-radius: 8px;
+  background-color: $light;
+  overflow: hidden;
+
+  &__content {
+    overflow-y: auto;
+  }
+
+  &__actions {
+    border-top: 1px solid rgba(16, 24, 64, 0.23);
+    background-color: $light-background-default;
+    transition: transform 0.5s ease;
+  }
+}
+
+.drawer-animation-actions {
+  &__showActions {
+    @include animationDrawerActions(0%, 0%);
+  }
+  &__hideActions {
+    @include animationDrawerActions(0%, 100%);
+    height: 0%;
+  }
+}
+
+.drawer-initial-position{
+  @extend .drawer-styles;
+  left: 0% !important;
+}

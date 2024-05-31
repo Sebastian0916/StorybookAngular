@@ -1,0 +1,255 @@
+import ColExample from "../../assets/ColExample.jpg";
+import { Meta, Story, Canvas } from "@storybook/blocks";
+import { MatButtonModule } from "@angular/material/button";
+
+<style>
+  {`
+  .flex {
+  width: 100%;
+}
+.width{
+  width: 100%;
+}
+.border{
+  border: 1px solid #000000
+}
+.justify {
+  width: 32.7%;
+  height:50px;
+  border: solid;
+  font-size:15px;
+  font-family:Nunito, sans-serif;
+}
+.between{
+  font-size:15px;
+  height:50px;
+  font-family:Nunito, sans-serif;
+
+}
+.between {
+  width: 100%;
+  border: solid;
+}
+.container{
+  width: 100%;
+  border:solid none;
+}
+.container-1{
+  height: 70px;
+  background-color: #30c5e6;
+}
+.container-2{
+  height: 70px;
+  background-color: #407aaf;
+}
+.container-3{
+  height: 70px;
+  background-color: #d85f5f;
+}
+.contents{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-right-style: ridge;
+}
+`}
+</style>
+
+<Meta title="Clases/Layout" />
+
+# LAYOUT
+<br />
+
+## COL
+ ```html
+  <div class="col-12 gap-12">
+        <div class="col-3">
+          <h3> col-3 </h3>
+        </div>
+        <div class="col-3">
+          <h3> col-3 </h3>
+        </div>
+        <div class="col-3">
+          <h3> col-3 </h3>
+        </div>
+        <div class="col-3">
+          <h3> col-3 </h3>
+        </div>
+  </div>
+  <div class="col-12">
+        <div class="col-4">
+          <div > col-1 </div>
+        </div>
+        <div class="col-8">
+          <div > col-1 </div>
+        </div>
+  </div>
+  <div class="col-12">
+          <div > col-12 </div>
+  </div>
+``` 
+<Canvas>
+  <div class="d-flex justify-content-center border col-12">
+        <img src={ColExample} />
+  </div>
+</Canvas>
+
+## GRID
+ ```html
+   <div class="d-grid">
+    <div class="grid-template-6">
+      <div> Grid-1 </div>
+      <div> Grid-2 </div>
+      <div> Grid-3 </div>
+      <div> Grid-4 </div>
+      <div> Grid-5 </div>
+      <div> Grid-6 </div>
+    </div>
+    <div class="grid-template-4">
+      <div> Grid-1 </div>
+      <div> Grid-2 </div>
+      <div> Grid-3 </div>
+      <div> Grid-4 </div>
+    </div>
+    <div class="grid-template-3">
+      <div> Grid-1 </div>
+      <div> Grid-2 </div>
+      <div> Grid-3 </div>
+    </div>
+  </div>
+  ```
+<Canvas>
+  <div class="d-grid container">
+    <div class="grid-template-6 container-1">
+      <div class="contents">Grid-1</div>
+      <div class="contents">Grid-2</div>
+      <div class="contents">Grid-3</div>
+      <div class="contents">Grid-4</div>
+      <div class="contents">Grid-5</div>
+      <div class="contents">Grid-6</div>
+    </div>
+    <div class="grid-template-4 container-2">
+      <div class="contents">Grid-1</div>
+      <div class="contents">Grid-2</div>
+      <div class="contents">Grid-3</div>
+      <div class="contents">Grid-4</div>
+    </div>
+    <div class="grid-template-3 container-3">
+      <div class="contents">Grid-1</div>
+      <div class="contents">Grid-2</div>
+      <div class="contents">Grid-3</div>
+    </div>
+  </div>
+</Canvas>
+
+## FLEX-BOX
+<br />
+##### JUSTIFY CONTENT
+
+
+      ```html
+       <div class="justify-content-start"> </div>   ```     
+                                      
+     
+<Canvas>
+    <article class="flex justify-content d-flex border ">
+      <div class="d-flex justify justify-content-start">
+        <h3>justify-content-start</h3>
+      </div>
+    </article>
+</Canvas>
+
+
+      ```html
+       <div class="justify-content-center"> </div> ```
+<Canvas>
+  <div class="flex width d-flex column border">
+    <div class="justify-content-center d-flex ">
+      <div class="d-flex justify justify-content-center">
+        <h3>justify-content-center</h3>
+      </div>
+    </div>
+  </div>
+</Canvas>
+      
+      ```html
+       <div class="justify-content-end"> </div> ```
+<Canvas>
+  <div class="flex width d-flex column border">
+    <div class="justify-content-end d-flex ">
+      <div class="d-flex justify justify-content-center">
+        <h3>justify-content-center</h3>
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+      ```html
+       <div class="justify-content-between"> </div> ```
+<Canvas>
+  <div class="flex width d-flex column">
+    <div class="justify-content-between d-flex ">
+      <div class="d-flex justify-content-between between">
+        <h3>justify-content-between</h3>
+        <h3>justify-content-between</h3>
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+      ```html
+       <div class="justify-content-around"> </div> 
+       ```
+<Canvas>
+  <aside class="flex d-flex column">
+    <article class="justify-content d-flex gap-2">
+      <div class="d-flex justify-content-around between">
+        <h3>justify-content-around</h3>
+        <h3>justify-content-around</h3>
+      </div>
+    </article>
+  </aside>
+</Canvas>
+
+##### ALIGN ITEMS
+
+ ```html 
+ <div class="align-items-start" >    </div> 
+ ``` 
+ 
+<Canvas>
+      <div class="d-flex justify align-items-start">
+        <h3>align-items-start</h3>
+      </div>
+
+</Canvas>
+
+ ```html
+  <div class="align-items-center">  </div> 
+``` 
+<Canvas>
+      <div class="d-flex justify align-items-center">
+        <h3>Align-items-center</h3>
+      </div>
+
+</Canvas>
+
+ ```html 
+ <div class="align-items-end">  </div> 
+ ``` 
+<Canvas>
+      <div class="d-flex justify align-items-end">
+        <h3>Align-items-end</h3>
+      </div>
+</Canvas>
+
+ ```html
+  <div class="align-items-baseline" > </div>  
+  ```
+
+<Canvas>
+      <div class="d-flex justify align-items-baseline ">
+        <h3>align-items-baseline</h3>
+      </div>
+</Canvas>

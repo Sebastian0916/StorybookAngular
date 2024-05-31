@@ -1,0 +1,7 @@
+<div class="rating-container" [class.rating-container-disabled]="disabled" >
+  <ng-container *ngFor="let item of render" >
+    <mat-icon inline class="mat-icon-outlined stars-outer" [fontIcon]="asignarContenido(item)" [class]="asignarContenido(item)" >
+        <mat-icon fontIcon="star" *ngIf="mostrarElemento(item)" class="mat-icon-outlined stars-inner star" [style.width]="formatoAnchoIcono" />
+    </mat-icon>
+  </ng-container>
+</div>

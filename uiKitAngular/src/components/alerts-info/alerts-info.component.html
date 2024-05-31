@@ -1,0 +1,26 @@
+<div
+  *ngIf="showAlert"
+  class="mat-alert row justify-content-between mat-typography"
+  [ngClass]="estadosAlerta"
+>
+  <div class="row gap-3 col nowrap p-0 container-title">
+    <div class="py-2">
+      <mat-icon class="icon-variant"></mat-icon>
+    </div>
+    <div class="column py-3 gap-1 px-0 col">
+      <p class="mat-subtitle-1 m-0 color-text-primary" *ngIf="title">
+        {{ title }}
+      </p>
+      <p class="mat-body-2 color-text-primary" *ngIf="content">{{ content }}</p>
+      <ng-container *ngTemplateOutlet="contentTemplate"> </ng-container>
+    </div>
+  </div>
+  <div>
+    <div class="pr-1 row gap-1 align-items-center">
+      <button mat-button size="small" *ngIf="action">{{ action }}</button>
+      <button size="small" mat-icon-button (click)="closeAlert()" *ngIf="close">
+        <mat-icon class="icon-close close">close</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
