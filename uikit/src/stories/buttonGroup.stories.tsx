@@ -31,22 +31,18 @@ type Story = StoryObj<typeof ButtonGroup>;
 
 export const button: Story = {
   name: "button",
-  render: (args) => (
+  args: {
+    size: "small",
+    variant: "contained",
+    children: "Button",
+    color: "primary",
+  },
+  render: ({ color, size, variant, children, ...args }) => (
     <>
-      <ButtonGroup size="small" variant="contained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-      <ButtonGroup size="medium" variant="contained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-      <ButtonGroup size="large" variant="contained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
+      <ButtonGroup size={size} color={color} variant={variant} {...args}>
+        <Button>{children}</Button>
+        <Button>{children}</Button>
+        <Button>{children}</Button>
       </ButtonGroup>
     </>
   ),

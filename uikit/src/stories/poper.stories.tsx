@@ -12,7 +12,7 @@ import "@fontsource/roboto/500.css";
 import React from "react";
 
 export default {
-  title: "Components/Popper,",
+  title: "Components/Popper",
   component: Popper,
   decorators: [
     (Story) => (

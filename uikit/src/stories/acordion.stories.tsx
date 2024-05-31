@@ -17,7 +17,7 @@ import "@fontsource/roboto/500.css";
 import { ExpandMore } from "@mui/icons-material";
 
 const meta: Meta<typeof Accordion> = {
-  title: "Components/Acordion",
+  title: "Components/Accordion",
   component: Accordion,
   decorators: [
     (Story) => (

@@ -19,7 +19,7 @@ import {
 } from "@mui/icons-material";
 
 export default {
-  title: "Components/ToggleButton,",
+  title: "Components/ToggleButton",
   component: ToggleButton,
   decorators: [
     (Story) => (

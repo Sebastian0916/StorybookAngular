@@ -20,7 +20,7 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/700.css";
 
 const meta: Meta<typeof DrawerComponent> = {
-  title: "Components/Drawer",
+  title: "Sinco React/Drawer",
   component: DrawerComponent,
   tags: ["autodocs"],
   decorators: [

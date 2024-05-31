@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import { SincoTheme } from "@sinco/react";
 import { Button, ThemeProvider, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { FooterAction } from "./footerAction";
+import { FooterAction } from "@sinco/react";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -12,9 +12,8 @@ import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/700.css";
 
-
 const meta: Meta<typeof FooterAction> = {
-  title: "Components/footerAction",
+  title: "Sinco React/footerAction",
   component: FooterAction,
   tags: ["autodocs"],
   parameters: {

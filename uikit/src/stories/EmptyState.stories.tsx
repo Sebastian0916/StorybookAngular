@@ -3,9 +3,9 @@ import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { SincoTheme } from "@sinco/react";
 import { ThemeProvider } from "@mui/material/styles";
-import { EmptyState } from "./EmptyState";
+import { EmptyState } from "@sinco/react";
 const meta: Meta<typeof EmptyState> = {
-  title: "Components/EmptyState",
+  title: "Sinco React/EmptyState",
   component: EmptyState,
   tags: ["autodocs"],
   decorators: [

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button, IconButton } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { Delete } from "@mui/icons-material";
+import { Delete, Person } from "@mui/icons-material";
 
 import { SincoTheme } from "../Theme";
 import "@fontsource/nunito/300.css";
@@ -25,28 +25,60 @@ const meta: Meta<typeof Button> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    color: {
+      control: "select",
+      options: [
+        "primary",
+        "secondary",
+        "error",
+        "warning",
+        "info",
+        "success",
+        "inherit",
+      ],
+    },
+    size: {
+      control: "radio",
+      options: ["small", "medium", "large"],
+    },
+    children: {
+      control: "text",
+    },
+    endIcon: {
+      control: "boolean",
+    },
+    startIcon: {
+      control: "boolean",
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const button: Story = {
+export const ButtonStorie: Story = {
   name: "button",
-  render: (args) => (
-    <>
-      <Button size="small" variant="contained">
-        Button
-      </Button>
-      <Button size="medium" variant="contained">
-        Button
-      </Button>
-      <Button size="large" variant="contained">
-        Button
-      </Button>
-    </>
+  args: {
+    size: "small",
+    color: "primary",
+    variant: "contained",
+    children: "Button",
+    startIcon: false,
+    endIcon: false,
+  },
+  render: ({ size, variant, startIcon, endIcon, children }) => (
+    <Button
+      variant={variant}
+      size={size}
+      startIcon={startIcon === true ? <Person /> : ""}
+      endIcon={endIcon === true ? <Person /> : ""}
+    >
+      {children}
+    </Button>
   ),
 };
-export const buttonWhitIcon: Story = {
+export const ButtonWhitIcon: Story = {
   name: "button-icons",
   render: (args) => (
     <>

@@ -13,7 +13,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 
 const meta: Meta<typeof Fab> = {
-  title: "Components/fab",
+  title: "Components/Fab",
   component: Fab,
   decorators: [
     (Story) => (

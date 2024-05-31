@@ -11,7 +11,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 
 const meta: Meta<typeof Radio> = {
-  title: "Components/radio",
+  title: "Components/Radio",
   component: Radio,
   decorators: [
     (Story) => (
