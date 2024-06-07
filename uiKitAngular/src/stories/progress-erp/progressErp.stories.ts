@@ -13,7 +13,10 @@ export default {
             description: 'Oculta el logo del componente cuando su valor es `false`',
         },
         loadingText: {
-            description: "Define variante 'determinate' o 'indeterminate'"
+            description: "Texto indicador de estado de carga"
+        },
+        progressIndicator: {
+            description: "Texto indicador del progreso, example: '4 de 100 completos'"
         },
         variant: {
             options: ['determinate', 'indeterminate'],
@@ -22,7 +25,7 @@ export default {
         },
         value: {
             defaultValue: 50,
-            description: "Valor de llenado de la barra de progreso"
+            description: "Modifica el % de llenado de la barra de progreso"
         }
     }
 } as Meta;
