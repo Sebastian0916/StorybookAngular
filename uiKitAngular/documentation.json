@@ -1327,126 +1327,6 @@
             "templateData": "<div\r\n  class=\"drawer-styles column nowrap mb-1 justify-content-between mat-elevation-z24\"\r\n  [ngClass]=\"handleDrawerPosition\"\r\n  [style.width]=\"width\"\r\n>\r\n  <div\r\n    class=\"drawer-styles__title bg-accent row justify-content-between align-items-center px-3 py-2 gap-4\"\r\n  >\r\n    <ng-container *ngTemplateOutlet=\"drawerHeader\"></ng-container>\r\n  </div>\r\n\r\n  <div\r\n    class=\"drawer-styles__content nowrap column py-2 px-3 gap-4\"\r\n    (click)=\"handlStateActions()\"\r\n  >\r\n    <ng-container *ngTemplateOutlet=\"drawerContent\"></ng-container>\r\n  </div>\r\n\r\n  <div\r\n    class=\"drawer-styles__actions bg-light row mt-1 py-2 px-3 gap-4\"\r\n    [class.justify-content-end]=\"actionsAlignStart\"\r\n    [ngClass]=\"setStateActions\"\r\n  >\r\n    <ng-container\r\n      class=\"drawer-styles__actions\"\r\n      *ngTemplateOutlet=\"drawerActions\"\r\n    ></ng-container>\r\n  </div>\r\n</div>\r\n"
         },
         {
-            "name": "EmptyStateComponent",
-            "id": "component-EmptyStateComponent-0f0d0e8f5ca30eb36021cfe3b2b48cb2e370026bb4d1ecdf8d0286591a2d1626cd2f26d7def96794fe065946bfff5f1883aa03db5edcabc38300334ddf95af85",
-            "file": "src/components/empty-state/empty-state.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-empty-state",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./empty-state.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "alturaContenedor",
-                    "defaultValue": "'100%'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 12,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "alturaIlustracion",
-                    "defaultValue": "'185px'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "anchoIlustracion",
-                    "defaultValue": "'210px'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "contenido",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "estado",
-                    "defaultValue": "'crear'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "Estados",
-                    "decorators": []
-                },
-                {
-                    "name": "titulo",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 9,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "acciones",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TemplateRef<HTMLButtonElement>",
-                    "optional": false,
-                    "description": "",
-                    "line": 17,
-                    "decorators": [
-                        {
-                            "name": "ContentChild",
-                            "stringifiedArguments": "'acciones', {static: true}"
-                        }
-                    ],
-                    "modifierKind": [
-                        170
-                    ]
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, ContentChild, Input, TemplateRef } from '@angular/core';\r\nimport { Estados, UrlImagen } from '../model/sinco-angular.model';\r\n\r\n@Component({\r\n  selector: 'app-empty-state',\r\n  templateUrl: './empty-state.component.html',\r\n})\r\nexport class EmptyStateComponent {\r\n  @Input() titulo!: string;\r\n  @Input() contenido!: string;\r\n  @Input() estado: Estados = 'crear';\r\n  @Input() alturaContenedor: string = '100%';\r\n  @Input() anchoIlustracion: string = '210px';\r\n  @Input() alturaIlustracion: string = '185px';\r\n\r\n  @ContentChild('acciones', { static: true })\r\n  acciones!: TemplateRef<HTMLButtonElement>;\r\n\r\n  get retornarImagen() {\r\n    return UrlImagen[this.estado];\r\n  }\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "accessors": {
-                "retornarImagen": {
-                    "name": "retornarImagen",
-                    "getSignature": {
-                        "name": "retornarImagen",
-                        "type": "",
-                        "returnType": "",
-                        "line": 19
-                    }
-                }
-            },
-            "templateData": "<div class=\"mat-typography\">\r\n  <div\r\n    class=\"column align-items-center justify-content-center nowrap gap-4 p-2\"\r\n    [style.height]=\"alturaContenedor\"\r\n  >\r\n    <svg [style.width]=\"anchoIlustracion\" [style.height]=\"alturaIlustracion\">\r\n      <use [attr.xlink:href]=\"retornarImagen\" />\r\n    </svg>\r\n    <div class=\"column align-items-center gap-3\">\r\n      <h6 *ngIf=\"titulo\">{{ titulo }}</h6>\r\n      <p class=\"mat-body-1 color-text-secondary\" *ngIf=\"contenido\">\r\n        {{ contenido }}\r\n      </p>\r\n    </div>\r\n    <div class=\"d-flex justify-content-center align-items-center gap-4\">\r\n      <ng-container *ngTemplateOutlet=\"acciones\"></ng-container>\r\n    </div>\r\n  </div>\r\n\r\n  <ng-template #acciones>\r\n    <button mat-button color=\"primary\">Opcion 1</button>\r\n    <button mat-stroked-button color=\"primary\">\r\n      <mat-icon>add</mat-icon>\r\n      Opcion 2\r\n    </button>\r\n  </ng-template>\r\n</div>\r\n"
-        },
-        {
             "name": "FooterActionsComponent",
             "id": "component-FooterActionsComponent-55674aacd6451fe0c86ccd729a29aaae4653ae3f37363c48ca7b98e95351b8b6941692e7325aff24c3ca18bb7f64a0baf94d0f80c8f5b0c5fd1360aded3ee081",
             "file": "src/components/footer-actions/footer-actions.component.ts",
@@ -2148,14 +2028,14 @@
                 "defaultValue": "{\r\n  name: 'drawer',\r\n  args: {\r\n    width:'40vw',\r\n    actions: true,\r\n    actionsAlignStart: false,\r\n    drawerAlignStart: false,\r\n  },\r\n  argTypes: {\r\n    width:{\r\n      description:'propiedad para definir el ancho del componente',\r\n    },\r\n    actions: {\r\n      options: [true, false],\r\n      description:'Seccion que interactua con el contenido. Se despliega al hacer click en algun elemento dentro de la seccion de contenido.',\r\n      defaultValue: { summary: false }\r\n\r\n    },\r\n    actionsAlignStart: {\r\n      options: [true, false],\r\n      description:'Posiciona el contenido de la acciones a la derecha.',\r\n      defaultValue: { summary: true }\r\n\r\n    },\r\n    drawerAlignStart: {\r\n      options: [true, false],\r\n      description:'Alinea el drawer a la derecha'\r\n    },\r\n  },\r\n  parameters:{\r\n    layout: 'fullscreen', \r\n    docs:{\r\n      source:{\r\n        code:`\r\n        <mat-drawer-container>\r\n        <mat-drawer #drawer>\r\n          <app-drawer  width=\"520px\" [actionsAlignStart]=\"true\" [drawerAlignStart]=\"false\" [actions]=\"true\">\r\n            <ng-template #drawerHeader>\r\n              <h6> typography</h6>\r\n              <button mat-icon-button size=\"small\" (click)=\"drawer.close()\">\r\n                <mat-icon size=\"small\">close</mat-icon>\r\n              </button>\r\n            </ng-template>\r\n            <ng-template #drawerContent>\r\n              <div class=\"row gap-3\">\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Correo</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> \r\n                </mat-form-field>\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Contraseña</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> \r\n                </mat-form-field>\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Documento</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> \r\n                </mat-form-field>\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Fecha Expedicion</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> \r\n                </mat-form-field>\r\n                <div class=\"column\">\r\n                  <label>Genero </label>\r\n                  <mat-radio-group>\r\n                    <mat-radio-button value=\"auto\">Masculino</mat-radio-button>\r\n                    <mat-radio-button value=\"always\">Femenino</mat-radio-button>\r\n                  </mat-radio-group>\r\n                </div>\r\n              </div>\r\n              <div class=\"row gap-3\">\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Correo</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> </mat-form-field>\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Contraseña</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> </mat-form-field>\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Documento</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> </mat-form-field>\r\n                <mat-form-field size=\"small\" appearance=\"outline\">\r\n                  <mat-label>Fecha Expedicion</mat-label>\r\n                  <input matInput placeholder=\"pat@example.com\" required /> </mat-form-field>\r\n                <div class=\"column\">\r\n                  <label>Genero </label>\r\n                  <mat-radio-group>\r\n                    <mat-radio-button value=\"auto\">Masculino</mat-radio-button>\r\n                    <mat-radio-button value=\"always\">Femenino</mat-radio-button>\r\n                  </mat-radio-group>\r\n                </div>\r\n              </div>\r\n            </ng-template>\r\n            <ng-template #drawerActions>\r\n              <button size=\"small\" mat-raised-button color=\"primary\" (click)=\"drawer.close()\">\r\n                Cerrar\r\n              </button>\r\n              <button size=\"small\" mat-raised-button color=\"primary\">Guardar</button>\r\n            </ng-template>\r\n          </app-drawer>\r\n        </mat-drawer>\r\n        <mat-drawer-content>\r\n          <button size=\"small\" mat-raised-button color=\"primary\" (click)='drawer.open()'>Open drawer</button>\r\n        </mat-drawer-content>\r\n      </mat-drawer-container>\r\n        `,\r\n        language:'html',\r\n        type:'code',\r\n      }\r\n    }\r\n  },\r\n}"
             },
             {
-                "name": "EmptyState",
+                "name": "emptyState",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/empty-state/emptyState.stories.ts",
+                "file": "src/stories/empty-state/empty.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    estado: 'crear',\r\n    titulo: 'Titulo del empty state',\r\n    contenido: 'Contenido del empty state',\r\n    anchoIlustracion: '210px',\r\n    alturaIlustracion: '185px',\r\n    alturaContenedor: '100%',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: \"EmptyState\",\r\n  args: {\r\n    estado: 'crear',\r\n    titulo: 'Titulo del empty state',\r\n    contenido: 'Contenido del empty state',\r\n    anchoIlustracion: '210px',\r\n    alturaIlustracion: '185px',\r\n    alturaContenedor: '100%',\r\n  },\r\n}"
             },
             {
                 "name": "error",
@@ -2458,6 +2338,16 @@
                 "defaultValue": "{\r\n  name: \"Chip\",\r\n  args: {\r\n    arrayChips: [\r\n      {\r\n        texto: 'Chip numero 2',\r\n        selected: true,\r\n        color: 'primary',\r\n        icono: 'home',\r\n        variante: 'stroked',\r\n        cancel: true,\r\n      },\r\n    ],\r\n  },\r\n}"
             },
             {
+                "name": "ProgressERP",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/progress-erp/progressErp.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    name: \"Progress ERP\",\r\n    args: {\r\n        hideLogo: false,\r\n        loadingText: 'Texto indicativo del estado de carga',\r\n        progressIndicator: '4 de 100 completos',\r\n        value: 50,\r\n        variant: 'determinate',\r\n    }\r\n}"
+            },
+            {
                 "name": "ProgressSpinner",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2515,7 +2405,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: \"small\",\r\n  render: () => ({\r\n    template: `\r\n    <mat-chip>Theme</mat-chip>\r\n    <mat-chip>\r\n     <button matChipRemove>\r\n      <mat-icon>cancel</mat-icon>\r\n      </button>\r\n       Theme\r\n    </mat-chip>\r\n    `\r\n  })\r\n}"
+                "defaultValue": "{\r\n  name: \"small\",\r\n  render: () => ({\r\n    template: `\r\n    <mat-chip removable highlighted color=\"primary\">Theme</mat-chip>\r\n    <mat-chip removable highlighted color=\"primary\">\r\n     <button matChipRemove>\r\n      <mat-icon>cancel</mat-icon>\r\n      </button>\r\n       Theme\r\n    </mat-chip>\r\n    `\r\n  })\r\n}"
             },
             {
                 "name": "small",
@@ -2774,8 +2664,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<EmptyStateComponent>",
-                "file": "src/stories/empty-state/emptyState.stories.ts",
+                "rawtype": "StoryObj",
+                "file": "src/stories/empty-state/empty.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2930,6 +2820,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<PageHeaderComponent>",
                 "file": "src/stories/page-header/page-header.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj",
+                "file": "src/stories/progress-erp/progressErp.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3141,16 +3042,16 @@
                     "defaultValue": "{\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations:[DrawerComponent,AlertsInfoComponent],\r\n      imports: [\r\n        MatButtonModule,\r\n        MatFormFieldModule,\r\n        BrowserAnimationsModule,\r\n        MatRadioModule,\r\n        MatInputModule,\r\n        MatIconModule,\r\n        MatSelectModule,\r\n        MatSidenavModule,\r\n        MatDatepickerModule,\r\n        MatNativeDateModule,\r\n        MatCheckboxModule \r\n      ],      \r\n    }),\r\n  ],\r\n  title: 'Angular Material/Drawer',\r\n  tags:['autodocs'],\r\n  component: ContainerComponent,\r\n}"
                 }
             ],
-            "src/stories/empty-state/emptyState.stories.ts": [
+            "src/stories/empty-state/empty.stories.ts": [
                 {
-                    "name": "EmptyState",
+                    "name": "emptyState",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/empty-state/emptyState.stories.ts",
+                    "file": "src/stories/empty-state/empty.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    estado: 'crear',\r\n    titulo: 'Titulo del empty state',\r\n    contenido: 'Contenido del empty state',\r\n    anchoIlustracion: '210px',\r\n    alturaIlustracion: '185px',\r\n    alturaContenedor: '100%',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: \"EmptyState\",\r\n  args: {\r\n    estado: 'crear',\r\n    titulo: 'Titulo del empty state',\r\n    contenido: 'Contenido del empty state',\r\n    anchoIlustracion: '210px',\r\n    alturaIlustracion: '185px',\r\n    alturaContenedor: '100%',\r\n  },\r\n}"
                 }
             ],
             "src/stories/alert/alerts.stories.ts": [
@@ -3462,7 +3363,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: \"small\",\r\n  render: () => ({\r\n    template: `\r\n    <mat-chip>Theme</mat-chip>\r\n    <mat-chip>\r\n     <button matChipRemove>\r\n      <mat-icon>cancel</mat-icon>\r\n      </button>\r\n       Theme\r\n    </mat-chip>\r\n    `\r\n  })\r\n}"
+                    "defaultValue": "{\r\n  name: \"small\",\r\n  render: () => ({\r\n    template: `\r\n    <mat-chip removable highlighted color=\"primary\">Theme</mat-chip>\r\n    <mat-chip removable highlighted color=\"primary\">\r\n     <button matChipRemove>\r\n      <mat-icon>cancel</mat-icon>\r\n      </button>\r\n       Theme\r\n    </mat-chip>\r\n    `\r\n  })\r\n}"
                 }
             ],
             "src/stories/mat-list/list.stories.ts": [
@@ -3597,6 +3498,18 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  name: \"Chip\",\r\n  args: {\r\n    arrayChips: [\r\n      {\r\n        texto: 'Chip numero 2',\r\n        selected: true,\r\n        color: 'primary',\r\n        icono: 'home',\r\n        variante: 'stroked',\r\n        cancel: true,\r\n      },\r\n    ],\r\n  },\r\n}"
+                }
+            ],
+            "src/stories/progress-erp/progressErp.stories.ts": [
+                {
+                    "name": "ProgressERP",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/progress-erp/progressErp.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    name: \"Progress ERP\",\r\n    args: {\r\n        hideLogo: false,\r\n        loadingText: 'Texto indicativo del estado de carga',\r\n        progressIndicator: '4 de 100 completos',\r\n        value: 50,\r\n        variant: 'determinate',\r\n    }\r\n}"
                 }
             ],
             "src/stories/progress-spinner/progressSpinner.stories.ts": [
@@ -3871,13 +3784,13 @@
                     "kind": 183
                 }
             ],
-            "src/stories/empty-state/emptyState.stories.ts": [
+            "src/stories/empty-state/empty.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<EmptyStateComponent>",
-                    "file": "src/stories/empty-state/emptyState.stories.ts",
+                    "rawtype": "StoryObj",
+                    "file": "src/stories/empty-state/empty.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4066,6 +3979,19 @@
                     "kind": 183
                 }
             ],
+            "src/stories/progress-erp/progressErp.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj",
+                    "file": "src/stories/progress-erp/progressErp.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/stories/progress-spinner/progressSpinner.stories.ts": [
                 {
                     "name": "Story",
@@ -4147,15 +4073,6 @@
                 "name": "DrawerComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/9",
-                "status": "low"
-            },
-            {
-                "filePath": "src/components/empty-state/empty-state.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "EmptyStateComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -4358,11 +4275,11 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/empty-state/emptyState.stories.ts",
+                "filePath": "src/stories/empty-state/empty.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "EmptyState",
+                "name": "emptyState",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4732,6 +4649,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Title_Section",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/progress-erp/progressErp.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ProgressERP",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

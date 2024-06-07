@@ -1,11 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "node_modules/@sinco/angular/src/lib/styles/typography.scss";
+@import "./styles//colors.component";
 
-html,
 body {
-    height: 100%;
+    @extend .mat-typography;
 }
 
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+$colors: (
+    'error':#d14343,
+    'info':#2d9fc5,
+    'success':#8fc93a,
+    'warning':#fb8500
+);
+
+@each $bgColor, $color in $colors {
+    .mdc-snackbar.#{$bgColor} {
+        width: 400px;
+
+        .container-icon-ripple {
+            background-color: rgba($color, 0.12);
+        }
+    }
 }

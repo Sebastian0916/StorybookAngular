@@ -1,17 +1,9 @@
-import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { EmptyStateComponent } from '../../components/empty-state/empty-state.component';
+import { Meta, StoryObj } from '@storybook/angular';
+import { EmptyStateComponent } from '@sinco/angular';
 
 export default {
   title: 'Angular Material/EmptyState',
   component: EmptyStateComponent,
-  decorators: [
-    moduleMetadata({
-      imports: [MatButtonModule, MatCardModule],
-    }),
-  ],
-  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -49,11 +41,12 @@ export default {
         "Define el ancho de la ilustración dentro del componente. De manera predeterminada, se establece en '210px', pero puedes personalizarlo utilizando valores en píxeles u otras unidades según las necesidades.",
     },
   },
-} as Meta<EmptyStateComponent>;
+} as Meta;
 
-type Story = StoryObj<EmptyStateComponent>;
+type Story = StoryObj;
 
-export const EmptyState: Story = {
+export const emptyState: Story = {
+  name: "EmptyState",
   args: {
     estado: 'crear',
     titulo: 'Titulo del empty state',

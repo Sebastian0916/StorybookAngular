@@ -22,8 +22,8 @@ export const small: Story = {
   name: "small",
   render: () => ({
     template: `
-    <mat-chip>Theme</mat-chip>
-    <mat-chip>
+    <mat-chip removable highlighted color="primary">Theme</mat-chip>
+    <mat-chip removable highlighted color="primary">
      <button matChipRemove>
       <mat-icon>cancel</mat-icon>
       </button>
