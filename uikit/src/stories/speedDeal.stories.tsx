@@ -23,21 +23,17 @@ const meta: Meta<typeof SpeedDial> = {
     ),
   ],
   tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
 };
 
 export default meta;
 type Story = StoryObj<typeof SpeedDial>;
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const actions = [
   { icon: <FileCopy />, name: "Copy" },
   { icon: <Save />, name: "Save" },
   { icon: <Print />, name: "Print" },
   { icon: <Share />, name: "Share" },
 ];
-export const button: Story = {
+export const SpeedDialStory: Story = {
   name: "SpeedDial",
   render: (args) => (
     <Box sx={{ height: 320, transform: "translateZ(0px)", flexGrow: 1 }}>
@@ -46,7 +42,6 @@ export const button: Story = {
         sx={{ position: "absolute", bottom: 16, right: 16 }}
         icon={<SpeedDialIcon />}
         open={true}
-
       >
         {actions.map((action) => (
           <SpeedDialAction

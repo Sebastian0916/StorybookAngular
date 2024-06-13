@@ -1,5 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Radio } from "@mui/material";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
 import { SincoTheme } from "@sinco/react";
@@ -24,32 +30,43 @@ const meta: Meta<typeof Radio> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    size: {
+      control: "radio",
+      options: ["small", "medium", "large"],
+    },
+    color: {
+      control: "select",
+      options: ["primary", "secondary", "error", "warning", "info", "success"],
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Radio>;
 
-export const button: Story = {
+export const RadioStorie: Story = {
   name: "radio",
+  args: {
+    size: "medium",
+    color: "primary",
+  },
+  render: (args) => <Radio {...args} />,
+};
+export const RadioStorieFormControl: Story = {
+  name: "Radio-formControl",
+  args: {
+    size: "medium",
+    color: "primary",
+  },
   render: (args) => (
-    <>
-      <Radio
-        value="a"
-        name="radio-buttons"
-        inputProps={{ "aria-label": "A" }}
-      />
-      <Radio
-        size="medium"
-        value="b"
-        name="radio-buttons"
-        inputProps={{ "aria-label": "B" }}
-      />
-      <Radio
-        size="large"
-        value="c"
-        name="radio-buttons"
-        inputProps={{ "aria-label": "C" }}
-      />
-    </>
+    <FormControl>
+      <FormLabel>Exmaple</FormLabel>
+      <RadioGroup row>
+        <FormControlLabel control={<Radio {...args} />} label="Female" />
+        <FormControlLabel control={<Radio {...args} />} label="Male" />
+        <FormControlLabel control={<Radio {...args} />} label="Other" />
+      </RadioGroup>
+    </FormControl>
   ),
 };

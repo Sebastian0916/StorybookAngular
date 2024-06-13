@@ -24,13 +24,30 @@ const meta: Meta<typeof ButtonGroup> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    size: {
+      control: "radio",
+      options: ["small", "medium", "large"],
+    },
+    color: {
+      control: "select",
+      options: ["primary", "secondary", "error", "warning", "info", "success"],
+    },
+    children: {
+      control: "text",
+    },
+    variant: {
+      control: "select",
+      options: ["text", "outlined", "contained"],
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof ButtonGroup>;
 
-export const button: Story = {
-  name: "button",
+export const ButtonGroupStories: Story = {
+  name: "ButtonGroup",
   args: {
     size: "small",
     variant: "contained",

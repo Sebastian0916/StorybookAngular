@@ -45,13 +45,13 @@ export const AutoCompleteStorie: Story = {
             {...params}
             label="Movie"
             size="small"
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <Search />
-                </InputAdornment>
-              ),
-            }}
+            // InputProps={{
+            //   endAdornment: (
+            //     <InputAdornment position="end">
+            //       <Search />
+            //     </InputAdornment>
+            //   ),
+            // }}
           />
         )}
       />
@@ -74,13 +74,13 @@ export const AutoCompleteStorie: Story = {
             label="Movie"
             size="small"
             variant="standard"
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <Search />
-                </InputAdornment>
-              ),
-            }}
+            // InputProps={{
+            //   endAdornment: (
+            //     <InputAdornment position="end">
+            //       <Search />
+            //     </InputAdornment>
+            //   ),
+            // }}
           />
         )}
       />

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Box, Fab } from "@mui/material";
-import { Add } from "@mui/icons-material";
+import { Add, Edit } from "@mui/icons-material";
 
 import { ThemeProvider } from "@mui/material/styles";
 
@@ -26,48 +26,83 @@ const meta: Meta<typeof Fab> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    size: {
+      control: "radio",
+      options: ["small", "medium", "large"],
+    },
+    color: {
+      control: "select",
+      options: ["primary", "secondary", "error", "warning", "info", "success"],
+    },
+    children: {
+      control: "text",
+    },
+    variant: {
+      control: "select",
+      options: ["extended", "circular"],
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Fab>;
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-export const fab: Story = {
-  name: "fab-extend",
-  render: (args) => (
+export const FabStories: Story = {
+  name: "Fab",
+  args: {
+    size: "small",
+    variant: "circular",
+    color: "primary",
+    children: "Fab",
+  },
+  render: ({ size, color, children, variant, ...args }) => (
     <>
-      <Box>
-        <Fab variant="extended" color="primary" aria-label="add">
-          Fab
-          <Add />
+      {variant === "circular" ? (
+        <Fab {...args} variant={variant} color={color} size={size}>
+          <Edit />
         </Fab>
-        <Fab variant="extended" color="primary" size="medium" aria-label="add">
-          Fab
-          <Add />
+      ) : (
+        <Fab {...args} variant={variant} color={color} size={size}>
+          <Edit />
+          {children}
         </Fab>
-        <Fab variant="extended" color="primary" size="large" aria-label="add">
-          Fab
-          <Add />
-        </Fab>
-      </Box>
+      )}
     </>
   ),
 };
-export const button: Story = {
-  name: "fab",
+export const FabStorieCircular: Story = {
+  name: "Fab-circular",
   render: (args) => (
     <>
-      <Box>
-        <Fab color="primary" aria-label="add">
-          <Add />
-        </Fab>
-        <Fab color="primary" size="medium" aria-label="add">
-          <Add />
-        </Fab>
-        <Fab color="primary" size="large" aria-label="add">
-          <Add />
-        </Fab>
-      </Box>
+      <Fab color="primary">
+        <Add />
+      </Fab>
+      <Fab color="primary" size="medium">
+        <Add />
+      </Fab>
+      <Fab color="primary" size="large">
+        <Add />
+      </Fab>
+    </>
+  ),
+};
+export const FabStorieExtended: Story = {
+  name: "Fab-circular",
+  render: (args) => (
+    <>
+      <Fab color="primary" variant="extended">
+        <Add />
+        Fab
+      </Fab>
+      <Fab color="primary" size="medium" variant="extended">
+        <Add />
+        Fab
+      </Fab>
+      <Fab color="primary" size="large" variant="extended">
+        <Add />
+        Fab
+      </Fab>
     </>
   ),
 };

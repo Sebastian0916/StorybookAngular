@@ -1,13 +1,13 @@
 import React from "react";
-import Registro from "./components/registro/Registro";
-import RegistroTerceros from "./components/registro/RegistroTerceros";
-
+import { InternationalPhone } from "./components/international-phone";
 function App() {
   return (
-    <>
-      {/* <Registro /> */}
-      <RegistroTerceros />
-    </>
+    <InternationalPhone
+      value={""}
+      onChange={function (phone: string): void {
+        throw new Error("Function not implemented.");
+      }}
+    />
   );
 }
 

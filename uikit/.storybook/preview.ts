@@ -12,8 +12,8 @@ const preview: Preview = {
           [
             "Autocomplete",
             "Button",
-            "Checkbox",
             "ButtonGroup",
+            "Checkbox",
             "Fab",
             "Radio",
             "Rating",

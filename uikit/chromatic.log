@@ -9,20 +9,20 @@ Authenticated with Chromatic
 Retrieving git information
 ‼ Using outdated package
 You are using an outdated version of the Chromatic CLI (v7.6.0).
-A new major version is available (v9.1.0).
+A new major version is available (v11.5.4).
 Run npm install chromatic@latest --save-dev to upgrade.
 Retrieved git information
-    → Commit 'cdce0c0' on branch 'ajustes-componentes'; found 1 parent build
+    → Commit '47fd29d' on branch 'main'; found 1 parent build
 Collecting Storybook metadata
 Collected Storybook metadata
-    → Storybook 7.5.2 for React; using the @storybook/react-webpack5 builder (7.5.2); supported addons found: Links, Essentials, Interactions
+    → Storybook 7.6.19 for React; using the @storybook/react-webpack5 builder (7.6.19); supported addons found: Links, Essentials, Interactions
 Initializing build
 Initialized build
-    → Build 20 initialized
+    → Build 27 initialized
 Building your Storybook
-    → Running command: npm run build-storybook -- --output-dir C:\Users\SEBAST~1.VER\AppData\Local\Temp\chromatic--23460-Nxct13iY30LK
-Storybook built in 1 minute 14 seconds
-    → View build log at C:\Users\sebastian.vera\Desktop\StorybookAngular-1\uikit\build-storybook.log
+    → Running command: npm run build-storybook -- --output-dir C:\Users\SEBAST~1.VER\AppData\Local\Temp\chromatic--20656-fJKGAAZ3nMfr
+Storybook built in 51 seconds
+    → View build log at C:\Users\Sebastian.vera\OneDrive - Sincosoft SAS\Escritorio\StorybookAngular\uikit\build-storybook.log
 Publish your built Storybook
     → Validating Storybook files
 Publishing your built Storybook
@@ -31,38 +31,41 @@ Publishing your built Storybook
     → [                    ] 0%
     → [                    ] 2%
     → [=                   ] 3%
-    → [=                   ] 4%
     → [=                   ] 5%
-    → [=                   ] 7%
-    → [==                  ] 8%
+    → [=                   ] 6%
     → [==                  ] 9%
+    → [==                  ] 11%
     → [==                  ] 12%
     → [===                 ] 13%
     → [===                 ] 14%
     → [===                 ] 16%
     → [====                ] 19%
     → [====                ] 20%
-    → [====                ] 22%
-    → [=====               ] 23%
+    → [====                ] 21%
     → [=====               ] 24%
-    → [=====               ] 27%
+    → [=====               ] 26%
+    → [======              ] 28%
     → [======              ] 29%
     → [======              ] 30%
     → [======              ] 31%
+    → [======              ] 32%
     → [=======             ] 33%
     → [=======             ] 34%
-    → [=======             ] 36%
-    → [========            ] 38%
+    → [=======             ] 35%
+    → [=======             ] 37%
     → [========            ] 39%
-    → [========            ] 40%
-    → [=========           ] 43%
+    → [========            ] 41%
+    → [========            ] 42%
     → [=========           ] 44%
-    → [=========           ] 46%
+    → [=========           ] 45%
     → [=========           ] 47%
-    → [==========          ] 48%
+    → [==========          ] 49%
+    → [==========          ] 50%
+    → [==========          ] 51%
     → [==========          ] 52%
     → [===========         ] 53%
     → [===========         ] 54%
+    → [===========         ] 55%
     → [===========         ] 56%
     → [===========         ] 57%
     → [============        ] 58%
@@ -70,50 +73,67 @@ Publishing your built Storybook
     → [============        ] 60%
     → [============        ] 61%
     → [============        ] 62%
-    → [=============       ] 63%
     → [=============       ] 64%
     → [=============       ] 65%
-    → [=============       ] 66%
     → [=============       ] 67%
-    → [==============      ] 71%
+    → [==============      ] 69%
     → [==============      ] 72%
     → [===============     ] 74%
-    → [===============     ] 75%
-    → [===============     ] 77%
+    → [===============     ] 76%
+    → [================    ] 78%
+    → [================    ] 79%
+    → [================    ] 81%
+    → [=================   ] 83%
+    → [=================   ] 85%
     → [=================   ] 87%
+    → [==================  ] 88%
+    → [==================  ] 89%
     → [==================  ] 90%
     → [==================  ] 91%
     → [==================  ] 92%
     → [=================== ] 93%
     → [=================== ] 94%
     → [=================== ] 95%
+    → [=================== ] 96%
     → [=================== ] 97%
     → [====================] 98%
     → [====================] 99%
     → [====================] 100%
-Publish complete in 56 seconds
-    → View your Storybook at https://65400b6a845f4219dbbda334-kpqiepjccu.chromatic.com
+Publish complete in 26 seconds
+    → View your Storybook at https://65400b6a845f4219dbbda334-krigsakkou.chromatic.com
 Verifying your Storybook
     → This may take a few minutes
-Started build 20
-    → View build details at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=20
-Running 43 tests
+Started build 27
+    → View build details at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=27
+Running 48 tests
     → This may take a few minutes
 i Speed up Continuous Integration
 Your project is linked to GitHub so Chromatic will report results there.
 This means you can pass the --exit-once-uploaded flag to skip waiting for build results.
 Read more here: https://www.chromatic.com/docs/cli#chromatic-options
-    → [                    ] 1/43  footerAction › FooterAction.. 
-    → [=                   ] 3/43  Autocomplete › Autocomplete 
-    → [=====               ] 10/43  ToggleButton, › Ratign 
-    → [========            ] 17/43  SvgIcon › svgIcon 
-    → [=========           ] 20/43  Menu › menu-dense 
-    → [=============       ] 28/43  Select › select 
-    → [===============     ] 33/43  Switch › switch 
-    → [=================   ] 36/43  Tabs › Tab 
-    → [====================] 42/43  ToastNotification › Toast-seeMore 
-    → [====================] 44/43  
-× Found 9 visual changes: Review the changes at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=20
+    → [                    ] 1/48  Autocomplete › Autocomplete 
+    → [==                  ] 4/48  Button › icon-button 
+    → [===                 ] 7/48  Checkbox › checkbox-formControl 
+    → [====                ] 10/48  Fab › Fab-circular 
+    → [=====               ] 13/48  Rating › Ratign 
+    → [======              ] 14/48  Select › select 
+    → [========            ] 18/48  Switch › switch 
+    → [=========           ] 22/48  SvgIcon › svgIcon 
+    → [==========          ] 23/48  List › List 
+    → [===========         ] 26/48  Alert › Alert 
+    → [=============       ] 30/48  Menu › menu-dense 
+    → [=============       ] 32/48  SpeedDial › SpeedDial 
+    → [==============      ] 34/48  Tabs › Tab-vertical 
+    → [===============     ] 37/48  DataGrid › DataGrid 
+    → [================    ] 38/48  Card Radio › Card Radio Story 
+    → [=================   ] 40/48  Drawer › Drawer 
+    → [=================   ] 41/48  EmptyState › EmptyState 
+    → [==================  ] 42/48  footerAction › FooterAction.. 
+    → [==================  ] 44/48  PageHeader › PageActions 
+    → [=================== ] 46/48  ToastNotification › Toast-actions 
+    → [====================] 47/48  ToastNotification › Toast-seeMore 
+    → [====================] 48/48  ToastNotification › ToastNotification 
+× Found 4 visual changes: Review the changes at https://www.chromatic.com/build?appId=65400b6a845f4219dbbda334&number=27
 
 i For CI/CD use cases, this command failed with exit code 1
 Pass --exit-zero-on-changes to succeed this command regardless of changes.

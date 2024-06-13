@@ -33,50 +33,41 @@ const meta: Meta<typeof List> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    dense: {
+      control: "boolean",
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof List>;
 
-export const button: Story = {
+export const ListStory: Story = {
   name: "List",
-  render: () => (
+  args: {
+    dense: false,
+  },
+  render: (args) => (
     <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      <nav>
-        <List dense={true}>
-          <ListItem dense>
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <DraftsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-      <Divider />
-      <nav>
-        <List dense={false}>
-          <ListItem>
-            <ListItemButton>
-              <ListItemText primary="Trash" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Spam" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
+      <List {...args}>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Inbox" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <DraftsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Drafts" />
+          </ListItemButton>
+        </ListItem>
+      </List>
     </Box>
   ),
 };

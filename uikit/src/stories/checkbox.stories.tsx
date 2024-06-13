@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Checkbox } from "@mui/material";
+import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
 import { SincoTheme } from "@sinco/react";
@@ -24,19 +24,49 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    size: {
+      control: "radio",
+      options: ["small", "medium", "large"],
+    },
+    color: {
+      control: "select",
+      options: ["primary", "secondary", "error", "warning", "info", "success"],
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-export const button: Story = {
+export const CheckboxStories: Story = {
   name: "checkbox",
+  args: {
+    size: "medium",
+    color: "primary",
+  },
+  render: (args) => <Checkbox {...args} />,
+};
+
+export const CheckboxStoriesFormControl: Story = {
+  name: "checkbox-formControl",
+  args: {
+    size: "medium",
+    color: "primary",
+  },
   render: (args) => (
-    <>
-      <Checkbox {...label} size="small" />
-      <Checkbox {...label} size="medium" />
-      <Checkbox {...label} size="large" />
-    </>
+    <FormGroup>
+      <FormControlLabel control={<Checkbox {...args} />} label="Label" />
+      <FormControlLabel
+        required
+        control={<Checkbox {...args} />}
+        label="Required"
+      />
+      <FormControlLabel
+        disabled
+        control={<Checkbox {...args} />}
+        label="Disabled"
+      />
+    </FormGroup>
   ),
 };

@@ -1,8 +1,7 @@
+import { ThemeProvider } from "@emotion/react";
+import { Stack } from "@mui/material";
+import { ProgressSinco, SincoTheme } from "@sinco/react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, Radio } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
-
-import { SincoTheme } from "@sinco/react";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
@@ -10,13 +9,15 @@ import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 
-const meta: Meta<typeof Avatar> = {
-  title: "Components/Avatar",
-  component: Avatar,
+const meta: Meta<typeof ProgressSinco> = {
+  title: "sinco react/Progress",
+  component: ProgressSinco,
   decorators: [
     (Story) => (
       <ThemeProvider theme={SincoTheme}>
-        <Story />
+        <Stack height={160}>
+          <Story />
+        </Stack>
       </ThemeProvider>
     ),
   ],
@@ -27,14 +28,10 @@ const meta: Meta<typeof Avatar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Avatar>;
 
-export const button: Story = {
-  name: "avatar",
-  render: (args) => (
-    <>
-      <Avatar alt="Remy Sharp" />
-      <Avatar alt="Remy Sharp" />
-    </>
-  ),
+type Story = StoryObj<typeof ProgressSinco>;
+
+export const ProgressSincoStory: Story = {
+  name: "ProgressSinco",
+  render: () => <ProgressSinco time={1000}  />,
 };

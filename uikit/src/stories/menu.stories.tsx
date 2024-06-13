@@ -37,9 +37,8 @@ const meta: Meta<typeof Menu> = {
 
 export default meta;
 type Story = StoryObj<typeof Menu>;
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-export const button: Story = {
+export const MenuStory: Story = {
   name: "menu",
   render: (args) => (
     <Paper sx={{ width: 320 }}>

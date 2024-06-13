@@ -32,6 +32,12 @@ const meta: Meta<typeof Table> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    size: {
+      options: ["small", "medium"],
+      control: "radio",
+    },
+  },
 };
 
 export default meta;
@@ -54,48 +60,15 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export const tables: Story = {
+export const TableStory: Story = {
   name: "table-medium",
+  args: {
+    size: "medium",
+  },
   render: (args) => (
     <>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="medium">
-          <TableHead>
-            <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </>
-  ),
-};
-export const table: Story = {
-  name: "table-small",
-  render: (args) => (
-    <>
-      <TableContainer component={Paper}>
-        <Table  sx={{ minWidth: 650 }}>
+        <Table sx={{ minWidth: 650 }} {...args}>
           <TableHead>
             <TableRow>
               <TableCell>Dessert (100g serving)</TableCell>
