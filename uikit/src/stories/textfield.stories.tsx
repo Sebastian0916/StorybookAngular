@@ -8,7 +8,8 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/nunito/600.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
-import { SincoTheme } from "@sinco/react";
+import { SincoTheme } from "../Theme";
+
 
 const meta: Meta<typeof TextField> = {
   title: "Components/TextField",

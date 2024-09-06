@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Story, Meta } from "@storybook/react";
 import { Rating, RatingProps } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import { SincoTheme } from "@sinco/react";
+import { SincoTheme } from "../Theme";
 
 export default {
   title: "Components/Rating",

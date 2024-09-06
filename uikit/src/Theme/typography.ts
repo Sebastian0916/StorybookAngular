@@ -1,16 +1,6 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
 import { breakpoints } from './breakpoints';
-
-declare module '@mui/material/styles' {
-  interface TypographyVariants {
-    body3: React.CSSProperties;
-  }
-
-  interface TypographyVariantsOptions {
-    body3?: React.CSSProperties;
-  }
-}
-
+import "./module"
 export const typography: TypographyOptions = {
   fontSize: 13,
   body1: {
@@ -87,7 +77,8 @@ export const typography: TypographyOptions = {
     fontFamily: 'Nunito',
     fontSize: 16,
     fontWeight: 600,
-    lineHeight: 1.6,
+    lineHeight: 1.4,
+    letterSpacing: "0.009rem",
     '@media(max-width: 885px)': {
       fontSize: 17,
     },
@@ -124,15 +115,5 @@ export const typography: TypographyOptions = {
     fontWeight: 300,
     letterSpacing: -1.5,
     lineHeight: 1.4,
-  },
-  button: {
-    fontFamily: 'Roboto',
-    textTransform: 'unset',
-    fontWeightLight: 300,
-    fontSize: 13,
-    lineHeight: 'normal',
-    '@media(max-width: 885px)': {
-      fontSize: 14,
-    },
   },
 };

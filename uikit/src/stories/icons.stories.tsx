@@ -3,7 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { SvgIcon } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 
-import { SincoTheme } from "@sinco/react";
+import { SincoTheme } from "../Theme";
 import "@fontsource/nunito/300.css";
 import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";

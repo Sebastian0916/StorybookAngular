@@ -1,50 +1,30 @@
 import { PaletteOptions } from "@mui/material";
 
-// declare module "@mui/material/styles" {
-//   interface PaletteColor {
-//     50: string;
-//     100: string;
-//     200: string;
-//     300: string;
-//     600: string;
-//     700: string;
-//     800: string;
-//   }
-// }
-export const palette: PaletteOptions = {
-  primary: {
-    50: "#E4ECF4",
-    100: "#BCD0E3",
-    200: "#8FB1D0",
-    300: "#6392BD",
-    light: "#417AAE",
-    main: "#2063A0",
-    600: "#1C5B98",
-    700: "#18518E",
-    800: "#134784",
-    dark: "#0B3573",
-    A100: "#A5C5FF",
-    A200: "#72A4FF",
-    A400: "#3F83FF",
-    A700: "#2572FF",
-    contrastText: "#ffffff",
+
+export const BasicPalette: Partial<PaletteOptions> = {
+  chipInfo: {
+    main: "#C0E8FC",
+    dark: "#9CD8FA",
+    light: "#E0F4FE",
+    contrastText: "#5A5E73"
   },
-  secondary: {
-    50: "#E0F7FA",
-    100: "#B3EBF2",
-    200: "#80DEEA",
-    300: "#4DD0E1",
-    light: "#26C6DA",
-    main: "#00BCD4",
-    600: "#00B6CF",
-    700: "#00ADC9",
-    800: "#00A5C3",
-    dark: "#0097B9",
-    A100: "#E2F9FF",
-    A200: "#AFEEFF",
-    A400: "#7CE3FF",
-    A700: "#63DDFF",
-    contrastText: "#ffffff",
+  chipWarning: {
+    main: "#FCE4C0",
+    dark: "#FAD19C",
+    light: "#F3F2F0",
+    contrastText: "#5A5E73"
+  },
+  chipError: {
+    main: "#FCD4D4",
+    dark: "#F4B9B9",
+    light: "#FEEAEA",
+    contrastText: "#5A5E73"
+  },
+  chipSuccess: {
+    main: "#DDF8C3",
+    dark: "#C8F3A2",
+    light: "#EFFCE2",
+    contrastText: "#5A5E73"
   },
   error: {
     50: "#F9E8E8",
@@ -115,16 +95,16 @@ export const palette: PaletteOptions = {
     contrastText: "#ffffff",
   },
   grey: {
-    50: "#F7F7F8",
-    100: "#EAEBEC",
-    200: "#DCDEE0",
-    300: "#CED1D4",
-    400: "#C4C7CA",
-    500: "#B9BDC1",
-    600: "#B2B7BB",
-    700: "#AAAEB3",
-    800: "#A2A6AB",
-    900: "#93989E",
+    50: "#FBFBFB",
+    100: "#F5F5F6",
+    200: "#EAEBEC",
+    300: "#DCDEE0",
+    400: "#CED1D4",
+    500: "#C4C7CA",
+    600: "#B9BDC1",
+    700: "#B2B7BB",
+    800: "#AAAEB3",
+    900: "#A2A6AB",
     A100: "#FFFFFF",
     A200: "#FFFFFF",
     A400: "#D4EAFF",
@@ -137,8 +117,8 @@ export const palette: PaletteOptions = {
   },
   action: {
     active: "#1018408a",
-    hover: "#10184066",
-    selected: "#101840cc",
+    hover: "#1018400a",
+    selected: "#10184014",
     disabled: "#10184042",
     disabledBackground: "#1018401f",
     focus: "#1018401f",
@@ -152,4 +132,153 @@ export const palette: PaletteOptions = {
     white: "#fff",
   },
   divider: "#0000001f",
+};
+
+export const paletteERP: PaletteOptions = {
+  primary: {
+    50: "#E4ECF4",
+    100: "#BCD0E3",
+    200: "#8FB1D0",
+    300: "#6392BD",
+    light: "#417AAE",
+    main: "#2063A0",
+    600: "#1C5B98",
+    700: "#18518E",
+    800: "#134784",
+    dark: "#0B3573",
+    A100: "#A5C5FF",
+    A200: "#72A4FF",
+    A400: "#3F83FF",
+    A700: "#2572FF",
+    contrastText: "#ffffff",
+
+  },
+  secondary: {
+    50: "#E0F7FA",
+    100: "#B3EBF2",
+    200: "#80DEEA",
+    300: "#4DD0E1",
+    light: "#26C6DA",
+    main: "#00BCD4",
+    600: "#00B6CF",
+    700: "#00ADC9",
+    800: "#00A5C3",
+    dark: "#0097B9",
+    A100: "#E2F9FF",
+    A200: "#AFEEFF",
+    A400: "#7CE3FF",
+    A700: "#63DDFF",
+    contrastText: "#ffffff",
+  },
+  chipPrimary: {
+    main: "#C4E1F5",
+    dark: "#A2CDEE",
+    light: "#E2F0FA",
+    contrastText: "#5A5E73"
+  },
+  chipSecondary: {
+    main: "#C4F6FD",
+    dark: "#A8F1FB",
+    light: "#E0FBFE",
+    contrastText: "#545E73"
+  },
+  ...BasicPalette
+};
+
+export const paletteADPRO: PaletteOptions = {
+  primary: {
+    50: "#F8FAFB",
+    100: "#E6EFF0",
+    200: "#D2E3E4",
+    300: "#82C6CB",
+    light: "#2B9DA7",
+    main: "#058C97",
+    600: "#04848F",
+    700: "#047984",
+    800: "#036F7A",
+    dark: "#015C69",
+    A100: "#98F0FF",
+    A200: "#65E9FF",
+    A400: "#32E1FF",
+    A700: "#32E1FF",
+  },
+  secondary: {
+    50: "#E0F7FA",
+    100: "#B3EBF2",
+    200: "#80DEEA",
+    300: "#4DD0E1",
+    light: "#26C6DA",
+    main: "#00BCD4",
+    600: "#00B6CF",
+    700: "#00ADC9",
+    800: "#00A5C3",
+    dark: "#0097B9",
+    A100: "#E2F9FF",
+    A200: "#AFEEFF",
+    A400: "#7CE3FF",
+    A700: "#63DDFF",
+    contrastText: "#ffffff",
+  },
+  chipPrimary: {
+    main: "#CEE7E9",
+    dark: "#B2D9DC",
+    light: "#E3F1F2",
+    contrastText: "#5A5E73"
+  },
+  chipSecondary: {
+    main: "#C4F6FD",
+    dark: "#A8F1FB",
+    light: "#E0FBFE",
+    contrastText: "#545E73"
+  },
+  ...BasicPalette
+};
+
+export const paletteADC: PaletteOptions = {
+  primary: {
+    50: "#F8FAFB",
+    100: "#E6EFF0",
+    200: "#D2E3E4",
+    300: "#82C6CB",
+    light: "#2B9DA7",
+    main: "#058C97",
+    600: "#04848F",
+    700: "#047984",
+    800: "#036F7A",
+    dark: "#015C69",
+    A100: "#98F0FF",
+    A200: "#65E9FF",
+    A400: "#32E1FF",
+    A700: "#32E1FF",
+  },
+  secondary: {
+    50: "#E0F7FA",
+    100: "#B3EBF2",
+    200: "#80DEEA",
+    300: "#4DD0E1",
+    light: "#26C6DA",
+    main: "#00BCD4",
+    600: "#00B6CF",
+    700: "#00ADC9",
+    800: "#00A5C3",
+    dark: "#0097B9",
+    A100: "#E2F9FF",
+    A200: "#AFEEFF",
+    A400: "#7CE3FF",
+    A700: "#63DDFF",
+    contrastText: "#ffffff",
+  },
+  chipPrimary: {
+    main: "#D4D8F7",
+    dark: "#B2B9F0",
+    light: "#E5E8FA",
+    contrastText: "#5A5E73"
+  },
+  chipSecondary: {
+    main: "#E0E0E0",
+    dark: "#D1D1D1",
+    light: "#EBEBEB",
+    contrastText: "#545E73"
+  },
+  ...BasicPalette
 };
